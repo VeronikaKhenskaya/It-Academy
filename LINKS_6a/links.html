@@ -7,13 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Links menu</title>
     <style>
-        .menu{
+        .menu {
             width: 50%;
             height: 40px;
             margin: 20px;
-            box-sizing: border-box;
             text-align: center;
         }
+
         .menu span {
             color: red;
             font-weight: bolder;
@@ -21,21 +21,53 @@
             padding: 10px;
             line-height: 30px;
         }
-        .sdmenu{
+
+        .sdmenu {
             width: 50%;
             height: 40px;
             margin: 20px;
-            box-sizing: border-box;
-            text-align: center;
-            
         }
 
         .sdmenu>div {
-            margin: 10px;
-            padding: 10px;
             border-right: red solid;
+            display: inline-block;
+            padding: 5px 10px 10px 13px;
+            margin: 5px;
+        }
+
+        .thirdmenu {
+            width: 50%;
+            height: 40px;
+            margin: 20px;
+            vertical-align: middle;
+        }
+
+        .thirdmenu ul li {
+            display: inline;
+            margin: 5px;
+            padding: 5px 10px 10px 5px;
+            text-align: center;
+            border-right: solid red;
+        }
+
+        .ul {
+            padding: 0px;
+            margin: 10px;
+        }
+
+        .fourthmenu {
+            width: 50%;
+            height: 40px;
+            margin: 20px;
+            vertical-align: middle;
+        }
+
+        .fourthmenu ul li {
+            float: left;
+            list-style: none;
+            margin-right: 10px;
+            border-right: solid red;
             padding: 10px;
-            
         }
     </style>
 </head>
@@ -45,13 +77,32 @@
         <a href="google.com">Первая ссылка </a> <span>|</span>
         <a href="google.com">Вторая ссылка </a> <span>|</span>
         <a href="google.com">Третья ссылка </a> <span>|</span>
-        </div>
+    </div>
 
-        <div class="sdmenu">
-            <div style="display: inline-block;"><a href="google.com">Первая ссылка </a></div>
-            <div style="display: inline-block;"><a href="google.com">Вторая ссылка </a></div>
-            <div style="display: inline-block;"><a href="google.com">Третья ссылка </a></div>
-        </div>
+    <div class="sdmenu">
+        <div><a href="google.com">Первая ссылка </a></div>
+        <div><a href="google.com">Вторая ссылка </a></div>
+        <div><a href="google.com">Третья ссылка </a></div>
+    </div>
+
+    <div class="thirdmenu">
+        <ul class="ul">
+            <li><a href="google.com">Первая ссылка</a></li>
+            <li><a href="google.com">Вторая ссылка</a></li>
+            <li><a href="google.com">Третья ссылка</a></li>
+        </ul>
+    </div>
+
+    <div class="fourthmenu">
+        <ul class="ul">
+            <li><a href="google.com">Первая ссылка</a></li>
+            <li><a href="google.com">Вторая ссылка</a></li>
+            <li><a href="google.com">Третья ссылка</a></li>
+        </ul>
+    </div>
+
+
+
 </body>
 
 </html>
