@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+     
+    </style>
+</head>
+
+<body>
+    <div>
+        <form method="get">
+            <fieldset style="border: none;">
+                <legend>Для публикации вашей статьи заполните, пожалуйста, следующую форму:</legend>
+
+                <p>Название статьи: <input type="text" name="name" id="name" style="margin-left: 5px;"></p>
+                <p>Рубрика:
+                <select name="heading">
+                    <option value="1">компьютерная графика</option>
+                    <option value="2">графический дизайн</option>
+                    <option value="3">программирование</option>
+                </select></p>
+                    Публикация:
+                    <input type="radio" name="answer" value="1">на сайте
+                    <input type="radio" name="answer" value="2">в журнале
+                    <input type="radio" name="answer" value="3">на сайте и в журнале
+                <p>Разрешить комментарии:<input type="checkbox" name="comments"></p>
+                Текст статьи:<br>
+                <textarea name="text" id="text"></textarea>
+            </fieldset>
+        </form>
+    </div>
+</body>
+
+</html>
