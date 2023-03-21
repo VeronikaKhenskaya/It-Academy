@@ -7,31 +7,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-     
+        * {
+            line-height: 25px;
+        }
+
+        #forma {
+            width: 60%;
+            border: 4px double red;
+        }
+
+        #namefield{
+            width: 80%;
+        }
+        #namefield2{
+            width: 100%;
+        }
+
+        #text {
+            width: 100%;
+        }
+
+        .name,
+        .heading {
+            display: inline-block;
+        }
+
+        @media all and (min-width:500px) {
+            .radio {
+                display: inline-block;
+            }
+
+        }
     </style>
 </head>
 
 <body>
-    <div>
-        <form method="get">
-            <fieldset style="border: none;">
-                <legend>Для публикации вашей статьи заполните, пожалуйста, следующую форму:</legend>
+    <div id="forma">
+        <fieldset style="border: none;">
+            <legend>Для публикации вашей статьи заполните, пожалуйста, следующую форму:</legend>
 
-                <p>Название статьи: <input type="text" name="name" id="name" style="margin-left: 5px;"></p>
-                <p>Рубрика:
-                <select name="heading">
+            <div class="name">Название статьи:</div>
+            <div class="name" id="namefield"><input type="text" name="name" id="namefield2"></div></br>
+            <div class="heading" style="margin-right: 55px;">Рубрика:</div>
+            <div class="heading"><select name="heading" class="heading">
                     <option value="1">компьютерная графика</option>
                     <option value="2">графический дизайн</option>
                     <option value="3">программирование</option>
-                </select></p>
-                    Публикация:
-                    <input type="radio" name="answer" value="1">на сайте
-                    <input type="radio" name="answer" value="2">в журнале
-                    <input type="radio" name="answer" value="3">на сайте и в журнале
-                <p>Разрешить комментарии:<input type="checkbox" name="comments"></p>
-                Текст статьи:<br>
+                </select></div><br>
+            <div class="radio" style="margin-right: 20px;">Публикация:</div>
+            <div class="radio"><input type="radio" name="answer" value="1">на сайте</div>
+            <div class="radio"><input type="radio" name="answer" value="2">в журнале</div>
+            <div class="radio"><input type="radio" name="answer" value="3">на сайте и в журнале</div>
+
+            <div>Разрешить комментарии:<input type="checkbox" name="comments"></div>
+            <div>Текст статьи:<br>
                 <textarea name="text" id="text"></textarea>
-            </fieldset>
+            </div>
+        </fieldset>
         </form>
     </div>
 </body>
