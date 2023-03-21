@@ -33,8 +33,9 @@
             width: 250px;
             padding: 5px;
             float: left;
-            text-align: center;
-            background: transparent 250px repeat-y
+            background: transparent 250px repeat-y;
+            text-align: left;
+            color: #000066;
         }
 
         .football {
@@ -59,12 +60,6 @@
             font-size: 10px;
         }
 
-
-        #list {
-            text-align: left;
-            color: #000066;
-        }
-
         #white {
             margin-left: 250px;
             background: white
@@ -83,6 +78,119 @@
         }
 
         @media all and (max-width:500px) {
+            .toggler {
+                z-index: 2;
+                height: 50px;
+                width: 50px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                cursor: pointer;
+                opacity: 0;
+
+            }
+
+            .hamburger {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 40px;
+                width: 40px;
+                padding: 0.6rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                
+            }
+
+            .hamburger>div {
+                position: relative;
+                top: 0;
+                left: 0;
+                background: black;
+                height: 2px;
+                width: 60%;
+                transition: all 0.4s ease;
+            }
+
+            .hamburger>div::before,
+            .hamburger>div::after {
+                content: '';
+                position: absolute;
+                top: -10px;
+                background: black;
+                width: 100%;
+                height: 2px;
+                transition: all 0.4s ease;
+            }
+
+            .hamburger>div::after {
+                top: 10px;
+            }
+
+
+            .toggler:checked+.hamburger>div {
+                background: rgba(0, 0, 0, 0);
+            }
+
+            .toggler:checked+.hamburger>div::before {
+                top: 0;
+                transform: rotate(45deg);
+                background: black;
+            }
+
+            .toggler:checked+.hamburger>div::after {
+                top: 0;
+                transform: rotate(135deg);
+                background: black;
+            }
+
+
+            .menu {
+                background: white;
+                width: 0%;
+                height: 100vh;
+                transition: all 0.4s ease;
+            }
+           
+
+            .toggler:checked~.menu {
+                width: 30%;
+                
+            }
+
+            .menu>div>ul {
+                display: flex;
+                flex-direction: column;
+                position: fixed;
+                top: 70px;
+                padding-left: 10px;
+                visibility: hidden;
+                overflow-y: scroll;
+            }
+
+            .menu>div>ul>li {
+                list-style: none;
+                padding: 0.5rem;
+                
+            }
+
+            .menu>div>ul>li>a {
+                color: black;
+                text-decoration: none;
+                font-size: 10px;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+
+            .toggler:checked~.menu>div>ul {
+                transition: visibility 0.4s ease;
+                transition-delay: 0.1s;
+                visibility: visible;
+            }
+
+            .toggler:checked~.menu>div>ul>li>a:hover {
+                color: yellow;
+            }
 
             .header,
             .footer {
@@ -91,22 +199,19 @@
                 width: 100%;
             }
 
-
             .text {
                 text-align: justify;
                 color: blue;
                 font-size: 5px;
+                position: fixed;
+                
             }
 
             #image {
+                float: left;
                 width: 99%;
                 margin: 2px;
-            }
-
-            .menu {
-                width: 100px;
-                font-size: 5px;
-                background-size: 100px;
+                position: fixed;
             }
 
             #white {
@@ -115,10 +220,6 @@
 
             .balls {
                 background: none;
-            }
-
-            #h1 {
-                font-size: 10px;
             }
 
             h2 {
@@ -133,81 +234,99 @@
 <body>
     <div class="header"> Привет участникам соревнований!</div>
     <div style="background-color: yellow;">
-        <div class="menu">
-            <ul id="list">
-                <h1 id="h1">Виды спорта:</h1>
-                <a href="http://ru.sport-wiki.org/vidy-sporta/">
-                    <li>Биатлон</li>
-                    <li>Футбол</li>
-                    <li>Хоккей</li>
-                    <li>Стрельба</li>
-                    <li>Конькобежный спорт</li>
-                    <li>Художественная гимнастика</li>
-                    <li>Фигурное катание</li>
-                    <li>Синхронное плавание</li>
-                    <li>Прыжки в высоту</li>
-                    <li>Бокс</li>
-                    <li>Волейбол</li>
-                    <li>Гандбол</li>
-                    <li>Кёрлинг</li>
-                    <li>Теннис</li>
-                    <li>Настольный теннис</li>
-                    <li>Фехтование</li>
-                    <li>Акробатика</li>
-                    <li>Водное поло</li>
-                    <li>Горнолыжный спорт</li>
-                    <li>Дзюдо</li>
-                    <li>Гребля</li>
-                    <li>Дартс</li>
-                </a>
-            </ul>
+        <input type="checkbox" class="toggler">
+        <div class="hamburger">
+            <div></div>
         </div>
-        <div id="white">
-            <div class="balls">
-                <div class="football">
-                    <h2>Футбол</h2>
-                </div>
-                <div><img id="image" src="football.png" alt="football"></div>
-                <div class="text">
-
-                    <p>Футбо́л — командный вид спорта, в котором целью является забить мяч в
-                        ворота соперника ногами или другими частями тела (кроме рук) большее количество раз, чем команда
-                        соперника.
-                        В настоящее время самый популярный и массовый вид спорта в мире.
-                        Игрок, играющий в эту игру, — футболи́ст.</p>
-
-                    <p>Согласно заявлению ФИФА, в 2001 году в футбол на планете играло около 250 миллионов человек. Из
-                        них
-                        более 20
-                        миллионов — женщины. Зарегистрировано около 1,5 миллиона команд и 300 000 профессиональных
-                        клубов.</p>
-
-                    По заявлению президента ФИФА Й. Блаттера, общее количество игроков в мире в мае 2004 г. составило
-                    250
-                    млн
-                    человек,что соответствует 4,1 % населения Земли. В распределении по странам на первом месте по числу
-                    играющих в
-                    футбол США (примерно 18 миллионов, из которых 40 % женщины), затем идут Индонезия (10 миллионов),
-                    Мексика
-                    (7,4 миллиона), Китай (7,2 миллиона), Бразилия (7 миллионов), Германия (6,2 миллиона), Бангладеш
-                    (5,2
-                    миллиона), Италия (4 миллиона), Россия (3,8 миллиона). Однако количество футболистов в той или иной
-                    стране
-                    вовсе не говорит о качестве футбола в разных частях мира. Так, чемпионаты мира по футболу выигрывали
-                    исключительно европейские и южноамериканские сборные, а в Уругвае, который является двукратным
-                    победителем
-                    Кубка мира ФИФА, живёт меньше человек, чем в России зарегистрировано футболистов.
-
-                    <p>В июле 2017 года Международная федерация футбола (ФИФА) заявила о планах к 2026 году увлечь
-                        футболом
-                        60
-                        %
-                        населения Земли. В развитие футбола ФИФА намерена вложить 4 миллиарда долларов.</p>
-                    <p style="font-style: italic; text-align: right;"> &copy; Википедия</p>
-                    <div style="clear: both;"></div>
-                </div>
+        <div class="menu">
+            <div>
+                <ul>
+                    <h1 id="h1">Виды спорта:</h1>
+                    <li><a href="http://ru.sport-wiki.org/vidy-sporta/">Биатлон</a></li>
+                    <li><a href="http://ru.sport-wiki.org/vidy-sporta/">Футбол</a></li>
+                    <li><a href="http://ru.sport-wiki.org/vidy-sporta/">Хоккей</a></li>
+                    <li><a href="http://ru.sport-wiki.org/vidy-sporta/">Стрельба</a></li>
+                    <li><a href="http://ru.sport-wiki.org/vidy-sporta/">Конькобежный спорт</a></li>
+                    <li><a href="http://ru.sport-wiki.org/vidy-sporta/">Художественная гимнастика</a></li>
+                    <li><a href="http://ru.sport-wiki.org/vidy-sporta/">Фигурное катание</a></li>
+                    <li><a href="http://ru.sport-wiki.org/vidy-sporta/">Синхронное плавание</a></li>
+                    <li><a href="http://ru.sport-wiki.org/vidy-sporta/">Прыжки в высоту</a></li>
+                    <li><a href="http://ru.sport-wiki.org/vidy-sporta/">Бокс</a></li>
+                    <li><a href="http://ru.sport-wiki.org/vidy-sporta/">Волейбол</a></li>
+                    <li><a href="http://ru.sport-wiki.org/vidy-sporta/">Гандбол</a></li>
+                    <li><a href="http://ru.sport-wiki.org/vidy-sporta/">Кёрлинг</a></li>
+                    <li><a href="http://ru.sport-wiki.org/vidy-sporta/">Теннис</a></li>
+                    <li><a href="http://ru.sport-wiki.org/vidy-sporta/">Настольный теннис</a></li>
+                    <li><a href="http://ru.sport-wiki.org/vidy-sporta/">Фехтование</a></li>
+                    <li><a href="http://ru.sport-wiki.org/vidy-sporta/">Акробатика</a></li>
+                    <li><a href="http://ru.sport-wiki.org/vidy-sporta/">Водное поло</a></li>
+                    <li><a href="http://ru.sport-wiki.org/vidy-sporta/">Горнолыжный спорт</a></li>
+                    <li><a href="http://ru.sport-wiki.org/vidy-sporta/">Дзюдо</a></li>
+                    <li><a href="http://ru.sport-wiki.org/vidy-sporta/">Гребля</a></li>
+                    <li><a href="http://ru.sport-wiki.org/vidy-sporta/">Дартс</a></li>
+                    <li><a href="http://ru.sport-wiki.org/vidy-sporta/">Дартс</a></li>
+                    <li><a href="http://ru.sport-wiki.org/vidy-sporta/">Дартс</a></li>
+                    <li><a href="http://ru.sport-wiki.org/vidy-sporta/">Дартс</a></li>
+                    <li><a href="http://ru.sport-wiki.org/vidy-sporta/">Дартс</a></li>
+                    <li><a href="http://ru.sport-wiki.org/vidy-sporta/">Дартс</a></li>
+                    </a>
+                </ul>
             </div>
         </div>
+    </div>
+    <div id="white">
+        <div class="balls">
+            <div class="football">
+                <h2>Футбол</h2>
+            </div>
+            <div><img id="image" src="football.png" alt="football"></div>
+            <div class="text">
+
+                <p>Футбо́л — командный вид спорта, в котором целью является забить мяч в
+                    ворота соперника ногами или другими частями тела (кроме рук) большее количество раз, чем
+                    команда
+                    соперника.
+                    В настоящее время самый популярный и массовый вид спорта в мире.
+                    Игрок, играющий в эту игру, — футболи́ст.</p>
+
+                <p>Согласно заявлению ФИФА, в 2001 году в футбол на планете играло около 250 миллионов человек.
+                    Из
+                    них
+                    более 20
+                    миллионов — женщины. Зарегистрировано около 1,5 миллиона команд и 300 000 профессиональных
+                    клубов.</p>
+
+                По заявлению президента ФИФА Й. Блаттера, общее количество игроков в мире в мае 2004 г.
+                составило
+                250
+                млн
+                человек,что соответствует 4,1 % населения Земли. В распределении по странам на первом месте по
+                числу
+                играющих в
+                футбол США (примерно 18 миллионов, из которых 40 % женщины), затем идут Индонезия (10
+                миллионов),
+                Мексика
+                (7,4 миллиона), Китай (7,2 миллиона), Бразилия (7 миллионов), Германия (6,2 миллиона), Бангладеш
+                (5,2
+                миллиона), Италия (4 миллиона), Россия (3,8 миллиона). Однако количество футболистов в той или
+                иной
+                стране
+                вовсе не говорит о качестве футбола в разных частях мира. Так, чемпионаты мира по футболу
+                выигрывали
+                исключительно европейские и южноамериканские сборные, а в Уругвае, который является двукратным
+                победителем
+                Кубка мира ФИФА, живёт меньше человек, чем в России зарегистрировано футболистов.
+
+                <p>В июле 2017 года Международная федерация футбола (ФИФА) заявила о планах к 2026 году увлечь
+                    футболом
+                    60
+                    %
+                    населения Земли. В развитие футбола ФИФА намерена вложить 4 миллиарда долларов.</p>
+                <p style="font-style: italic; text-align: right;"> &copy; Википедия</p>
+                <div style="clear: both;"></div>
+            </div>
+        </div>
+    </div>
     </div>
     <div class="footer"> Главное не победа, а участие!</div>
     </div>
