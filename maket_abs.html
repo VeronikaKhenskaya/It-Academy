@@ -1,12 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maket ABS</title>
+    <style>
+        #biohazard {
+            position: absolute;
+            left: 300px;
+        }
+
+        #manandwoman {
+            position: absolute;
+            left: 520px;
+        }
+
+        #No_smoking {
+            position: absolute;
+            left: 385px;
+            top: 150px;
+        }
+
+        #Yin_and_Yang {
+            position: absolute;
+            left: 415px;
+            top: 285px;
+        }
+
+        #biohazard:hover {
+            z-index: 5;
+        }
+
+        #manandwoman:hover {
+            z-index: 5;
+        }
+
+        #Yin_and_Yang:hover {
+            z-index: 5;
+        }
+
+        #container {
+            width: 100%;
+            height: 500px;
+            position: relative;
+        }
+
+        @media all and (max-width: 500px) {
+            #biohazard {
+            left: 0px;
+        }
+        #manandwoman {
+            left: 200px;
+        }
+
+        #No_smoking {
+            left: 50px;
+            top: 80px;
+        }
+
+        #Yin_and_Yang {
+            left: 80px;
+            top: 230px;
+        }
+        }
+    </style>
 </head>
+
 <body>
-    
+    <div id="text">
+        <p>Я к вам пишу — чего же боле? Что я могу еще сказать? Теперь, я знаю, в вашей воле Меня презреньем наказать.
+            Но
+            вы, к моей несчастной доле Хоть каплю жалости храня, Вы не оставите меня. Сначала я молчать хотела;
+            Поверьте:
+            моего стыда Вы не узнали б никогда, Когда б надежду я имела Хоть редко, хоть в неделю раз В деревне нашей
+            видеть
+            вас.</p>
+    </div>
+    <div id="container">
+        <div id="biohazard">
+            <img src="biohazard.png">
+        </div>
+        <div id="manandwoman">
+            <img src="Man-and-woman.png">
+        </div>
+
+        <div id="Yin_and_Yang">
+            <img src="Yin_and_Yang.png">
+        </div>
+        <div id="No_smoking">
+            <img src="No_smoking.png">
+        </div>
+    </div>
+    <p>Чтоб только слышать ваши речи, Вам слово молвить, и потом Все думать, думать об одном И день и ночь до новой
+        встречи.</p>
+
 </body>
+
 </html>
