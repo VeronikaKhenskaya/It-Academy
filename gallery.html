@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <style>
+        .container {
+            width: 100%;
+            max-width: 300px;
+            height: 70vh;
+            border: 1px solid black;
+            margin: 0 auto;
+            display: flex;
+            align-items: stretch;
+            flex-direction: column;
+            overflow: scroll;
+            justify-content: flex-start;
+        }
+
+        .video {
+            width: 100%;
+            background-size: 20%;
+            padding-top: 56.25%;
+            position: relative;
+            margin-bottom: 5px;
+
+
+        }
+
+        .video:hover {
+            cursor: pointer;
+        }
+
+        .video iframe {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+
+        }
+
+        .link {
+            margin-top: 0px;
+            margin-left: 2px;
+            margin-bottom: 5px;
+            margin-right: 2px;
+
+        }
+
+        .link:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="video">
+            <iframe src="https://www.youtube.com/embed/KP0UJYRrjLA" title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+
+        </div>
+        <div class="link"><a href="https://youtu.be/KP0UJYRrjLA" target="_blank">Watch video</a></div>
+        <div class="video">
+            <iframe src="https://www.youtube.com/embed/jHIT0iwpBW0" title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+        </div>
+        <div class="link"><a href="https://youtu.be/jHIT0iwpBW0" target="_blank">Watch video</a></div>
+        <div class="video">
+            <iframe src="https://www.youtube.com/embed/5JDAF86rS6M" title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+        </div>
+        <div class="link"><a href="https://youtu.be/5JDAF86rS6M" target="_blank">Watch video</a></div>
+        <div class="video">
+            <iframe src="https://www.youtube.com/embed/pXD3txG2bVQ" title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+        </div>
+        <div class="link"><a href="https://youtu.be/pXD3txG2bVQ" target="_blank">Watch video</a></div>
+    </div>
+
+
+</body>
+
+</html>
