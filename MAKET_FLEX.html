@@ -7,10 +7,10 @@
     <title>MAKET FLEX</title>
     <style>
         .container{
-            display: flex;
             border: solid red 1px;
+            display: flex;
             flex-direction:row;
-            flex-wrap: wrap;
+            flex-wrap: wrap; 
             
         }
         header, footer{
@@ -21,34 +21,45 @@
             font-size: 25px;
             font-weight: bold;
             color: #000066;
-            width: 100%;
             height: 10%;
-            flex-grow: 2; 
+            width: 100%;
         }
-
+        .header{
+            order:1;
+        }
 
         .menu{
             background-color: yellow;
             width: 20%;
-            
-            
+            margin: 0;
+            padding: 10px;
+            box-sizing: border-box;
         }
         .article{
             background-color: white;
-
+            width: 78%;
+            padding: 2px;
+            box-sizing: border-box;
+            text-align: justify;
+        }
+        .section{
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .menu>.section{
+            text-align: left;
+        }
+        .article>.section{
+            text-align: center;
         }
         
-
-        
-
     </style>
 </head>
 <body>
     <div class="container">
     <header>Привет участникам соревнований!</header>
-    
     <menu class="menu">
-            <h1 id="h1">Виды спорта:</h1>
+            <section class="section">Виды спорта:</section><br>
             <a href="http://ru.sport-wiki.org/vidy-sporta/">
                 <li>Биатлон</li>
                 <li>Футбол</li>
@@ -75,7 +86,7 @@
             </a>
     </menu>
     <article class="article">
-        <section>Футбол</section>
+        <section class="section">Футбол</section>
         <p>Футбо́л — командный вид спорта, в котором целью является забить мяч в
             ворота соперника ногами или другими частями тела (кроме рук) большее количество раз, чем команда
             соперника.
@@ -111,7 +122,6 @@
             населения Земли. В развитие футбола ФИФА намерена вложить 4 миллиарда долларов.</p>
         <p style="font-style: italic; text-align: right;"> &copy; Википедия</p>
     </article>
-    
     <footer>Главное не победа, а участие!</footer>
     </div>
 </body>
