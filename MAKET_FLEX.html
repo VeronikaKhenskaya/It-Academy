@@ -13,8 +13,8 @@
             flex-wrap: wrap;
         }
 
-        header,
-        footer {
+        .header,
+        .footer {
             background: #86DAFF;
             padding: 20px;
             text-transform: uppercase;
@@ -26,9 +26,6 @@
             width: 100%;
         }
 
-        .header {
-            order: 1;
-        }
 
         .menu {
             background-color: yellow;
@@ -70,14 +67,40 @@
             body .container {
                 flex-direction: column;
             }
+
+            .menu {
+                order: 2;
+                background-color: white;
+                width: 100%;
+                margin: 0;
+                padding: 10px;
+                box-sizing: border-box;
+                
+            }
+            li{
+                display: inline-block;
+                word-spacing: 15px;
+                text-align: justify;
+                word-wrap: break-word;
+            
+            }
+
+            .header {
+                display: none;
+            }
+
+            .image{
+                width: 98%;
+                margin-bottom: 7px;
+            }
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <header>Привет участникам соревнований!</header>
-        <menu class="menu">
+        <header class="header">Привет участникам соревнований!</header>
+        <div class="menu">
             <section class="section">Виды спорта:</section><br>
             <a href="http://ru.sport-wiki.org/vidy-sporta/">
                 <li>Биатлон</li>
@@ -103,7 +126,7 @@
                 <li>Гребля</li>
                 <li>Дартс</li>
             </a>
-        </menu>
+        </div>
         <article class="article">
             <section class="section">Футбол</section>
             <img class="image" src="football.png" <p>Футбо́л — командный вид спорта, в котором целью является забить мяч
@@ -142,7 +165,7 @@
                 населения Земли. В развитие футбола ФИФА намерена вложить 4 миллиарда долларов.</p>
             <p style="font-style: italic; text-align: right;"> &copy; Википедия</p>
         </article>
-        <footer>Главное не победа, а участие!</footer>
+        <footer class="header">Главное не победа, а участие!</footer>
     </div>
 </body>
 
