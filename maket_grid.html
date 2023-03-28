@@ -9,7 +9,6 @@
     <style>
         .container {
             display: grid;
-            border: solid red 1px;
             grid-template-columns: 30% 1fr;
             grid-template-rows: 10% 1fr 10%;
         }
@@ -75,6 +74,31 @@
 
         @media all and (max-width:500px) {
             body .container {
+                grid-template-columns: 100%;
+                grid-template-rows: 1fr 15%;
+                justify-items: center;
+                align-items: center;
+            }
+
+                .header, .footer{
+                    display: none;
+                }
+                .menu{
+                    display: inline-block;
+                    grid-row: 2/3;
+                    grid-column: 1;
+                    background-color: white;
+                }
+                .article{
+                    grid-row: 1;
+                    grid-column: 1;
+                }
+                li{
+                    display: inline;
+                }
+
+            }
+                
     </style>
 </head>
 
