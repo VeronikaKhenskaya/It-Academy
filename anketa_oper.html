@@ -18,20 +18,12 @@
         alert('ФИО:' + name + firstname + fullname)
         alert('ваш возраст в годах:' + age)
         alert('ваш возраст в днях:' + age * 365)
-        alert('через 5 лет вам будет:' + (+age + +5))
-        if (sex === true) {
-            alert('ваш пол:' + 'Мужской');
-        }
-        else {
-            alert('ваш пол:' + 'Женский')
-        }
-        if (age < 60) {
-            alert('вы на пенсии:' + 'нет')
-        }
-        else {
-            alert('вы на пенсии:' + 'да')
-        }
-
+        alert('через 5 лет вам будет:' + (+age + +5));
+        let message = (sex === true) ? 'ваш пол: Мужской': 'ваш пол: Женский';
+        alert (message);
+        let message2 = (age < 60)? 'вы на пенсии: нет' :'вы на пенсии: да'
+        alert(message2);
+        
     </script>
 
 </body>
