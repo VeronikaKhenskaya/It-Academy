@@ -6,30 +6,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src='countries.js'></script>
+    <script>
+        let countryName = prompt("Введите название страны")
+        let capitalName = prompt("Введите название столицы")
+    </script>
 </head>
 
 <body>
     <div>
-        <input type='button' value='ввод информации о стране' onclick='prompt("Введите название страны"), prompt("Введите название столицы")'>
+        <input type='button' value='ввод информации о стране' onclick='countryName, capitalName'>
+        <script>
+            function addCountry() {
+                console.log(countrysH);
+            }
+        </script>
     </div>
     <div>
-        <input type='button' value='получение информации о стране' onclick='prompt("Введите название страны")'>
+        <input type='button' value='получение информации о стране' onclick='countryName'>
+        <script>
+        function getCountryInfo(countryName){
+            console.log(getCountryInfo);
+        }
+        </script>
     </div>
     <div>
-        <input type='button' value='перечень всех стран' onclick=''>
+        <input type='button' value='перечень всех стран' onclick='console.log( "список стран:" + listCountrys() );'>
     </div>
     <div>
         <input type='button' value='удаление информации о стране' onclick='prompt("Введите название страны")'>
     </div>
-    
-<script>
-    let countriesH={};
 
 
-</script>
 
-   
-   
 
 
 </body>

@@ -1,4 +1,4 @@
-<script>
+
 
     var countrysH={};
 
@@ -30,4 +30,3 @@
 
     console.log( "список стран:" + listCountrys() );
 
-</script>
