@@ -15,15 +15,15 @@
         let fullname = prompt('Введите ваше отчество')
         let age = prompt('Ваш возраст')
         let sex = confirm('Ваш пол мужской?')
-        alert('ФИО:' + name + firstname + fullname)
-        alert('ваш возраст в годах:' + age)
-        alert('ваш возраст в днях:' + age * 365)
-        alert('через 5 лет вам будет:' + (+age + +5));
         let message = (sex === true) ? 'ваш пол: Мужской': 'ваш пол: Женский';
         alert (message);
         let message2 = (age < 60)? 'вы на пенсии: нет' :'вы на пенсии: да'
         alert(message2);
-        
+        alert("ФИО: " + name + firstname + fullname + '\n' +
+        'ваш возраст в годах: ' + age + '\n' +
+        'ваш возраст в днях:' + age * 365 + '\n' +
+        'через 5 лет вам будет:' + (+age + +5) + '\n' +
+        'ваш пол:' + sex)
     </script>
 
 </body>
