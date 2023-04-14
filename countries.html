@@ -15,26 +15,31 @@
 
 <body>
     <div>
-        <input type='button' value='ввод информации о стране' onclick='countryName, capitalName'>
+        <input type='button' id="elem" value='ввод информации о стране' onclick='countryName, capitalName'>
         <script>
-            function addCountry() {
-                console.log(countrysH);
+            elem.onclick = function addCountry() {
+                alert(countrysH)
             }
         </script>
     </div>
     <div>
-        <input type='button' value='получение информации о стране' onclick='countryName'>
+        <input type='button'id="info" value='получение информации о стране' onclick= prompt(countryName)>
         <script>
-        function getCountryInfo(countryName){
-            console.log(getCountryInfo);
-        }
+            info.onclick = function getCountryInfo(countryName) {
+                alert(capitalName);
+            }
         </script>
     </div>
     <div>
         <input type='button' value='перечень всех стран' onclick='console.log( "список стран:" + listCountrys() );'>
     </div>
     <div>
-        <input type='button' value='удаление информации о стране' onclick='prompt("Введите название страны")'>
+        <input type='button' id="del" value='удаление информации о стране' onclick='prompt("Введите название страны")'>
+        <script>
+            del.onclick = function deleteCountry(countryName){
+                console.log(countrysH);
+            }
+        </script>
     </div>
 
 
