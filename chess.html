@@ -13,7 +13,7 @@
     <p id="kasparov">Гарри Каспаров</p>
     <p class="dates">Дата рождения: 13 апреля 1963 г.</p>
     <p class="dates">Чемпион мира: 1985-1993</p>
-    <p id="link"> <a href="https://chesspro.ru/statistic/kasparov.shtml">Информация:</a></p>
+    <p id="link"> <a id="ssylka" href="https://chesspro.ru/statistic/kasparov.shtml">Информация:</a></p>
     <p class="text">Первый матч за звание чемпиона мира по шахматам Гарри Каспаров играл против чемпиона мира Анатолия
         Карпова. До
         этого они в разных официальных соревнованиях сыграли три партии, которые закончились вничью. Для победы
@@ -37,12 +37,15 @@
         element.style.fontSize = '25px';
         element.style.fontWeight = 'bolder';
 
-        let elem = document.getElementsByClassName("dates");
-        elem.style.fontSize = '18px';
-        elem.style.fontWeight = 'bold';
+        let text = document.getElementsByClassName('text');
+        text[0].style.color = 'blue';
+        text[0].style.fontSize = '15px';
+        text[0].style.border = 'solid blue 2px';
 
-        let p = document.getElementsByTagName('p')
-        p.style.border = 'solid.red.1px';
+        let p = document.getElementsByClassName('paragraph');
+        p[0].style.color = 'green';
+        p[0].style.fontSize = '15px';
+        p[0].style.border = 'solid red 2px';
 
 
     </script>
