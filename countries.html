@@ -19,11 +19,13 @@
         <script>
             elem.onclick = function addCountry() {
                 alert(countrysH)
+                <!--я не уверена, что именно нужно выводить в alert и я не понимаю, добавляется ли новая страна в хэш?-->
             }
         </script>
     </div>
     <div>
-        <input type='button'id="info" value='получение информации о стране' onclick= prompt(countryName)>
+        <input type='button'id="info" value='получение информации о стране' onclick='countryName'>
+        <!--почему prompt на этой кнопке не работает?-->
         <script>
             info.onclick = function getCountryInfo(countryName) {
                 alert(capitalName);
@@ -32,6 +34,7 @@
     </div>
     <div>
         <input type='button' value='перечень всех стран' onclick='console.log( "список стран:" + listCountrys() );'>
+
     </div>
     <div>
         <input type='button' id="del" value='удаление информации о стране' onclick='prompt("Введите название страны")'>
@@ -39,6 +42,7 @@
             del.onclick = function deleteCountry(countryName){
                 console.log(countrysH);
             }
+            <!--тут тоже не понятно, работает это вообще или нет...-->
         </script>
     </div>
 
