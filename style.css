@@ -212,3 +212,22 @@
     width: 41.17px;
     height: 9.74px;
 }
+.mainstars{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 41.41px;
+    margin-left: 19.2%;
+    margin-right: 17.5%;
+}
+.stars{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 166.46px;
+
+}
+.star{
+    width:26.07px;
+    height: 26px;
+}
