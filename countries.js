@@ -2,32 +2,34 @@
 
 let countrysH = {};
 
-
-
-function addCountry(countryName, capitalName) {
+function addCountry() {
 let countryName = prompt("Введите название страны");
 let capitalName = prompt("Введите название столицы");
     countrysH[countryName] = capitalName;
 }
-console.log(countrysH)
+addCountry(countryName, capitalName);
 
-function deleteCountry(countryName) {
+
+function deleteCountry() {
     let countryName = prompt("Введите название страны");
     delete countrysH[countryName];
 }
+deleteCountry(countryName);
 
-function getCountryInfo(countryName) {
+
+function getCountryInfo() {
     let countryName = prompt("Введите название страны");
     if (countryName in countrysH)
         return 'страна: ' + countryName + ' столица: ' + countrysH[countryName];
     else
         return 'нет информации о стране ' + countryName + '!';
 }
+getCountryInfo(countryName);
+
 
 function listCountrys() {
-   
-    var res = "";
-    for (var CN in countrysH)
+    let res = "";
+    for (let CN in countrysH)
         res += '\n' + getCountryInfo(CN);
     return res;
 }
