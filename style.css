@@ -147,26 +147,36 @@
     margin-top: 69px;
 }
 
-.logos{
+.logos {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin-left: 20%;
     margin-right: 20%;
+    margin-top: 83.49px;
 }
 
-#photoshop{
-    background: url(AdobePhotologo.png);
+#photoshop {
+    width: 89.07px;
+    height: 88.41px;
+    background: radial-gradient(75.99% 75.64% at 32.94% 22.44%, rgba(52, 54, 78, 0.98) 0%, #0C0824 100%);
+    ;
 }
 
-#illustrator{
-    background: url(AdobeIllustrator.png);
-}
-#aftereffects{
+#illustrator {
     width: 89.21px;
     height: 88.57px;
-    background: #12002C 100%;
+    background: radial-gradient(76% 75.63% at 32.97% 22.44%, rgba(66, 51, 37, 0.98) 0%, #1C0A00 100%);
+    ;
 }
-#figma{
+
+#aftereffects {
+    width: 89.21px;
+    height: 88.57px;
+    background: radial-gradient(76% 75.63% at 32.97% 22.42%, rgba(68, 47, 85, 0.98) 0%, #12002C 100%);
+    ;
+}
+
+#figma {
     background: url(Figmalogo.png);
 }
