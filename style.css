@@ -151,7 +151,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-left: 20%;
+    margin-left: 20.36%;
     margin-right: 20%;
     margin-top: 83.49px;
 }
@@ -179,4 +179,36 @@
 
 #figma {
     background: url(Figmalogo.png);
+}
+
+.logosnames {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 21%;
+    margin-right: 20%;
+    margin-top: 25.18px;
+    font-family: 'Gilroy-Bold';
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #828282;
+}
+#name1{
+    width: 70.29px;
+    height: 27.27px;
+   
+}
+#name2{
+    width: 63.26px;
+    height: 27.27px;
+    
+}
+#name3{
+   width: 79.33px;
+   height: 27.27px; 
+}
+#name4{
+    width: 41.17px;
+    height: 9.74px;
 }
