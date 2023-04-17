@@ -7,48 +7,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src='countries.js'></script>
-    <script>
-        let countryName = prompt("Введите название страны")
-        let capitalName = prompt("Введите название столицы")
-    </script>
-</head>
 
+</head>
 <body>
     <div>
-        <input type='button' id="elem" value='ввод информации о стране' onclick='countryName, capitalName'>
-        <script>
-            elem.onclick = function addCountry() {
-                alert(countrysH)
-//я не уверена, что именно нужно выводить в alert и я не понимаю, добавляется ли новая страна в хэш?//
-            }
-        </script>
+        <input type='button' id="elem" value='ввод информации о стране' onclick='addCountry()'>
     </div>
+    <br>
     <div>
-        <input type='button' id="info" value='получение информации о стране' onclick='countryName'>
-        <!--почему prompt на этой кнопке не работает?-->
-        <script>
-            info.onclick = function getCountryInfo(countryName) {
-                alert(capitalName);
-            }
-        </script>
+        <input type='button' id="info" value='получение информации о стране' onclick='getCountryInfo()'>
     </div>
+    <br>
     <div>
         <input type='button' value='перечень всех стран' onclick='console.log( "список стран:" + listCountrys() );'>
-
     </div>
+    <br>
     <div>
-        <input type='button' id="del" value='удаление информации о стране' onclick='prompt("Введите название страны")'>
-        <script>
-            del.onclick = function deleteCountry(countryName) {
-                console.log(countrysH);
-            }
-            <!--тут тоже не понятно, работает это вообще или нет...-->
-        </script>
+        <input type='button' id="del" value='удаление информации о стране' onclick='deleteCountry()'>
     </div>
-
-
-
-
 
 </body>
 
