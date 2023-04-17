@@ -156,5 +156,15 @@
 }
 
 #photoshop{
-    background: url();
+    background: url(AdobePhotologo.png);
+}
+
+#illustrator{
+    background: url(AdobeIllustrator.png);
+}
+#aftereffects{
+    background: url(AdobeAfterEffectslogo.png);
+}
+#figma{
+    background: url(Figmalogo.png);
 }
