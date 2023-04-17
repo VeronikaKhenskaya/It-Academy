@@ -2,14 +2,14 @@
 
 *{
     margin: 0, auto;
+    box-sizing: border-box;
 }
 
 #header {
     border-bottom: #828282 1px solid;
-    width: 100%;
-    margin-left: 250.65px;
-    margin-right: 250.65px;
-    margin-top: 87.94;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-top: 87.94px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -30,10 +30,11 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 100%;
-    margin-left: 250.65px;
+    margin-left: 30%;
+    margin-right: 30%;
     margin-bottom: 49.67px;
-    box-sizing: border-box;
+    
+    
 }
 
 #name {
@@ -70,18 +71,16 @@
     width: 70px;
     height: 20.06px;
     margin-bottom: 54px;
+    
 }
 
 
 #photo {
-    width: 943.61px;
+    
+    background: url(BSPP2266.png) no-repeat;
+    margin-left: 30%;
+    margin-right: 30%;
     height: 387px;
-    position: absolute;
-    width: 943.61px;
-    height: 387px;
-    left: 250.69px;
-    top: 276.94px;
-    background: url(BSPP2266.png);
     margin-bottom: 104.06px;
 }
 
@@ -92,12 +91,11 @@
     left: 0px;
     top: 768px;
     background: #F6F6F6;
-    position: relative;
     margin-top: 104.06px;
 }
 
 #me {
-    position: absolute;
+    
     left: 44.68%;
     right: 44.54%;
     top: 18.66%;
@@ -122,6 +120,5 @@
     font-size: 18px;
     text-align: center;
     line-height: 21.83px;
-    position: absolute;
     color: #070707;
 }
