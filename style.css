@@ -238,3 +238,21 @@
     width: 26.07px;
     height: 26px;
 }
+
+.portfolio {
+    height: 2253px;
+    background: #F6F6F6;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#title {
+    width: 132.55px;
+    height: 43.06px;
+    margin-top: 112.93px;
+    font-family: 'Gilroy-Bold';
+    font-size: 34px;
+    line-height: 42px;
+    text-align: center;
+}
