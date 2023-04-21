@@ -1,18 +1,21 @@
 @import url('https://fonts.cdnfonts.com/css/gilroy-bold');
 
 * {
-    margin: 0, auto;
+    margin: 0 auto;
     box-sizing: border-box;
+}
+
+#main {
+    width: 70%; 
 }
 
 #header {
     border-bottom: #828282 1px solid;
-    margin-left: 30%;
-    margin-right: 30%;
     margin-top: 87.94px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
 }
 
 .header {
@@ -30,20 +33,9 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-left: 30%;
-    margin-right: 30%;
     margin-bottom: 49.67px;
-
-
 }
 
-.title {
-    font-family: 'Gilroy-Bold';
-    font-size: 34px;
-    line-height: 42px;
-    text-align: center;
-    color: #070707;
-}
 
 #name {
 
@@ -54,18 +46,16 @@
     width: 123.51px;
     height: 118.17px;
     margin-top: 39.69px;
-
 }
 
 #designer {
-
     font-family: 'Gilroy-Medium';
     font-size: 18px;
     line-height: 22px;
     width: 155.65px;
     height: 44.06px;
     margin-top: 94.77px;
-
+    align-items: center;
 }
 
 #lang {
@@ -79,42 +69,43 @@
     width: 70px;
     height: 20.06px;
     margin-bottom: 54px;
-
 }
 
 .picture {
-    margin-left: 30%;
-    margin-right: 30%;
-    height: 387px;
-    background-image: url(BSPP2266.png);
-    background-repeat: no-repeat;
-    margin-bottom: 104.06px;
+    width: 100%;
 }
 
-#photo {}
+#photo {
+    width: 100%;
+    height: auto;
+}
+
 
 .textcontainer {
-    box-sizing: border-box;
     width: 100%;
     height: 506px;
     background: #F6F6F6;
-    padding-top: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 104.6px;
+    padding-top: 120.25px;
     padding-bottom: 107px;
 }
 
-#me {
-    width: 10%;
+#about {
+  
     height: 43.06px;
-    margin-left: 45%;
-    margin-right: 45%;
-
+    font-family: 'Gilroy-Bold';
+    font-size: 34px;
+    line-height: 42px;
+    text-align: center;
+    color: #070707;
 }
 
 .text {
-    box-sizing: border-box;
-    margin-left: 33%;
-    margin-right: 33%;
-    margin-top: 17, 6px;
+    margin-top: 17. 6px;
     width: 33%;
     height: 218px;
     font-family: 'Gilroy-Medium';
@@ -159,21 +150,18 @@
     width: 89.07px;
     height: 88.41px;
     background: radial-gradient(75.99% 75.64% at 32.94% 22.44%, rgba(52, 54, 78, 0.98) 0%, #0C0824 100%);
-    ;
 }
 
 #illustrator {
     width: 89.21px;
     height: 88.57px;
     background: radial-gradient(76% 75.63% at 32.97% 22.44%, rgba(66, 51, 37, 0.98) 0%, #1C0A00 100%);
-    ;
 }
 
 #aftereffects {
     width: 89.21px;
     height: 88.57px;
     background: radial-gradient(76% 75.63% at 32.97% 22.42%, rgba(68, 47, 85, 0.98) 0%, #12002C 100%);
-    ;
 }
 
 #figma {
@@ -246,7 +234,7 @@
     justify-content: center;
 }
 
-#title {
+.title {
     width: 132.55px;
     height: 43.06px;
     margin-top: 112.93px;
@@ -263,12 +251,19 @@
     text-align: center;
     text-decoration-line: underline;
     color: #070707;
+
 }
-.contacts{
+
+.contacts {
     height: 4759px;
 }
-.sn{
+
+.icons {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
+    margin-left: 38%;
+    margin-right: 38%;
+    margin-top: 85.78px;
+    margin-left: 45.98px;
 }
