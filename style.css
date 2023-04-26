@@ -6,16 +6,15 @@
 }
 
 #main {
-    width: 70%; 
+    width: 70%;
 }
 
 #header {
     border-bottom: #828282 1px solid;
-    margin-top: 87.94px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+
 }
 
 .header {
@@ -29,17 +28,21 @@
     margin-bottom: 31.86px;
 }
 
+header.a,
+header.a:visited {
+    text-decoration: none;
+    color: #828282;
+}
+
 .presentation {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     justify-content: center;
     margin-bottom: 49.67px;
 }
 
 
 #name {
-
     font-family: 'Gilroy-Bold';
     font-size: 47.3392px;
     line-height: 59px;
@@ -47,7 +50,7 @@
     width: 123.51px;
     height: 118.17px;
     margin-top: 39.69px;
-    transform: translateX(-125px);
+    transform: translateX(-80px);
 }
 
 #designer {
@@ -66,7 +69,7 @@
     font-size: 16px;
     line-height: 20px;
     color: #828282;
-    transform:translateX(150px) rotate(-90deg);
+    transform: translateX(110px) rotate(-90deg);
     margin-top: 68px;
     width: 70px;
     height: 20.06px;
@@ -97,7 +100,7 @@
 }
 
 #about {
-  
+
     height: 43.06px;
     font-family: 'Gilroy-Bold';
     font-size: 34px;
@@ -113,7 +116,7 @@
     font-family: 'Gilroy-Medium';
     font-size: 18px;
     text-align: center;
-    line-height: 21.83px;
+    line-height: 22px;
     color: #070707;
 }
 
@@ -123,10 +126,16 @@
 }
 
 #skills {
-
     margin-left: 46%;
     margin-right: 46%;
     margin-top: 91px;
+    margin-bottom: 69.1px;
+    font-family: 'Gilroy-Bold';
+    font-size: 34px;
+    line-height: 42px;
+    text-align: center;
+    color: #070707;
+
 }
 
 #programs {
@@ -145,7 +154,6 @@
     justify-content: space-between;
     margin-left: 20.36%;
     margin-right: 20%;
-    margin-top: 83.49px;
 }
 
 #photoshop {
@@ -230,20 +238,24 @@
 
 .portfolio {
     height: 2253px;
+    width: 100%;
     background: #F6F6F6;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    text-align: center;
 }
 
 .title {
-    width: 132.55px;
     height: 43.06px;
-    margin-top: 112.93px;
+    padding: 112.93px;
     font-family: 'Gilroy-Bold';
     font-size: 34px;
     line-height: 42px;
     text-align: center;
+    margin-bottom: 47px;
+}
+
+.img {
+    width: 100%;
+    height: auto;
 }
 
 .link {
@@ -253,19 +265,73 @@
     text-align: center;
     text-decoration-line: underline;
     color: #070707;
-
+    margin-top: 44.8px;
+    margin-bottom: 99px;
 }
 
 .contacts {
-    height: 4759px;
+    height: 622px;
+    text-align: center;
+}
+
+#contacts {
+    font-family: 'Gilroy-Bold';
+    font-size: 34px;
+    line-height: 42px;
+    text-align: center;
+    color: #070707;
+    margin-bottom: 20px;
+    margin-top: 114px;
+}
+
+.button {
+    background-color: #070707;
+    color: #FFFFFF;
+    font-family: 'Gilroy-Bold';
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    width: 166.46px;
+    height: 38px;
+    border-radius: 30px;
+    margin-top: 29.6px;
+    margin-bottom: 80px;
+
+}
+
+a[href^="mailto:"] {
+    background-color: #070707;
+    color: #FFFFFF;
+    font-family: 'Gilroy-Bold';
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    text-decoration: none;
+
 }
 
 .icons {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    margin-left: 38%;
-    margin-right: 38%;
-    margin-top: 85.78px;
-    margin-left: 45.98px;
+    justify-content: center;
+    width: 25%;
+    margin-bottom: 46px;
+
+}
+
+.message {
+    font-family: 'Gilroy-Medium';
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#like {
+    font-family: 'Gilroy-Medium';
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #828282;
+
 }
