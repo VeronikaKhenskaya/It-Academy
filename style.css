@@ -335,3 +335,59 @@ a[href^="mailto:"] {
     color: #828282;
     margin-top: 46px;
 }
+
+#mobilephoto {
+    display: none;
+}
+
+@media all and (max-width:750px) {
+
+    #main,
+    .presentation,
+    .picture,
+    #skills,
+    .portfolio,
+    .skillstext {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: auto;
+
+    }
+
+    #header,
+    #lang,
+    #photo {
+        display: none;
+    }
+
+    #name {
+        font-size: 47px;
+        line-height: 58px;
+        color: #000000;
+    }
+
+    #designer {
+        color: #090909;
+    }
+
+    .picture {
+        width: 100%;
+    }
+
+    #mobilephoto {
+        display: flex;
+        width: 100%;
+        align-items: center;
+    }
+
+    .logos, .logosnames, .mainstars, .stars{
+        display: grid;
+        grid-template-columns: 80%;
+    }
+
+    #name1{
+        grid-row: 2;
+    }
+
+}
