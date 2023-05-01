@@ -322,8 +322,6 @@ a[href^="mailto:"] {
 
 @media all and (max-width:750px) {
 
-    * {}
-
     #main,
     .presentation,
     .picture,
@@ -395,7 +393,12 @@ a[href^="mailto:"] {
     }
 
     .img {
-        width: 90%;
+        width: 100%;
+    }
+
+    #img{
+        width: 100%;
+        overflow-x: hidden;
     }
 
     .navbar {
