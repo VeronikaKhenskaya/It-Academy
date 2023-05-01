@@ -154,77 +154,13 @@ a:visited {
     margin-top: 69px;
 }
 
-.logos {
+#logos {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-left: 20.36%;
-    margin-right: 20%;
-}
-
-#photoshop {
-    width: 89.07px;
-    height: 88.41px;
-    background: radial-gradient(75.99% 75.64% at 32.94% 22.44%, rgba(52, 54, 78, 0.98) 0%, #0C0824 100%);
-}
-
-#illustrator {
-    width: 89.21px;
-    height: 88.57px;
-    background: radial-gradient(76% 75.63% at 32.97% 22.44%, rgba(66, 51, 37, 0.98) 0%, #1C0A00 100%);
-}
-
-#aftereffects {
-    width: 89.21px;
-    height: 88.57px;
-    background: radial-gradient(76% 75.63% at 32.97% 22.42%, rgba(68, 47, 85, 0.98) 0%, #12002C 100%);
-}
-
-#figma {
-    background: url(Figmalogo.png);
-}
-
-.logosnames {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-left: 21%;
-    margin-right: 20%;
-    margin-top: 25.18px;
-    font-family: 'Gilroy-Bold';
-    font-size: 14px;
-    line-height: 17px;
+    width: 50%;
     text-align: center;
-    color: #828282;
-}
-
-#name1 {
-    width: 70.29px;
-    height: 27.27px;
-}
-
-#name2 {
-    width: 63.26px;
-    height: 27.27px;
-}
-
-#name3 {
-    width: 79.33px;
-    height: 27.27px;
-}
-
-#name4 {
-    width: 41.17px;
-    height: 9.74px;
-}
-
-.mainstars {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-top: 41.41px;
-    margin-left: 19.2%;
-    margin-right: 17.5%;
+    margin: auto;
 }
 
 .stars {
@@ -237,6 +173,45 @@ a:visited {
 .star {
     width: 26.07px;
     height: 26px;
+}
+
+#photoshopImg {
+    width: 89.07px;
+    height: 88.41px;
+    background: radial-gradient(75.99% 75.64% at 32.94% 22.44%, rgba(52, 54, 78, 0.98) 0%, #0C0824 100%);
+    margin: auto;
+}
+
+#illustratorImg {
+    width: 89.21px;
+    height: 88.57px;
+    background: radial-gradient(76% 75.63% at 32.97% 22.44%, rgba(66, 51, 37, 0.98) 0%, #1C0A00 100%);
+    margin: auto;
+}
+
+#afreteffectsImg {
+    width: 89.21px;
+    height: 88.57px;
+    background: radial-gradient(76% 75.63% at 32.97% 22.42%, rgba(68, 47, 85, 0.98) 0%, #12002C 100%);
+    margin: auto;
+}
+
+#figmaImg {
+    height: 88.57px;
+    width: 89.21px;
+    margin: auto
+}
+
+#name1,
+#name2,
+#name3,
+#name4 {
+    font-family: 'Gilroy-Bold';
+    font-size: 14px;
+    line-height: 17px;
+    color: #828282;
+    margin-top: 23px;
+    margin-bottom: 41px;
 }
 
 .portfolio {
@@ -381,12 +356,15 @@ a[href^="mailto:"] {
         align-items: center;
     }
 
-    .logos, .logosnames, .mainstars, .stars{
+    .logos,
+    .logosnames,
+    .mainstars,
+    .stars {
         display: grid;
         grid-template-columns: 80%;
     }
 
-    #name1{
+    #name1 {
         grid-row: 2;
     }
 
