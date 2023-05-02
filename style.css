@@ -1,0 +1,17 @@
+.header {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 3px solid #DA6B62
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 40px;
+}
