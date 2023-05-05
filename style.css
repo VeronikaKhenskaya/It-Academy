@@ -7,30 +7,42 @@
     height: 100px;
     display: flex;
     flex-direction: row;
+    padding: 0% 5% 0% 5%;
     border-bottom: 3px solid #DA6B62;
-    margin: auto;
+    align-items: center;
+    justify-content: space-between;
+    
 }
 
 .header .logo {
     display: flex;
     flex-direction: row;
-    flex-grow: 3;
-    margin-left: 5%;
-}
-
-.header .menu {
-    display: flex;
-    flex-direction: row;
+    width: 51px;
+    height: 68px;
     align-items: center;
     justify-content: center;
+    
+}
+
+.header .logo img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+
+.header .menu {
+    width: 55%;
+    display: flex;
+    flex-direction: row;
     font-family: "Roboto";
     font-style: normal;
     font-weight: 400;
     font-size: 24px;
     line-height: 40px;
     color: #141323;
-    flex-grow: 1;
-    margin-right: 5%;
+    
 }
 
 .menu .menu {
