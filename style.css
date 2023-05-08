@@ -316,17 +316,19 @@ p {
     width: 100%;
     height: 100%;
 }
-.button3{
+
+.button3 {
     margin: 0, auto;
     width: 340px;
-    position: relative ;
+    position: relative;
     margin-left: 50%;
     margin-right: 50%;
     margin-top: 100px;
     margin-bottom: 100px;
 
 }
-#button3{
+
+#button3 {
     background: #DA6B62;
     border-color: #DA6B62;
     color: #FFFFFF;
@@ -336,34 +338,79 @@ p {
     font-style: normal;
     font-weight: 400;
     font-size: 24px;
-    position:absolute;
+    position: absolute;
 }
-.teachers{
-    border: 3px solid #FC8D84;
-    border-radius: 0px;
+
+.teachers {
     display: grid;
     grid-template-columns: 44%;
     grid-template-rows: 507px;
     grid-column-gap: 10px;
     grid-row-gap: 10px;
+    
 }
 
-#teacher1, #teacher2{
+#teacher1,
+#teacher2 {
     grid-row: 1;
 }
 
-#teacher3, #teacher4{
+#teacher3,
+#teacher4 {
     grid-row: 2;
 }
 
-#teacher5, #teacher6{
+#teacher5,
+#teacher6 {
     grid-row: 3;
 }
 
-#teacher1, #teacher3, #teacher5{
+#teacher1,
+#teacher3,
+#teacher5 {
     grid-column: 1;
 }
 
-#teacher2, #teacher4, #teacher6{
+#teacher2,
+#teacher4,
+#teacher6 {
     grid-column: 2;
+}
+
+.teacherDescription {
+    padding-left: 10px;
+}
+
+.teacherDescription h3 {
+    font-size: 30px;
+    line-height: 40px;
+    color: #141323;
+    margin-top: 0;
+}
+
+.teacherDescription p {
+    font-size: 18px;
+    line-height: 30px;
+    color: #141323;
+
+}
+
+#UI {
+    color: rgba(218, 107, 98, 1)
+}
+
+
+.teacher1,
+.teacher2 {
+    padding: 45px 0 45px 45px;
+    display: flex;
+    flex-direction: row;
+    border: 3px solid #FC8D84;
+    border-radius: 0px;
+
+}
+
+#teacher1 {
+    height: 100%;
+    width: 100%;
 }
