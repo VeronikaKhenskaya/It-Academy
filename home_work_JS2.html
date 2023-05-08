@@ -1,12 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <script>
+        function getFahrenheit() {
+            let T = document.getElementById("input").value;
+            let F = (T * 9 / 5) + 32;
+            document.getElementById("result").innerHTML = T + "\xB0C" + " " + "это" + " " + F + "\xB0F";
+        }
+
+
+        function getCelsius() {
+            let T = document.getElementById("input").value;
+            let C = (T - 32) * 5 / 9;
+            document.getElementById("result").innerHTML = T + "\xB0F" +" " + "это" + " " + C + "\xB0C";
+        }
+
+
+    </script>
 </head>
+
 <body>
-    
+    Введите температуру: <br>
+    <input id="input" type="text"> <br>
+    <button onclick='getCelsius()'>В Цельсия</button>
+    <button onclick='getFahrenheit()'>В Фаренгейта</button><br>
+    <span id="result"></span>
 </body>
+
 </html>
