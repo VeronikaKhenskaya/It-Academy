@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+.teachers {
+    display: grid;
+    grid-template-columns: 44%;
+    grid-template-rows: 507px;
+    grid-column-gap: px;
+    grid-row-gap: 10px;
+    
+}
+
+#teacher1,
+#teacher2 {
+    grid-row: 1;
+}
+
+#teacher3,
+#teacher4 {
+    grid-row: 2;
+}
+
+#teacher5,
+#teacher6 {
+    grid-row: 3;
+}
+
+#teacher1,
+#teacher3,
+#teacher5 {
+    grid-column: 1;
+}
+
+#teacher2,
+#teacher4,
+#teacher6 {
+    grid-column: 2;
+}
+
+.teacherDescription {
+    padding-left: 10px;
+}
+
+.teacherDescription h3 {
+    font-size: 30px;
+    line-height: 40px;
+    color: #141323;
+    margin-top: 0;
+}
+
+.teacherDescription p {
+    font-size: 18px;
+    line-height: 30px;
+    color: #141323;
+
+}
+
+#UI {
+    color: rgba(218, 107, 98, 1)
+}
+
+
+.teacher1,
+.teacher2,
+.teacher3,
+.teacher4,
+.teacher5,
+.teacher6 {
+    padding: 45px 0 45px 45px;
+    display: flex;
+    border: 3px solid #FC8D84;
+    border-radius: 0px;
+}
+
+#teacher1 {
+    height: 100%;
+    width: 100%;
+}
+    </style>
+</head>
+<body>
+    <div class="teachers">
+        <div id="teacher1">
+            <div class="flex">
+                <div id="teacher1img">
+                    <img src="img/dmitri.png">
+                </div>
+                <div class="teacherDescription">
+                    <h3>Дмитрий Аверченко</h3>
+                    <p>Опыт работы с 2018 года</p>
+                    <p>Специальность:</p>
+                    <p id="UI">UX/UI и веб-дизайн</p>
+                    <p>Сфера интересов: Продуктовый дизайн. Проектирование сложных интерфейсов. Пользовательские
+                        исследования и аналитика</p>
+                </div>
+            </div>
+        </div>
+        <div class="teacher2">
+            <div id="teacher2" >
+            <div >
+                <img src="img/maxim.png">
+            </div>
+            <div class="teacherDescription">
+                <h3>Максим Осичка</h3>
+                <p>Опыт работы с 2011 года</p>
+                <p>Специальность:</p>
+                <p id="UI">UX/UI и веб-дизайн</p>
+                <p>Сфера интересов: Дизайн интерфейсов, юзабилити, иллюстрации, анимация, каллиграфия и леттеринг</p>
+            </div>
+        </div>
+        </div>
+        <div class="teacher3">
+            <div id="teacher3">
+                <img src="img/maximilian.png">
+            </div>
+            <div class="teacherDescription">
+                <h3>Максимилиан Антипенко</h3>
+                <p>Опыт работы с 2013 года</p>
+                <p>Специальность:</p>
+                <p id="UI">UX/UI и веб-дизайн</p>
+                <p>Сфера интересов: UI-дизайн (мобильный дизайн, веб-дизайн, дизайн десктоп-приложений),
+                    UX-исследования, Front-end разработка</p>
+            </div>
+        </div>
+        <div class="teacher4">
+            <div id="teacher4">
+                <img src="img/darya.png">
+            </div>
+            <div class="teacherDescription">
+                <h3>Дарья Тумаш</h3>
+                <p>Опыт работы с 2016 года</p>
+                <p>Специальность:</p>
+                <p id="UI">UX/UI и веб-дизайн</p>
+                <p>Сфера интересов: UX/UI design, веб-дизайн, анимация, айдентика, продуктовый дизайн, полиграфия,
+                    дизайн-системы, продуктовая анадитика</p>
+            </div>
+        </div>
+        <div class="teacher5">
+            <div id="teacher5">
+                <img src="img/ludmila.png">
+            </div>
+            <div class="teacherDescription">
+                <h3>Людмила Казакова</h3>
+                <p>Опыт работы с 2019 года</p>
+                <p>Специальность:</p>
+                <p id="UI">UX/UI и веб-дизайн</p>
+                <p>Сфера интересов: UX дизайн, UI архитектура, графический дизайн, моушн дизайн, маркетинг, бизнес
+                    аналитика</p>
+            </div>
+        </div>
+        <div class="teacher6">
+            <div id="teacher6">
+                <img src="img/andrey.png">
+            </div>
+            <div class="teacherDescription">
+                <h3>Андрей Клименок</h3>
+                <p>Опыт работы с 2019 года</p>
+                <p>Специальность:</p>
+                <p id="UI">UX/UI и веб-дизайн</p>
+                <p>Сфера интересов: UX/UI дизайн, графический дизайн, проектирование пользовательских интерфейсов,
+                    анимация</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

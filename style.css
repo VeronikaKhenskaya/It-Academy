@@ -132,7 +132,8 @@ p {
     margin-top: 210px;
 }
 
-.for {
+.for,
+.programs {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -345,7 +346,7 @@ p {
     display: grid;
     grid-template-columns: 44%;
     grid-template-rows: 507px;
-    grid-column-gap: 10px;
+    grid-column-gap: px;
     grid-row-gap: 10px;
     
 }
@@ -401,13 +402,15 @@ p {
 
 
 .teacher1,
-.teacher2 {
+.teacher2,
+.teacher3,
+.teacher4,
+.teacher5,
+.teacher6 {
     padding: 45px 0 45px 45px;
     display: flex;
-    flex-direction: row;
     border: 3px solid #FC8D84;
     border-radius: 0px;
-
 }
 
 #teacher1 {

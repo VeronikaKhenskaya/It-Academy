@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #main-grid {
+            display: grid;
+            grid-template-columns: 45%;
+            grid-template-rows: 507px;
+            grid-column-gap: 7px;
+            grid-row-gap: 10px;
+        }
+
+        .teacher1,
+        .teacher3,
+        .teacher5 {
+            grid-column: 1;
+        }
+
+        .teacher2,
+        .teacher4,
+        .teacher6 {
+            grid-column: 2;
+        }
+
+        .teacher1,
+        .teacher2 {
+            grid-row: 1;
+        }
+
+        .teacher3,
+        .teacher4 {
+            grid-row: 2;
+        }
+
+        .teacher5,
+        .teacher6 {
+            grid-row: 3;
+        }
+
+        .teacher1,
+        .teacher2,
+        .teacher3,
+        .teacher4,
+        .teacher5,
+        .teacher6 {
+            padding: 45px 0 45px 45px;
+            display: grid;
+            border: 3px solid #FC8D84;
+            border-radius: 0px;
+        }
+
+        .teacher1 {
+            display: grid;
+            grid-column: 1fr 1fr;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main-grid">
+        <div class="teacher1">
+            <div id="teacher1-photo">
+                <img src="img/dmitri.png">
+            </div>
+            <div id="teacher-description">
+                <h3>Дмитрий Аверченко</h3>
+                <p>Опыт работы с 2018 года</p>
+                <p>Специальность:</p>
+                <p id="UI">UX/UI и веб-дизайн</p>
+                <p>Сфера интересов: Продуктовый дизайн. Проектирование сложных интерфейсов. Пользовательские
+                    исследования и аналитика</p>
+            </div>
+
+        </div>
+        <div class="teacher2">
+            <div id="teacher2-photo"></div>
+            <div id="teacher-description"></div>
+        </div>
+        <div class="teacher3">
+            <div id="teacher3-photo"></div>
+            <div id="teacher-description"></div>
+        </div>
+        <div class="teacher4">
+            <div id="teacher4-photo"></div>
+            <div id="teacher-description"></div>
+        </div>
+        <div class="teacher5">
+            <div id="teacher5-photo"></div>
+            <div id="teacher-description"></div>
+        </div>
+        <div class="teacher6">
+            <div id="teacher6-photo"></div>
+            <div id="teacher-description"></div>
+        </div>
+    </div>
+</body>
+
+</html>
