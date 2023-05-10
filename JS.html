@@ -17,47 +17,43 @@
     <button onclick="DeleteFirstElemet()">удаление первого элемента массива </button><br>
     <button onclick="DeleteElemet()"> удаление элемента по указанному номеру</button><br>
 
-<script>
-    function AddFistElemet(){
-  let Array = [ 1, 2, 3, 4, 5, 6, ]
-  let x = +document.getElementById("input").value;
-let NewArray = Array.unshift(x);
-  console.log(Array)
-}
+    <script>
 
-function AddLastElemet(){
-  let Array = [ 1, 2, 3, 4, 5, 6, ]
-  let x = +document.getElementById("input").value;
-let NewArray = Array.push(x);
-  console.log(Array)
-}
+        
+        function AddFistElemet() {
+            let Array = [1, 2, 3, 4, 5, 6,]
+            let x = +document.getElementById("input").value;
+            let NewArray = Array.unshift(x);
+            console.log(Array);
+        }
 
-function DeleteLastElemet(){
- let Array = [ 1, 2, 3, 4, 5, 6, ]
-let NewArray = Array.pop();
-  console.log(Array)
-}
+        function AddLastElemet() {
+            let Array = [1, 2, 3, 4, 5, 6,];
+            let x = +document.getElementById("input").value;
+            let NewArray = Array.push(x);
+            console.log(Array)
+        }
 
-function DeleteFirstElemet(){
-let Array = [ 1, 2, 3, 4, 5, 6, ]
-let NewArray = Array.shift();
-  console.log(Array)
-}
+        function DeleteLastElemet() {
+            let Array = [1, 2, 3, 4, 5, 6,]
+            let NewArray = Array.pop();
+            console.log(Array)
+        }
 
-function DeleteElemet(){
-let Array = [ 1, 2, 3, 4, 5, 6, ]
-let x = +document.getElementById("input").value;
-let NewArray = delete Array[x];
-  console.log(Array);
-}
+        function DeleteFirstElemet() {
+            let Array = [1, 2, 3, 4, 5, 6,]
+            let NewArray = Array.shift();
+            console.log(Array)
+        }
 
+        function DeleteElemet() {
+            let Array = [1, 2, 3, 4, 5, 6,]
+            let x = +document.getElementById("input").value;
+            let NewArray = delete Array[x];
+            console.log(Array);
+        }
 
-
-
-
-
-
-</script>
+    </script>
 
 </body>
 
