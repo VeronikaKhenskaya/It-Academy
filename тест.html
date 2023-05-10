@@ -8,97 +8,164 @@
     <title>Document</title>
 
     <style>
-        #main-grid {
-            display: grid;
-            grid-template-columns: 45%;
-            grid-template-rows: 507px;
-            grid-column-gap: 7px;
-            grid-row-gap: 10px;
+        .flex-container {
+            display: flex;
+            flex-direction: row;
+            width: 95%;
+            height: 507px;
+            margin: auto;
         }
 
-        .teacher1,
-        .teacher3,
-        .teacher5 {
-            grid-column: 1;
-        }
-
-        .teacher2,
-        .teacher4,
-        .teacher6 {
-            grid-column: 2;
-        }
-
-        .teacher1,
-        .teacher2 {
-            grid-row: 1;
-        }
-
-        .teacher3,
-        .teacher4 {
-            grid-row: 2;
-        }
-
-        .teacher5,
-        .teacher6 {
-            grid-row: 3;
-        }
-
-        .teacher1,
-        .teacher2,
-        .teacher3,
-        .teacher4,
-        .teacher5,
-        .teacher6 {
-            padding: 45px 0 45px 45px;
-            display: grid;
+        #teacher1,
+        #teacher2,
+        #teacher3,
+        #teacher4,
+        #teacher5,
+        #teacher6 {
+            display: flex;
+            flex-direction: row;
             border: 3px solid #FC8D84;
-            border-radius: 0px;
+            width: 100%;
+            justify-content: center;
+            justify-items: center;
+            padding: 2%;
+
         }
 
-        .teacher1 {
-            display: grid;
-            grid-column: 1fr 1fr;
+        #teacher1,
+        #teacher3,
+        #teacher5 {
+            margin-right: 20px;
+        }
+
+        #teacher3,
+        #teacher4,
+        #teacher5,
+        #teacher6 {
+            margin-top: 20px;
+        }
+
+        .teacherDescription {
+            padding-left: 10px;
+        }
+
+        .teacherDescription h3 {
+            font-size: 30px;
+            line-height: 40px;
+            color: #141323;
+            margin-top: 0;
+        }
+
+        .teacherDescription p {
+            font-size: 18px;
+            line-height: 30px;
+            color: #141323;
+
+        }
+
+        #UI {
+            color: rgba(218, 107, 98, 1)
+        }
+
+        #photo {
+            height: 100%;
+        }
+
+        #more {
+            font-size: 24px;
+            color: #DA6B62;
+            text-decoration: none;
         }
     </style>
 </head>
 
 <body>
-    <div id="main-grid">
-        <div class="teacher1">
-            <div id="teacher1-photo">
-                <img src="img/dmitri.png">
+    <div class="flex-container">
+        <div id="teacher1">
+            <div>
+                <img id="photo" src="img/dmitri.png">
             </div>
-            <div id="teacher-description">
+            <div class="teacherDescription">
                 <h3>Дмитрий Аверченко</h3>
                 <p>Опыт работы с 2018 года</p>
                 <p>Специальность:</p>
                 <p id="UI">UX/UI и веб-дизайн</p>
                 <p>Сфера интересов: Продуктовый дизайн. Проектирование сложных интерфейсов. Пользовательские
                     исследования и аналитика</p>
+                <div id="more"><a href="">Узнать больше</a></div>
             </div>
-
         </div>
-        <div class="teacher2">
-            <div id="teacher2-photo"></div>
-            <div id="teacher-description"></div>
-        </div>
-        <div class="teacher3">
-            <div id="teacher3-photo"></div>
-            <div id="teacher-description"></div>
-        </div>
-        <div class="teacher4">
-            <div id="teacher4-photo"></div>
-            <div id="teacher-description"></div>
-        </div>
-        <div class="teacher5">
-            <div id="teacher5-photo"></div>
-            <div id="teacher-description"></div>
-        </div>
-        <div class="teacher6">
-            <div id="teacher6-photo"></div>
-            <div id="teacher-description"></div>
+        <div id="teacher2">
+            <div>
+                <img id="photo" src="img/maxim.png">
+            </div>
+            <div class="teacherDescription">
+                <h3>Максим Осичка</h3>
+                <p>Опыт работы с 2011 года</p>
+                <p>Специальность:</p>
+                <p id="UI">UX/UI и веб-дизайн</p>
+                <p>Сфера интересов: Дизайн интерфейсов, юзабилити, иллюстрации, анимация, каллиграфия и леттеринг
+                </p>
+            </div>
         </div>
     </div>
+    <div class="flex-container">
+        <div id="teacher3">
+            <div>
+                <img id="photo" src="img/maximilian.png">
+            </div>
+            <div class="teacherDescription">
+                <h3>Максимилиан Антипенко</h3>
+                <p>Опыт работы с 2013 года</p>
+                <p>Специальность:</p>
+                <p id="UI">UX/UI и веб-дизайн</p>
+                <p>Сфера интересов: UI-дизайн (мобильный дизайн, веб-дизайн, дизайн десктоп-приложений),
+                    UX-исследования, Front-end разработка</p>
+            </div>
+        </div>
+        <div id="teacher4">
+            <div>
+                <img id="photo" src="img/darya.png">
+            </div>
+            <div class="teacherDescription">
+                <h3>Дарья Тумаш</h3>
+                <p>Опыт работы с 2016 года</p>
+                <p>Специальность:</p>
+                <p id="UI">UX/UI и веб-дизайн</p>
+                <p>Сфера интересов: UX/UI design, веб-дизайн, анимация, айдентика, продуктовый дизайн, полиграфия,
+                    дизайн-системы, продуктовая анадитика</p>
+            </div>
+        </div>
+    </div>
+    <div class="flex-container">
+        <div id="teacher5">
+            <div>
+                <img id="photo" src="img/ludmila.png">
+            </div>
+            <div class="teacherDescription">
+                <h3>Людмила Казакова</h3>
+                <p>Опыт работы с 2019 года</p>
+                <p>Специальность:</p>
+                <p id="UI">UX/UI и веб-дизайн</p>
+                <p>Сфера интересов: UX дизайн, UI архитектура, графический дизайн, моушн дизайн, маркетинг, бизнес
+                    аналитика</p>
+            </div>
+        </div>
+        <div id="teacher6">
+            <div>
+                <img id="photo" src="img/andrey.png">
+            </div>
+            <div class="teacherDescription">
+                <h3>Андрей Клименок</h3>
+                <p>Опыт работы с 2019 года</p>
+                <p>Специальность:</p>
+                <p id="UI">UX/UI и веб-дизайн</p>
+                <p>Сфера интересов: UX/UI дизайн, графический дизайн, проектирование пользовательских интерфейсов,
+                    анимация</p>
+            </div>
+        </div>
+    </div>
+
 </body>
 
 </html>
