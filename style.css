@@ -132,8 +132,7 @@ p {
     margin-top: 210px;
 }
 
-.for,
-.programs {
+.for {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -151,25 +150,50 @@ p {
 }
 
 #for1,
-#for2 {
+#for2,
+#program1,
+#program2,
+#program4,
+#program5 {
     margin-right: 20px;
 }
 
 #for1 p,
 #for2 p,
-#for3 p {
+#for3 p,
+{
+font-style: normal;
+font-weight: 400;
+font-size: 30px;
+line-height: 48px;
+color: #141323;
+text-align: center;
+}
+
+#program1 p,
+#program2 p,
+#program3 p,
+#program4 p,
+#program5 p,
+#program6 p {
 
     font-style: normal;
     font-weight: 400;
-    font-size: 30px;
-    line-height: 48px;
+    font-size: 23px;
+    line-height: 40px;
     color: #141323;
     text-align: center;
 }
 
 #for1 li,
 #for2 li,
-#for3 li {
+#for3 li,
+#program1 li,
+#program2 li,
+#program3 li,
+#program4 li,
+#program5 li,
+#program6 li {
 
     font-style: normal;
     font-weight: 400;
@@ -348,7 +372,7 @@ p {
     grid-template-rows: 507px;
     grid-column-gap: px;
     grid-row-gap: 10px;
-    
+
 }
 
 #teacher1,
@@ -416,4 +440,31 @@ p {
 #teacher1 {
     height: 100%;
     width: 100%;
+}
+
+.programs {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#program1,
+#program2,
+#program3,
+#program4,
+#program5,
+#program6 {
+    width: 560px;
+    height: 265px;
+    background: #FFDCD9;
+    border-radius: 60px 0px;
+
+}
+
+#program4,
+#program5,
+#program6 {
+    margin-top: 20px;
 }
