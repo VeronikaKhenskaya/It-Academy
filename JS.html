@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input id="input" type="text"><br>
+    <button onclick="AddFistElemet()">добавление в начало массива введенного элемента</button><br>
+    <button onclick="AddLastElemet()">добавление в конец массива введенного элемента</button><br>
+    <button onclick="DeleteLastElemet()">удаление последнего элемента массива</button><br>
+    <button onclick="DeleteFirstElemet()">удаление первого элемента массива </button><br>
+    <button onclick="DeleteElemet()"> удаление элемента по указанному номеру</button><br>
+
+<script>
+    function AddFistElemet(){
+  let Array = [ 1, 2, 3, 4, 5, 6, ]
+  let x = +document.getElementById("input").value;
+let NewArray = Array.unshift(x);
+  console.log(Array)
+}
+
+function AddLastElemet(){
+  let Array = [ 1, 2, 3, 4, 5, 6, ]
+  let x = +document.getElementById("input").value;
+let NewArray = Array.push(x);
+  console.log(Array)
+}
+
+function DeleteLastElemet(){
+ let Array = [ 1, 2, 3, 4, 5, 6, ]
+let NewArray = Array.pop();
+  console.log(Array)
+}
+
+function DeleteFirstElemet(){
+let Array = [ 1, 2, 3, 4, 5, 6, ]
+let NewArray = Array.shift();
+  console.log(Array)
+}
+
+function DeleteElemet(){
+let Array = [ 1, 2, 3, 4, 5, 6, ]
+let x = +document.getElementById("input").value;
+let NewArray = delete Array[x];
+  console.log(Array);
+}
+
+
+
+
+
+
+
+</script>
+
+</body>
+
+</html>
