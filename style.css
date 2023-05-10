@@ -75,10 +75,12 @@
 
 .girlimg {
     width: 45%;
+    
 }
 
 .girlimg img{
     width: 100%;
+    height: 100%;
 }
 
 h1 {
@@ -357,8 +359,6 @@ text-align: center;
 .button3 {
     margin: auto;
     width: 340px;
-    margin-left: 50%;
-    margin-right: 50%;
     margin-top: 100px;
     margin-bottom: 100px;
 
