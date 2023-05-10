@@ -37,13 +37,10 @@
 
 
 .header .menu {
-    width: 55%;
+    width: 60%;
     display: flex;
     flex-direction: row;
-    font-style: normal;
-    font-weight: 400;
     font-size: 24px;
-    line-height: 40px;
     color: #141323;
 
 }
@@ -65,7 +62,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
-    width: 55%;
+    width: 65%;
 }
 
 .buttons {
@@ -74,28 +71,28 @@
 }
 
 .girlimg {
-    width: 45%;
+    width: 35%;
     
 }
 
 .girlimg img{
     width: 100%;
-    height: 100%;
+height: auto;
 }
 
 h1 {
     font-style: normal;
     font-weight: 800;
-    font-size: 55px;
-    line-height: 86px;
+    font-size: 50px;
+    line-height: 80px;
     color: #141323;
 }
 
 p {
     font-style: normal;
     font-weight: 400;
-    font-size: 25px;
-    line-height: 48px;
+    font-size: 20px;
+    line-height: 40px;
     color: #141323;
 }
 
@@ -165,8 +162,8 @@ p {
 #for3 p {
 font-style: normal;
 font-weight: 400;
-font-size: 30px;
-line-height: 48px;
+font-size: 25px;
+line-height: 40px;
 color: #141323;
 text-align: center;
 }
@@ -282,10 +279,8 @@ text-align: center;
 
 #classes h2 {
     font-style: normal;
-    font-weight: 600;
-    font-size: 40px;
+    font-size: 35px;
     color: #141323;
-
 }
 
 .classesDescription {
@@ -295,15 +290,24 @@ text-align: center;
 
 .classesDescription p {
     font-style: normal;
-    font-size: 25px;
-    line-height: 48px;
+    font-size: 20px;
+    line-height: 40px;
     color: #141323;
 }
 
 #aboutClasses {
     display: flex;
     flex-direction: column;
+    width: 45%;
 }
+.girl2-img {
+    width: 50%;
+}
+#girl2 {
+    width: 100%;
+}
+
+
 
 #works {
     display: grid;
