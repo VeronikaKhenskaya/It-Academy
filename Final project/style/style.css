@@ -24,7 +24,7 @@ footer {
     width: 100%;
     justify-content: space-between;
     align-items: center;
-    padding: 2% 11% 2% 11%;
+    padding: 2% 10% 2% 10%;
 
 }
 
@@ -65,14 +65,14 @@ footer {
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
-    padding: 5% 5% 5% 10%;
+    padding: 5% 10% 5% 10%;
 }
 
-.menu-content {
+menu {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 30%;
+    width: 35%;
     font-size: 14px;
     color: #FFFFFF;
 }
@@ -83,7 +83,7 @@ footer {
     font-size: 72px;
     line-height: 55px;
     color: #FFFFFF;
-   
+
 }
 
 #with {
@@ -94,11 +94,11 @@ footer {
     color: #FFC700;
     line-height: 1px;
     margin-left: 73%;
-    
+
 }
 
 #pero {
-    font-family:  'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 96px;
     color: transparent;
     -webkit-text-stroke-width: 1px;
@@ -106,8 +106,116 @@ footer {
     line-height: 108px;
 }
 
-.tagline{
+.tagline {
     position: absolute;
-    top:30%;
+    top: 30%;
     left: 10%;
+}
+
+.header-logos {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    right: 10%;
+    top: 40%;
+    height: 110px;
+}
+
+.button-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 230px;
+    height: 50px;
+    background: linear-gradient(92.71deg, #0499DD 0%, #17C1BC 100%);
+    border-radius: 60px;
+    position: absolute;
+    left: 10%;
+    top: 65%;
+    align-items: center;
+}
+
+#arrow1 {
+    width: 14px;
+
+}
+
+#button-text {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    color: #FFFFFF;
+}
+
+.title {
+
+    margin-top: 150px;
+    margin-bottom: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.title h3 {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    color: #0499DD;
+}
+
+#see-all {
+    font-size: 12px;
+    text-decoration-line: underline;
+    color: #282828;
+}
+
+
+.about-us {
+    width: 74%;
+    height: 749px;
+    position: relative;
+}
+
+.about-us img {
+    width: 100%;
+    height: 100%;
+}
+
+.about-us article {
+    position: absolute;
+    top: 18%;
+    left: 71%;
+    width: 52%;
+    height: 476px;
+    background: #EDEDED;
+    border-radius: 10px;
+}
+
+article {
+    padding: 7%;
+    
+}
+
+article h3 {
+    font-size: 24px;
+    line-height: 29px;
+    color: #0499DD;
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+article p {
+    font-size: 14px;
+    line-height: 17px;
+    color: #282828;
+    text-align: left;
 }
