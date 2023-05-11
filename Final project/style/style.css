@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap');
+
 
 * {
     box-sizing: border-box;
@@ -9,14 +12,10 @@
 header {
     width: 100%;
     height: 789px;
-    background: url(Images/images/Main_page.png);
+    border: 1px solid black;
     filter: blur(0.5px);
-    overflow: hidden;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url("../Images/images/Main_page.png");
 }
-
-
-
-
 
 footer {
     display: flex;
@@ -25,11 +24,11 @@ footer {
     width: 100%;
     justify-content: space-between;
     align-items: center;
-    padding: 2% 11% 2% 11% ;
+    padding: 2% 11% 2% 11%;
 
 }
 
-.logoColor{
+.logoColor {
     width: 80px;
     height: 114px;
 }
@@ -49,11 +48,66 @@ footer {
     flex-direction: row;
 }
 
-.tg img, .tgBot img, .whatsapp img, .footerMail img{
+.tg img,
+.tgBot img,
+.whatsapp img,
+.footerMail img {
     margin-right: 10px;
 }
 
-.footerSM{
+.footerSM {
     width: 120px;
     justify-content: space-between;
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding: 5% 5% 5% 10%;
+}
+
+.menu-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 30%;
+    font-size: 14px;
+    color: #FFFFFF;
+}
+
+#travel {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 72px;
+    line-height: 55px;
+    color: #FFFFFF;
+   
+}
+
+#with {
+    font-family: 'Pacifico', cursive;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 64px;
+    color: #FFC700;
+    line-height: 1px;
+    margin-left: 73%;
+    
+}
+
+#pero {
+    font-family:  'Poppins', sans-serif;
+    font-size: 96px;
+    color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #FFFFFF;
+    line-height: 108px;
+}
+
+.tagline{
+    position: absolute;
+    top:30%;
+    left: 10%;
 }
