@@ -149,6 +149,7 @@ menu {
     font-size: 14px;
     line-height: 17px;
     color: #FFFFFF;
+    margin-right: 5px;
 }
 
 .title {
@@ -217,7 +218,7 @@ article p {
     font-size: 14px;
     line-height: 17px;
     color: #282828;
-    text-align: left;
+    text-align: justify;
 }
 
 .excursion {
@@ -237,12 +238,13 @@ article p {
     flex-direction: row;
     width: 50%;
 }
+
 #bus-logo,
 #jeep-logo,
 #yacht-logo,
 #canyon-logo {
     width: 20%;
-    margin-right: 10px;
+    margin-right: 20px;
 }
 
 #bus-text,
@@ -250,4 +252,46 @@ article p {
 #yacht-text,
 #canyon-text {
     margin-right: 20px;
+}
+
+#bus-text h3,
+#jeep-text h3,
+#yacht-text h3,
+#canyon-text h3 {
+    font-size: 18px;
+    line-height: 22px;
+    color: #0499DD;
+    margin-bottom: 10px;
+}
+
+#bus-text p,
+#jeep-text p,
+#yacht-text p,
+#canyon-text p {
+    font-size: 14px;
+    line-height: 17px;
+    color: #282828;
+    text-align: justify;
+}
+
+#choose {
+    width: 40%;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #282828;
+    margin: auto;
+}
+
+.button-excursion {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 230px;
+    height: 50px;
+    background: linear-gradient(92.71deg, #0499DD 0%, #17C1BC 100%);
+    border-radius: 60px;
+    align-items: center;
+    margin: auto;
+    margin-top: 20px;
 }
