@@ -7,3 +7,259 @@
     margin: 0;
     font-family: 'Montserrat'
 }
+
+header {
+    width: 100%;
+    height: 289px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url("../Images/images/header_excursion.png") no-repeat;
+    filter: blur(0.5px);
+    margin-bottom: 40px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding: 5% 10% 1% 10%;
+}
+
+menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 35%;
+    font-size: 14px;
+    color: #FFFFFF;
+}
+
+#our-excursions {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 72px;
+    line-height: 88px;
+    color: #FFFFFF;
+}
+
+.tagline {
+    padding-left: 10%;
+}
+
+#place {
+    background: url(../Images/svg/place.svg) no-repeat;
+    background-position: 90% center;
+}
+
+#date {
+    background: url(../Images/svg/calendar.svg) no-repeat;
+    background-position: 90% center;
+}
+
+#people {
+    background: url(../Images/svg/people.svg) no-repeat;
+    background-position: 90% center;
+}
+
+.search {
+    width: 77%;
+    height: 260px;
+    margin: auto;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3%;
+}
+
+.excursion-type {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 60px;
+}
+
+.excursion-type p {
+    text-align: center;
+    width: 18%;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #282828;
+}
+
+.button-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 230px;
+    height: 50px;
+    background: linear-gradient(92.71deg, #0499DD 0%, #17C1BC 100%);
+    border-radius: 60px;
+    align-items: center;
+}
+
+#arrow1 {
+    width: 14px;
+}
+
+#button-text {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    color: #FFFFFF;
+    margin-right: 5px;
+}
+
+form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+input {
+    width: 235px;
+    height: 50px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    border: transparent;
+    padding: 10px;
+    margin-right: 20px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+}
+
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+}
+
+aside {
+    margin-top: 38px;
+    width: 21%;
+    height: 1018px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 2% 3% 2% 3%;
+}
+
+aside h2 {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    color: #0499DD;
+    margin-bottom: 31px;
+}
+
+aside p {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    color: #282828;
+    margin-bottom: 20px;
+}
+
+#price {
+    width: 105px;
+    height: 30px;
+    background: #FFFFFF;
+    border: 1px solid #EDEDED;
+    border-radius: 40px;
+    display: inline-block;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    color: #282828;
+}
+
+aside input {}
+
+#main-container {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    width: 77%;
+}
+
+#main-container h2 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    color: #0499DD;
+}
+
+#tour-description {
+    display: flex;
+    flex-direction: row;
+    border-left: 3px solid #0499DD;
+    padding-left: 20px;
+}
+
+#tour-description p {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    color: #282828;
+}
+
+.tickets-cost {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: flex-start;
+    margin-right: 20px;
+}
+
+.tickets-cost img {
+    margin-right: 20px;
+}
+
+#full-ticket,
+#children-ticket {
+    width: 90px;
+    height: 35px;
+}
+
+#duration {
+    width: 97px;
+    height: 22px;
+}
+
+.tour-title {
+    display: flex;
+    flex-direction: column;
+}
+
+#title {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    color: #FFC700;
+}
+
+.tour-title h3 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    color: #282828;
+}
