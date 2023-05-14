@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,13 +8,84 @@
     <title>Экскурсии</title>
     <link rel="stylesheet" href="./style/excursion_style.css">
 </head>
+
 <body>
-    <header></header>
+    <header>
+        <div class="menu">
+            <div id="logo">
+                <img src="Images/svg/main_logo.svg">
+            </div>
+            <menu>
+                <div>Главная</div>
+                <div>Экскурсии</div>
+                <div>Личный кабинет</div>
+            </menu>
+        </div>
+        <div class="tagline">
+            <p id="our-excursions">НАШИ ЭКСКУРСИИ</p>
+        </div>
+    </header>
+    <div class="search">
+        <div class="excursion-type">
+            <p>АВТОБУСНЫЙ ТУР</p>
+            <p>ДЖИППИНГ</p>
+            <p>ЯХТИНГ</p>
+            <p>КАНЬОНИНГ</p>
+        </div>
+        <form>
+            <input id="place"><input id="date" type="date"><input id="people" type="number">
+            <div class="button-header">
+                <div id="button-text">К экскурсиям</div>
+                <div>
+                    <img id="arrow1" src="Images/svg/arrow1.svg">
+                </div>
+            </div>
+        </form>
+    </div>
+    <div id="main-container">
+        <aside>
+            <h2>Фильтры</h2>
+            <div>
+                <p>Стоимость</p>
+                <input id="price" type="number"><input id="price" type="number">
+                <div class="slidecontainer">
+                    <input type="range" min="1" max="100" value="" class="slider" id="cost">
+                </div>
+            </div>
+            <p>Количество человек</p>
+            <p>Место</p>
+            <p>Длительность</p>
+            <p>Дата</p>
+        </aside>
 
-    <aside>Фильтры</aside>
-
-
+        <div>
+            <h2>Наши туры</h2>
+            <section id="tour-description">
+                <img src="Images/images/section_photo.png">
+                <div class="tour-title">
+                    <p id="title">Автобусный тур</p>
+                    <h3>Золотое кольцо Абхазии (из Адлера)</h3>
+                    <div class="tickets-cost">
+                        <img id="full-ticket" src="Images/images/full_ticket.png">
+                        <img id="children-ticket" src="Images/images/children_price.png">
+                        <img id="duration" src="Images/images/duration.png">
+                    </div>
+                    <div id="tour-description">
+                        <p>Вас ждет путешествие по "Золотому Кольцу Абхазии" на Мерседес Спринтер (20 мест). По маршруту
+                            вас
+                            будет сопровождать профессиональный гид. Посадка на экскурсию осуществляется с вашего отеля
+                            или
+                            ближайшей автобусной остановки. Пересечение границы без пересадок...</p>
+                    </div>
+                </div>
+            </section>
+            <section></section>
+            <section></section>
+            <section></section>
+        </div>
+    </div>
     <footer></footer>
-    
+
 </body>
+
 </html>
