@@ -400,11 +400,16 @@ article p {
 
 form {
     border-bottom: 1px solid #FFFFFF;
-    width: 65%;
+    width: 100%;
     background: transparent;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 60px;
 }
 
-#name {
+#name,
+#tel,
+#email {
     font-size: 12px;
     line-height: 15px;
     color: #FFFFFF
@@ -414,4 +419,8 @@ form input {
     background: transparent;
     width: 100%;
     border: none;
+}
+
+#request{
+    margin-bottom: 45px;
 }
