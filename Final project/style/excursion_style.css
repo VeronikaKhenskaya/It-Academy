@@ -205,19 +205,40 @@ aside input {}
     color: #0499DD;
 }
 
-#tour-description {
-    display: flex;
-    flex-direction: row;
-    border-left: 3px solid #0499DD;
-    padding-left: 20px;
+.main-section {
+    width: 79%;
+    margin-top: 38px;
 }
 
-#tour-description p {
+.main-section h2 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    color: #0499DD;
+    margin-bottom: 40px;
+    margin-left: 40px;
+}
+
+section {
+    display: flex;
+    flex-direction: row;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-left: 40px;
+    margin-bottom: 20px;
+}
+
+
+#description-text p {
     font-style: normal;
     font-weight: 500;
     font-size: 12px;
     line-height: 15px;
     color: #282828;
+    border-left: 3px solid #0499DD;
+    padding-left: 20px;
 }
 
 .tickets-cost {
@@ -225,12 +246,9 @@ aside input {}
     flex-direction: row;
     width: 100%;
     justify-content: flex-start;
-    margin-right: 20px;
+    margin: 20px 20px 20px 0;
 }
 
-.tickets-cost img {
-    margin-right: 20px;
-}
 
 #full-ticket,
 #children-ticket {
@@ -246,6 +264,8 @@ aside input {}
 .tour-title {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    padding: 27px 43px 27px
 }
 
 #title {
@@ -262,4 +282,75 @@ aside input {}
     font-size: 18px;
     line-height: 22px;
     color: #282828;
+}
+
+.tour-title p:first-child {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    color: #FFC700;
+}
+
+.button-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 160px;
+    height: 40px;
+    background: linear-gradient(92.71deg, #0499DD 0%, #17C1BC 100%);
+    border-radius: 60px;
+    align-items: center;
+}
+
+.button-like{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 56%;
+    margin-top: 20px;
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    height: 173px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2% 10% 2% 10%;
+    background: #EDEDED;
+
+}
+
+.logoColor {
+    width: 80px;
+    height: 114px;
+}
+
+.footerMenu p,
+.footerContacts {
+    display: flex;
+    flex-direction: column;
+}
+
+.footerSM,
+.footerMail,
+.whatsapp,
+.tg,
+.tgBot {
+    display: flex;
+    flex-direction: row;
+}
+
+.tg img,
+.tgBot img,
+.whatsapp img,
+.footerMail img {
+    margin-right: 10px;
+}
+
+.footerSM {
+    width: 120px;
+    justify-content: space-between;
 }
