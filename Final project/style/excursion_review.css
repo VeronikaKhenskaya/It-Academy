@@ -159,9 +159,9 @@ menu {
     flex-direction: row;
 }
 
- #lake_photo img {
+#lake_photo img {
     width: 57%;
- }
+}
 
 #lake_photo h2 {
     font-style: normal;
@@ -172,4 +172,132 @@ menu {
     color: #0499DD;
     margin-top: 151px;
     margin-left: 132px;
+}
+
+.route_description {
+    width: 40%;
+    text-align: justify;
+    margin-bottom: 150px;
+}
+
+.route_description h2 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    color: #0499DD;
+}
+
+.route_description li::marker {
+    color: #FFC700;
+    padding-left: 26px;
+}
+
+
+.route_description li {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #282828;
+    text-align: justify;
+    list-style-position: outside;
+    display: list-item;
+}
+
+.route_description p {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    color: #282828;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.additional_cost {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+
+}
+
+.additional_cost img {
+    height: 117px;
+    width: 165px;
+}
+
+h2 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    color: #0499DD;
+    margin-bottom: 90px;
+    margin-left: 10%;
+}
+
+.info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 50%;
+    margin-left: 10%;
+}
+
+.documents {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+#passport,
+#for_children {
+    display: flex;
+    flex-direction: row;
+}
+
+#passport span,
+#for_children span {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    color: #0499DD;
+    margin-bottom: 20px;
+}
+
+.info p {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #282828;
+}
+
+#passport img,
+#for_children img {
+    margin-right: 28px;
+}
+
+.for_children_text p {
+    margin-top: 20px;
+}
+
+.documents p {
+    margin-bottom: 40px;
+}
+
+#passport {
+    margin-bottom: 20px;
+}
+
+.attention {
+    width: ;
+    height: 131px;
+    background: #EDEDED;
+    border-radius: 10px;
 }
