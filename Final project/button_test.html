@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button</title>
+    <style>
+        .button-header {
+            width: 230px;
+            height: 50px;
+            background: linear-gradient(92.71deg, #0499DD 0%, #17C1BC 100%);
+            border-radius: 60px;
+            justify-content: center;
+            display: flex;
+            flex-direction: row;
+            transition: all 0.2s ease-in-out;
+        }
+
+        button {
+            border: none;
+            border-radius: 60px;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 14px;
+            color: #FFFFFF;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .button-header:hover,
+        button:hover {
+            background: linear-gradient(92.71deg, #FFC700 0%, #ffcc99 100%); ;
+            color: #FFFFFF;
+        }
+
+        #arrow1 {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="button-header">
+        <button id="button-text">К экскурсиям<img id="arrow1" src="Images/svg/arrow1.svg"></button>
+        <div>
+
+        </div>
+    </div>
+</body>
+
+</html>

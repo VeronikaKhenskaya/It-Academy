@@ -61,6 +61,11 @@ footer {
     justify-content: space-between;
 }
 
+.footerMenu a {
+    text-decoration: none;
+    color: #282828;
+}
+
 .menu {
     display: flex;
     flex-direction: row;
@@ -76,6 +81,19 @@ menu {
     width: 35%;
     font-size: 14px;
     color: #FFFFFF;
+}
+
+#main-page,
+#excursion-page,
+#account {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+#main-page:hover,
+#excursion-page:hover,
+#account:hover {
+    color:#FFC700
 }
 
 #travel {
@@ -123,6 +141,7 @@ menu {
     top: 40%;
     height: 110px;
 }
+
 
 .button-header {
     display: flex;
