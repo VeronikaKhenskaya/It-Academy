@@ -36,7 +36,8 @@ footer {
 }
 
 .footerMenu p,
-.footerContacts {
+.footerContacts,
+.footer-mail-sm {
     display: flex;
     flex-direction: column;
 }
@@ -48,24 +49,33 @@ footer {
 .tgBot {
     display: flex;
     flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: nowrap;
 }
 
 .tg img,
 .tgBot img,
 .whatsapp img,
 .footerMail img {
-    margin-right: 10px;
+    margin-right: 8px;
 }
 
 .footerSM {
     width: 120px;
     justify-content: space-between;
+    align-items: center;
 }
 
-.footerMenu a {
+.footerMenu a,
+.footerMail a {
     text-decoration: none;
     color: #282828;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
 }
+
 
 .menu {
     display: flex;
@@ -521,7 +531,7 @@ form {
 }
 
 form input,
-form input:focus  {
+form input:focus {
     background: transparent;
     width: 100%;
     border: none;
