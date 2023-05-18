@@ -132,7 +132,7 @@ menu {
     left: 10%;
 }
 
-.header-logos {
+.logo-buttons {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -141,6 +141,24 @@ menu {
     right: 10%;
     top: 40%;
     height: 110px;
+}
+
+.logo-buttons button,
+.logo-buttons button:hover {
+    border: none;
+    background: transparent;
+}
+
+.logo-buttons button:hover #fb-logo {
+    stroke: #17C1BC;
+}
+
+.logo-buttons button:hover .insta-logo {
+    fill: #E59B06;
+}
+
+.logo-buttons button:hover #vk-logo {
+    fill: #BC0000;
 }
 
 #button-text {
@@ -168,7 +186,7 @@ menu {
     align-items: center;
 }
 
-button {
+.button-header button {
     border: none;
     border-radius: 60px;
     width: 100%;
@@ -184,7 +202,7 @@ button {
 }
 
 .button-header:hover,
-button:hover {
+.button-header button:hover {
     background: linear-gradient(92.71deg, #FFC700 0%, #ffcc99 100%);
     ;
     color: #FFFFFF;
