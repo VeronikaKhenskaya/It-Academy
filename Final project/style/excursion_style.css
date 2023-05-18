@@ -33,6 +33,19 @@ menu {
     color: #FFFFFF;
 }
 
+#main-page,
+#excursion-page,
+#account {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+#main-page:hover,
+#excursion-page:hover,
+#account:hover {
+    color: #FFC700
+}
+
 #our-excursions {
     font-family: 'Montserrat';
     font-style: normal;
@@ -44,6 +57,12 @@ menu {
 
 .tagline {
     padding-left: 10%;
+}
+
+.search-form {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
 }
 
 #place {
@@ -60,6 +79,50 @@ menu {
     background: url(../Images/svg/people.svg) no-repeat;
     background-position: 90% center;
 }
+
+form input,
+form input:focus  {
+    background: transparent;
+    width: 100%;
+    border: none;
+    outline: none;
+    color: #282828;
+    font-size: 14px;
+    background-color: transparent;
+}
+
+.button-show {
+    width: 230px;
+    height: 50px;
+    background: linear-gradient(92.71deg, #0499DD 0%, #17C1BC 100%);
+    border-radius: 10px;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    transition: all 0.2s ease-in-out;
+
+}
+
+.button-show:hover,
+button:hover {
+    background: linear-gradient(92.71deg, #FFC700 0%, #ffcc99 100%);
+    color: #FFFFFF;
+}
+button {
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
 
 .search {
     width: 77%;
@@ -105,6 +168,7 @@ menu {
 
 #arrow1 {
     width: 14px;
+    margin-left: 5px;
 }
 
 #button-text {
@@ -245,7 +309,7 @@ section {
     display: flex;
     flex-direction: row;
     width: 100%;
-    justify-content: flex-start;
+    justify-content: space-between;
     margin: 20px 20px 20px 0;
 }
 
@@ -292,25 +356,79 @@ section {
     color: #FFC700;
 }
 
-.button-section {
+.button-with-like {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    width: 160px;
-    height: 40px;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.button-like {
+    width: 230px;
+    height: 50px;
     background: linear-gradient(92.71deg, #0499DD 0%, #17C1BC 100%);
     border-radius: 60px;
-    align-items: center;
-}
-
-.button-like{
+    justify-content: center;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    width: 56%;
-    margin-top: 20px;
+    transition: all 0.2s ease-in-out;
 }
 
+button {
+    border: none;
+    border-radius: 60px;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.button-like:hover,
+button:hover {
+    background: linear-gradient(92.71deg, #FFC700 0%, #ffcc99 100%);
+    ;
+    color: #FFFFFF;
+}
+
+#arrow1 {
+    margin-left: 10px;
+}
+
+.button-with-like svg {
+    margin-left: 10px;
+}
+
+label {
+    width: 40px;
+    height: 40px;
+    display: block;
+    position: relative;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+input[type="checkbox"]+span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked+span {
+    background-position: 0 -26px;
+}
 footer {
     display: flex;
     flex-direction: row;
