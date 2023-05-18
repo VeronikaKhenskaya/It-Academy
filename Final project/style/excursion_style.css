@@ -252,7 +252,7 @@ aside p {
     color: #282828;
 }
 
-aside input {}
+
 
 #main-container {
     display: flex;
@@ -303,6 +303,7 @@ section {
     color: #282828;
     border-left: 3px solid #0499DD;
     padding-left: 20px;
+    text-align: justify;
 }
 
 .tickets-cost {
@@ -471,4 +472,9 @@ footer {
 .footerSM {
     width: 120px;
     justify-content: space-between;
+}
+
+.footerMenu a {
+    text-decoration: none;
+    color: #282828;
 }
