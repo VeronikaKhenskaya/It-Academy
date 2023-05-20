@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>[<a href="#" onMouseOver="highlight()" onMouseOut="removeHighlight()">On mouse over here bold words of the
+            following paragraph will be highlighted</a>]</p>
+    <p><strong>We</strong> have just started <strong>this</strong> section for the users (<strong>beginner</strong> to
+        intermediate) who <strong>want</strong> to work with <strong>various</strong> JavaScript
+        <strong>problems</strong> and write scripts online to <strong>test</strong> their JavaScript
+        <strong>skill</strong>.</p>
+</body>
+<script>
+    function highlight() {
+let boldElements = document.getElementsByTagName("strong");
+  // for (i = 0; i < boldElements.length; i++) {
+  //   boldElements[i].style.color="red";
+  // }
+  Array.from(boldElements).forEach(
+    element => element.style.color="red");
+}
+
+function removeHighlight() {
+  let boldElements = document.getElementsByTagName("strong");
+  for (i = 0; i < boldElements.length; i++) {
+   boldElements[i].style.color="green";
+   }
+  
+}
+</script>
+
+</html>
