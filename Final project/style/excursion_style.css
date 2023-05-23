@@ -81,7 +81,7 @@ menu {
 }
 
 form input,
-form input:focus  {
+form input:focus {
     background: transparent;
     width: 100%;
     border: none;
@@ -108,6 +108,7 @@ button:hover {
     background: linear-gradient(92.71deg, #FFC700 0%, #ffcc99 100%);
     color: #FFFFFF;
 }
+
 button {
     border: none;
     border-radius: 10px;
@@ -251,8 +252,6 @@ aside p {
     line-height: 15px;
     color: #282828;
 }
-
-
 
 #main-container {
     display: flex;
@@ -413,11 +412,11 @@ label {
     position: relative;
 }
 
-input[type="checkbox"] {
+#checkbox {
     display: none;
 }
 
-input[type="checkbox"]+span {
+#checkbox+span {
     position: absolute;
     left: 0;
     top: 0;
@@ -427,9 +426,10 @@ input[type="checkbox"]+span {
     cursor: pointer;
 }
 
-input[type="checkbox"]:checked+span {
+#checkbox:checked+span {
     background-position: 0 -26px;
 }
+
 footer {
     display: flex;
     flex-direction: row;
@@ -478,3 +478,76 @@ footer {
     text-decoration: none;
     color: #282828;
 }
+
+#quantity-checkbox1,
+#quantity-checkbox2,
+#quantity-checkbox3,
+#quantity-checkbox4,
+#quantity-checkbox5,
+#quantity-checkbox6,
+#quantity-checkbox7,
+#quantity-checkbox8,
+#quantity-checkbox9,
+#quantity-checkbox10,
+#quantity-checkbox11 {
+    width: 73px;
+    height: 30px;
+    background: #FFFFFF;
+    border: 1px solid #EDEDED;
+    border-radius: 40px;
+}
+
+.quantity-checkboxes{
+    display: grid;
+    grid-column: 3;
+    grid-row: 4;
+    width: 100%;
+}
+
+#quantity-checkbox1,
+#quantity-checkbox2,
+#quantity-checkbox3 {
+    grid-row: 1;
+}
+
+#quantity-checkbox4,
+#quantity-checkbox5,
+#quantity-checkbox6 {
+    grid-row: 2;
+}
+
+#quantity-checkbox7,
+#quantity-checkbox8,
+#quantity-checkbox9 {
+    grid-row: 3;
+}
+
+#quantity-checkbox10,
+#quantity-checkbox11 {
+    grid-row: 4;
+}
+
+#quantity-checkbox1,
+#quantity-checkbox4,
+#quantity-checkbox7,
+#quantity-checkbox10 {
+    grid-column: 1;
+}
+
+#quantity-checkbox2,
+#quantity-checkbox5,
+#quantity-checkbox8,
+#quantity-checkbox11 {
+    grid-column: 2;
+}
+
+#quantity-checkbox3,
+#quantity-checkbox6,
+#quantity-checkbox9 {
+    grid-column: 3;
+}
+
+#quantity-checkbox11 {
+    grid-column: 2/5;
+}
+

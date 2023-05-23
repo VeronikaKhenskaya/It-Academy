@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        aside {
+            width: 25%;
+            background: #FFFFFF;
+            box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.05);
+            border-radius: 10px;
+            height: 1018px;
+        }
+
+        aside h2 {
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 17px;
+            color: #0499DD;
+        }
+
+        aside p {
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 17px;
+            color: #282828;
+        }
+
+        .costs,
+        .people-quantity,
+        .place {
+            box-sizing: border-box;
+            padding: 5px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #EDEDED;
+        }
+
+        .wrapper {
+            width: 90%;
+
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            height: 40px;
+
+        }
+
+        input[type="range"] {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            width: 100%;
+            outline: none;
+            position: absolute;
+            margin: auto;
+            top: 0;
+            bottom: 0;
+            background-color: transparent;
+            pointer-events: none;
+        }
+
+        .slider-track {
+            width: 100%;
+            height: 5px;
+            position: absolute;
+            margin: auto;
+            top: 0;
+            bottom: 0;
+            border-radius: 5px;
+        }
+
+        input[type="range"]::-webkit-slider-runnable-track {
+            -webkit-appearance: none;
+            height: 5px;
+        }
+
+        input[type="range"]::-moz-range-track {
+            -moz-appearance: none;
+            height: 5px;
+        }
+
+        input[type="range"]::-ms-track {
+            appearance: none;
+            height: 5px;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 1.7em;
+            width: 1.7em;
+            background-color: #0499DD;
+            cursor: pointer;
+            margin-top: -9px;
+            pointer-events: auto;
+            border-radius: 50%;
+        }
+
+        input[type="range"]::-moz-range-thumb {
+            -webkit-appearance: none;
+            height: 1.7em;
+            width: 1.7em;
+            cursor: pointer;
+            border-radius: 50%;
+            background-color: #0499DD;
+            pointer-events: auto;
+        }
+
+        input[type="range"]::-ms-thumb {
+            appearance: none;
+            height: 1.7em;
+            width: 1.7em;
+            cursor: pointer;
+            border-radius: 50%;
+            background-color: #0499DD;
+            pointer-events: auto;
+        }
+
+        input[type="range"]:active::-webkit-slider-thumb {
+            background-color: #ffffff;
+            border: 3px solid #0499DD;
+        }
+
+        .values {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            background-color: #ffffff;
+            width: 100%;
+            padding: 10px 0;
+
+        }
+
+        .values span {
+            background: #FFFFFF;
+            border: 1px solid #EDEDED;
+            border-radius: 40px;
+            color: #282828;
+            font-size: 12px;
+            width: 105px;
+            height: 30px;
+            text-align: center;
+            padding-top: 3%;
+            box-sizing: border-box;
+        }
+
+        .checkbox {
+            width: 73px;
+            height: 30px;
+            background: #FFFFFF;
+            border: 1px solid #EDEDED;
+            border-radius: 40px;
+        }
+
+        .checkbox:hover {
+            background: #0499DD;
+        }
+
+        .quantity-checkboxes {
+            display: grid;
+            grid-column: 3;
+            grid-row: 4;
+            width: 20%;
+        }
+
+        #quantity-checkbox1,
+        #quantity-checkbox2,
+        #quantity-checkbox3 {
+            grid-row: 1;
+        }
+
+        #quantity-checkbox4,
+        #quantity-checkbox5,
+        #quantity-checkbox6 {
+            grid-row: 2;
+        }
+
+        #quantity-checkbox7,
+        #quantity-checkbox8,
+        #quantity-checkbox9 {
+            grid-row: 3;
+        }
+
+        #quantity-checkbox10,
+        #quantity-checkbox11 {
+            grid-row: 4;
+        }
+
+        #quantity-checkbox1,
+        #quantity-checkbox4,
+        #quantity-checkbox7,
+        #quantity-checkbox10 {
+            grid-column: 1;
+        }
+
+        #quantity-checkbox2,
+        #quantity-checkbox5,
+        #quantity-checkbox8 {
+            grid-column: 2;
+        }
+
+        #quantity-checkbox3,
+        #quantity-checkbox6,
+        #quantity-checkbox9 {
+            grid-column: 3;
+        }
+
+        #quantity-checkbox11 {
+            grid-column: 2/5
+        }
+
+        label {
+            text-align: center;
+            padding-top: 6px;
+            box-sizing: border-box;
+            color: #282828;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 12px;
+            margin-bottom: 5px;
+            margin-right: 5px;
+        }
+
+        .place {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .place p {
+            margin: 2px;
+        }
+
+        .checkbox [type="radio"] {
+            display: none;
+        }
+
+        .duration input {}
+    </style>
+</head>
+
+<body>
+    <aside class="filters">
+        <h2>Фильтры</h2>
+
+
+        <p>Стоимость</p>
+        <div class="costs">
+            <div class="wrapper">
+                <div class="values">
+                    <span id="range1">1000</span>
+                    <span id="range2">20000</span>
+                </div>
+                <div class="container">
+                    <div class="slider-track"></div>
+                    <input type="range" min="1000" max="20000" value="1600" id="slider-1"
+                        oninput="sliderOne(this.parentElement.parentElement)">
+                    <input type="range" min="1000" max="20000" value="4000" id="slider-2"
+                        oninput="sliderTwo(this.parentElement.parentElement)">
+                </div>
+            </div>
+        </div>
+
+
+        <p>Количество человек</p>
+        <div class="people-quantity">
+            <div class="quantity-checkboxes">
+                <label class="checkbox" id="quantity-checkbox1">1 чел.<input name="check" type="radio"
+                        onclick="changeButtonColor(this.parentElement, this)"></label>
+                <label class="checkbox" id="quantity-checkbox2">2 чел.<input name="check" type="radio"
+                        onclick="changeButtonColor(this.parentElement, this)"> </label>
+                <label class="checkbox" id="quantity-checkbox3">3 чел.<input name="check" type="radio"
+                        onclick="changeButtonColor(this.parentElement, this)"></label>
+                <label class="checkbox" id="quantity-checkbox4">4 чел.<input name="check" type="radio"
+                        onclick="changeButtonColor(this.parentElement, this)"></label>
+                <label class="checkbox" id="quantity-checkbox5">5 чел.<input name="check" type="radio"
+                        onclick="changeButtonColor(this.parentElement, this)"></label>
+                <label class="checkbox" id="quantity-checkbox6">6 чел.<input name="check" type="radio"
+                        onclick="changeButtonColor(this.parentElement, this)"></label>
+                <label class="checkbox" id="quantity-checkbox7">7 чел.<input name="check" type="radio"
+                        onclick="changeButtonColor(this.parentElement, this)"></label>
+                <label class="checkbox" id="quantity-checkbox8">8 чел.<input name="check" type="radio"
+                        onclick="changeButtonColor(this.parentElement, this)"></label>
+                <label class="checkbox" id="quantity-checkbox9">9 чел.<input name="check" type="radio"
+                        onclick="changeButtonColor(this.parentElement, this)"></label>
+                <label class="checkbox" id="quantity-checkbox10">10 чел.<input name="check" type="radio"
+                        onclick="changeButtonColor(this.parentElement, this)"></label>
+                <label class="checkbox" id="quantity-checkbox11">Больше 10 чел.<input name="check" type="radio"
+                        onclick="changeButtonColor(this.parentElement, this)"></label>
+            </div>
+        </div>
+
+        <p>Место</p>
+        <button class="btn" type="button">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 8H15M8 15V1" stroke="#0499DD" stroke-width="2" stroke-linecap="round" />
+            </svg>
+        </button>
+        <div class="place">
+            <p><input name="place" type="radio" value="Abkhasia"><label>Абхазия</label></p>
+            <p><input name="place" type="radio" value="Krasnaya Polyana"><label>Красная поляна</label></p>
+            <p><input name="place" type="radio" value="Sotchi"><label>Сочи</label></p>
+            <p><input name="place" type="radio" value="Adler"><label>Адлер</label></p>
+        </div>
+
+        <p>Длительность</p>
+        <div class="duration">
+            <div class="wrapper">
+                <div class="values">
+                    <span id="range1">1 день</span>
+                    <span id="range2">10 дней</span>
+                </div>
+                <div class="container">
+                    <div class="slider-track"></div>
+                    <input type="range" min="1" max="10" value="2" id="slider-left"
+                        oninput="sliderOne(this.parentElement.parentElement)">
+                    <input type="range" min="1" max="10" value="4" id="slider-right"
+                        oninput="sliderTwo(this.parentElement.parentElement)">
+                </div>
+            </div>
+        </div>
+
+        <p>Дата</p>
+        <div>
+            <input type="date" class="form-control" id="date" name="date" placeholder="Дата" required>
+        </div>
+
+
+    </aside>
+
+    <script>
+        window.onload = function () {
+            let wrappers = document.getElementsByClassName("wrapper");
+            for (i = 0; i < wrappers.length; i++) {
+                sliderOne(wrappers[i]);
+                sliderTwo(wrappers[i]);
+            }
+        }
+        function sliderOne(rangeElement) {
+            let displayValues = rangeElement.getElementsByTagName('span');
+            let sliders = rangeElement.getElementsByTagName('input');
+            if (parseInt(sliders[1].value) - parseInt(sliders[0].value) <= 0) {
+                sliders[0].value = parseInt(sliders[1].value);
+            }
+            displayValues[0].textContent = sliders[0].value;
+            let sliderTrack = rangeElement.getElementsByClassName('slider-track')[0];
+            fillColor(sliders[0], sliders[1], sliderTrack);
+        }
+        function fillColor(sliderOne, sliderTwo, sliderTrack) {
+            percent1 = (sliderOne.value / sliderTwo.max) * 100;
+            percent2 = (sliderTwo.value / sliderTwo.max) * 100;
+            sliderTrack.style.background = `linear-gradient(to right, #dadae5 ${percent1}% , #0499DD, #0499DD, #dadae5 ${percent2}%)`;
+        }
+
+        function sliderTwo(rangeElement) {
+            let displayValues = rangeElement.getElementsByTagName('span');
+            let sliders = rangeElement.getElementsByTagName('input');
+            if (parseInt(sliders[1].value) - parseInt(sliders[0].value) <= 0) {
+                sliders[1].value = parseInt(sliders[0].value);
+            }
+            displayValues[1].textContent = sliders[1].value;
+            let sliderTrack = rangeElement.getElementsByClassName('slider-track')[0];
+            fillColor(sliders[0], sliders[1], sliderTrack);
+        }
+
+    </script>
+
+    <script>
+        function changeButtonColor(button, checkbox) {
+            console.log(button);
+            let buttons = document.getElementsByClassName('checkbox');
+            for (i = 0; i < buttons.length; i++) {
+                buttons[i].style.backgroundColor = 'white';
+            }
+            button.style.backgroundColor = "#0499DD";
+        }
+    </script>
+
+</body>
+
+</html>
