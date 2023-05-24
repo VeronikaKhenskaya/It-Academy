@@ -6,14 +6,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="./node_modules/air-datepicker/air-datepicker.css" rel="stylesheet"/>
     <style>
-        @import AirDatepicker from 'air-datepicker';
-        @import 'air-datepicker/air-datepicker.css';
+
     </style>
 </head>
 
 <body>
 
+    <div class="container">
+        <input type="text" id="dp" />
+    </div>
+    <script src="./node_modules/air-datepicker/air-datepicker.js"></script>
+
+    <script>
+        
+        let dp = new AirDatepicker("#dp", {});
+
+    </script>
 </body>
 
 </html>
