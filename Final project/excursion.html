@@ -33,46 +33,104 @@
             <p>КАНЬОНИНГ</p>
         </div>
         <div class="search-form">
-        <form>
-            <input id="place" type="text" placeholder="Место"><input id="date" type="date" placeholder="Дата"><input
-                id="people" type="number" placeholder="Кол-во человек">
-        </form>
-        <form action=" " class="button-show">
-            <button id="button-text">Показать<img id="arrow1" src="Images/svg/arrow1.svg"></button>
-        </form></div>
+            <form>
+                <input id="place" type="text" placeholder="Место"><input id="date" type="date" placeholder="Дата"><input
+                    id="people" type="number" placeholder="Кол-во человек">
+            </form>
+            <form action=" " class="button-show">
+                <button id="button-text">Показать<img id="arrow1" src="Images/svg/arrow1.svg"></button>
+            </form>
+        </div>
     </div>
     <div id="main-container">
-        <aside>
+        <aside class="filters">
             <h2>Фильтры</h2>
-            <div class="excursion-prices">
-                <p>Стоимость</p>
-                <input id="price" type="number"><input id="price" type="number">
-                <div class="slidecontainer">
-                    <input type="range" min="1" max="100" value="" class="slider" id="cost">
+            <p>Стоимость</p>
+            <div class="costs">
+                <div class="wrapper">
+                    <div class="values">
+                        <span id="range1">1000</span>
+                        <span id="range2">20000</span>
+                    </div>
+                    <div class="container">
+                        <div class="slider-track"></div>
+                        <input type="range" min="1000" max="20000" value="1600" id="slider-1"
+                            oninput="sliderOne(this.parentElement.parentElement)">
+                        <input type="range" min="1000" max="20000" value="4000" id="slider-2"
+                            oninput="sliderTwo(this.parentElement.parentElement)">
+                    </div>
                 </div>
             </div>
-            <div>
-                <p>Количество человек</p>
-                <div class="quantity-checkboxes">
-                <input id="quantity-checkbox1" type="checkbox" value="1 чел.">
-                <input id="quantity-checkbox2" type="checkbox" value="2 чел.">
-                <input id="quantity-checkbox3" type="checkbox" value="3 чел.">
-                <input id="quantity-checkbox4" type="checkbox" value="4 чел.">
-                <input id="quantity-checkbox5" type="checkbox" value="5 чел.">
-                <input id="quantity-checkbox6" type="checkbox" value="6 чел.">
-                <input id="quantity-checkbox7" type="checkbox" value="7 чел.">
-                <input id="quantity-checkbox8" type="checkbox" value="8 чел.">
-                <input id="quantity-checkbox9" type="checkbox" value="9 чел.">
-                <input id="quantity-checkbox10" type="checkbox" value="10 чел.">
-                <input id="quantity-checkbox11" type="checkbox" value=" Больше 10 чел.">
-            </div>
-            </div>
-            
-            <p>Место</p>
-            <p>Длительность</p>
-            <p>Дата</p>
-        </aside>
 
+
+            <p>Количество человек</p>
+            <div class="people-quantity">
+                <div class="quantity-checkboxes">
+                    <label class="checkbox" id="quantity-checkbox1">1 чел.<input name="check" type="radio"
+                            onclick="changeButtonColor(this.parentElement, this)"></label>
+                    <label class="checkbox" id="quantity-checkbox2">2 чел.<input name="check" type="radio"
+                            onclick="changeButtonColor(this.parentElement, this)"> </label>
+                    <label class="checkbox" id="quantity-checkbox3">3 чел.<input name="check" type="radio"
+                            onclick="changeButtonColor(this.parentElement, this)"></label>
+                    <label class="checkbox" id="quantity-checkbox4">4 чел.<input name="check" type="radio"
+                            onclick="changeButtonColor(this.parentElement, this)"></label>
+                    <label class="checkbox" id="quantity-checkbox5">5 чел.<input name="check" type="radio"
+                            onclick="changeButtonColor(this.parentElement, this)"></label>
+                    <label class="checkbox" id="quantity-checkbox6">6 чел.<input name="check" type="radio"
+                            onclick="changeButtonColor(this.parentElement, this)"></label>
+                    <label class="checkbox" id="quantity-checkbox7">7 чел.<input name="check" type="radio"
+                            onclick="changeButtonColor(this.parentElement, this)"></label>
+                    <label class="checkbox" id="quantity-checkbox8">8 чел.<input name="check" type="radio"
+                            onclick="changeButtonColor(this.parentElement, this)"></label>
+                    <label class="checkbox" id="quantity-checkbox9">9 чел.<input name="check" type="radio"
+                            onclick="changeButtonColor(this.parentElement, this)"></label>
+                    <label class="checkbox" id="quantity-checkbox10">10 чел.<input name="check" type="radio"
+                            onclick="changeButtonColor(this.parentElement, this)"></label>
+                    <label class="checkbox" id="quantity-checkbox11">Больше 10 чел.<input name="check" type="radio"
+                            onclick="changeButtonColor(this.parentElement, this)"></label>
+                </div>
+            </div>
+
+            <p>Место</p>
+
+            <div class="place">
+                <p><input name="place" type="radio" value="Abkhasia"><label>Абхазия</label></p>
+                <p><input name="place" type="radio" value="Krasnaya Polyana"><label>Красная поляна</label></p>
+                <p><input name="place" type="radio" value="Sotchi"><label>Сочи</label></p>
+                <p><input name="place" type="radio" value="Adler"><label>Адлер</label></p>
+            </div>
+
+            <p>Длительность</p>
+            <div class="duration">
+                <div class="wrapper">
+                    <div class="values">
+                        <span id="range1">1 день</span>
+                        <span id="range2">10 дней</span>
+                    </div>
+                    <div class="container">
+                        <div class="slider-track"></div>
+                        <input type="range" min="1" max="10" value="2" id="slider-left"
+                            oninput="sliderOne(this.parentElement.parentElement)">
+                        <input type="range" min="1" max="10" value="4" id="slider-right"
+                            oninput="sliderTwo(this.parentElement.parentElement)">
+                    </div>
+                </div>
+            </div>
+
+            <p>Дата</p>
+            <div class="date">
+                <input type="date" class="form-control" id="date" name="date" placeholder="Дата" required>
+            </div>
+
+            <div class="button-with-like">
+                <form action="excursion.html" class="button-like">
+                    <button type="submit" id="button-text">Показать<img id="arrow1"
+                            src="Images/svg/arrow1.svg"></button>
+                </form>
+            </div>
+
+
+        </aside>
         <div class="main-section">
             <h2>Наши туры</h2>
             <section id="tour-description">
@@ -99,11 +157,13 @@
                         <div>
                             <label><input type="checkbox" value="1" id="checkbox" onclick="toggleColor()">
                                 <span>
-                                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <circle id="circle" cx="20" cy="20" r="20" fill="#EDEDED"/>
+                                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <circle id="circle" cx="20" cy="20" r="20" fill="#EDEDED" />
                                         <path id="heart"
                                             d="M28.8401 12.61C28.3294 12.099 27.7229 11.6936 27.0555 11.4171C26.388 11.1405 25.6726 10.9982 24.9501 10.9982C24.2276 10.9982 23.5122 11.1405 22.8448 11.4171C22.1773 11.6936 21.5709 12.099 21.0601 12.61L20.0001 13.67L18.9401 12.61C17.9084 11.5783 16.5092 10.9987 15.0501 10.9987C13.5911 10.9987 12.1918 11.5783 11.1601 12.61C10.1284 13.6417 9.54883 15.041 9.54883 16.5C9.54883 17.959 10.1284 19.3583 11.1601 20.39L12.2201 21.45L20.0001 29.23L27.7801 21.45L28.8401 20.39C29.3511 19.8792 29.7565 19.2728 30.033 18.6053C30.3096 17.9379 30.4519 17.2225 30.4519 16.5C30.4519 15.7775 30.3096 15.0621 30.033 14.3946C29.7565 13.7272 29.3511 13.1208 28.8401 12.61V12.61Z"
-                                            stroke="#D4D4D4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            stroke="#D4D4D4" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
                                     </svg>
                         </div>
                         </span>
@@ -135,11 +195,13 @@
                         <div>
                             <label><input type="checkbox" value="1" id="checkbox" onclick="toggleColor()">
                                 <span>
-                                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <circle id="circle" cx="20" cy="20" r="20" fill="#EDEDED"/>
+                                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <circle id="circle" cx="20" cy="20" r="20" fill="#EDEDED" />
                                         <path id="heart"
                                             d="M28.8401 12.61C28.3294 12.099 27.7229 11.6936 27.0555 11.4171C26.388 11.1405 25.6726 10.9982 24.9501 10.9982C24.2276 10.9982 23.5122 11.1405 22.8448 11.4171C22.1773 11.6936 21.5709 12.099 21.0601 12.61L20.0001 13.67L18.9401 12.61C17.9084 11.5783 16.5092 10.9987 15.0501 10.9987C13.5911 10.9987 12.1918 11.5783 11.1601 12.61C10.1284 13.6417 9.54883 15.041 9.54883 16.5C9.54883 17.959 10.1284 19.3583 11.1601 20.39L12.2201 21.45L20.0001 29.23L27.7801 21.45L28.8401 20.39C29.3511 19.8792 29.7565 19.2728 30.033 18.6053C30.3096 17.9379 30.4519 17.2225 30.4519 16.5C30.4519 15.7775 30.3096 15.0621 30.033 14.3946C29.7565 13.7272 29.3511 13.1208 28.8401 12.61V12.61Z"
-                                            stroke="#D4D4D4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            stroke="#D4D4D4" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
                                     </svg>
                         </div>
                         </span>
@@ -171,11 +233,13 @@
                         <div>
                             <label><input type="checkbox" value="1" id="checkbox" onclick="toggleColor()">
                                 <span>
-                                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <circle id="circle" cx="20" cy="20" r="20" fill="#EDEDED"/>
+                                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <circle id="circle" cx="20" cy="20" r="20" fill="#EDEDED" />
                                         <path id="heart"
                                             d="M28.8401 12.61C28.3294 12.099 27.7229 11.6936 27.0555 11.4171C26.388 11.1405 25.6726 10.9982 24.9501 10.9982C24.2276 10.9982 23.5122 11.1405 22.8448 11.4171C22.1773 11.6936 21.5709 12.099 21.0601 12.61L20.0001 13.67L18.9401 12.61C17.9084 11.5783 16.5092 10.9987 15.0501 10.9987C13.5911 10.9987 12.1918 11.5783 11.1601 12.61C10.1284 13.6417 9.54883 15.041 9.54883 16.5C9.54883 17.959 10.1284 19.3583 11.1601 20.39L12.2201 21.45L20.0001 29.23L27.7801 21.45L28.8401 20.39C29.3511 19.8792 29.7565 19.2728 30.033 18.6053C30.3096 17.9379 30.4519 17.2225 30.4519 16.5C30.4519 15.7775 30.3096 15.0621 30.033 14.3946C29.7565 13.7272 29.3511 13.1208 28.8401 12.61V12.61Z"
-                                            stroke="#D4D4D4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            stroke="#D4D4D4" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
                                     </svg>
                         </div>
                         </span>
@@ -207,11 +271,13 @@
                         <div>
                             <label><input type="checkbox" value="1" id="checkbox" onclick="toggleColor()">
                                 <span>
-                                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <circle id="circle" cx="20" cy="20" r="20" fill="#EDEDED"/>
+                                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <circle id="circle" cx="20" cy="20" r="20" fill="#EDEDED" />
                                         <path id="heart"
                                             d="M28.8401 12.61C28.3294 12.099 27.7229 11.6936 27.0555 11.4171C26.388 11.1405 25.6726 10.9982 24.9501 10.9982C24.2276 10.9982 23.5122 11.1405 22.8448 11.4171C22.1773 11.6936 21.5709 12.099 21.0601 12.61L20.0001 13.67L18.9401 12.61C17.9084 11.5783 16.5092 10.9987 15.0501 10.9987C13.5911 10.9987 12.1918 11.5783 11.1601 12.61C10.1284 13.6417 9.54883 15.041 9.54883 16.5C9.54883 17.959 10.1284 19.3583 11.1601 20.39L12.2201 21.45L20.0001 29.23L27.7801 21.45L28.8401 20.39C29.3511 19.8792 29.7565 19.2728 30.033 18.6053C30.3096 17.9379 30.4519 17.2225 30.4519 16.5C30.4519 15.7775 30.3096 15.0621 30.033 14.3946C29.7565 13.7272 29.3511 13.1208 28.8401 12.61V12.61Z"
-                                            stroke="#D4D4D4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            stroke="#D4D4D4" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
                                     </svg>
                         </div>
                         </span>
@@ -266,9 +332,57 @@
                 c.style.stroke = "#0499DD";
             } else {
                 e.style.fill = "#EDEDED";
-                    e.style.stroke = "#D4D4D4";
-                    c.style.stroke = "#D4D4D4";
+                e.style.stroke = "#D4D4D4";
+                c.style.stroke = "#D4D4D4";
             }
+        }
+    </script>
+
+    <script>
+        window.onload = function () {
+            let wrappers = document.getElementsByClassName("wrapper");
+            for (i = 0; i < wrappers.length; i++) {
+                sliderOne(wrappers[i]);
+                sliderTwo(wrappers[i]);
+            }
+        }
+        function sliderOne(rangeElement) {
+            let displayValues = rangeElement.getElementsByTagName('span');
+            let sliders = rangeElement.getElementsByTagName('input');
+            if (parseInt(sliders[1].value) - parseInt(sliders[0].value) <= 0) {
+                sliders[0].value = parseInt(sliders[1].value);
+            }
+            displayValues[0].textContent = sliders[0].value;
+            let sliderTrack = rangeElement.getElementsByClassName('slider-track')[0];
+            fillColor(sliders[0], sliders[1], sliderTrack);
+        }
+        function fillColor(sliderOne, sliderTwo, sliderTrack) {
+            percent1 = (sliderOne.value / sliderTwo.max) * 100;
+            percent2 = (sliderTwo.value / sliderTwo.max) * 100;
+            sliderTrack.style.background = `linear-gradient(to right, #dadae5 ${percent1}% , #0499DD, #0499DD, #dadae5 ${percent2}%)`;
+        }
+
+        function sliderTwo(rangeElement) {
+            let displayValues = rangeElement.getElementsByTagName('span');
+            let sliders = rangeElement.getElementsByTagName('input');
+            if (parseInt(sliders[1].value) - parseInt(sliders[0].value) <= 0) {
+                sliders[1].value = parseInt(sliders[0].value);
+            }
+            displayValues[1].textContent = sliders[1].value;
+            let sliderTrack = rangeElement.getElementsByClassName('slider-track')[0];
+            fillColor(sliders[0], sliders[1], sliderTrack);
+        }
+
+    </script>
+
+    <script>
+        function changeButtonColor(button, checkbox) {
+            console.log(button);
+            let buttons = document.getElementsByClassName('checkbox');
+            for (i = 0; i < buttons.length; i++) {
+                buttons[i].style.backgroundColor = 'white';
+            }
+            button.style.backgroundColor = "#0499DD";
         }
     </script>
 </body>
