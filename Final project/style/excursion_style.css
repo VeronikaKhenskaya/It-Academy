@@ -570,6 +570,31 @@ footer {
     grid-column: 2/5;
 }
 
+.open-close {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.open-btn,
+.close-btn {
+    width: 10%;
+}
+
+.close-btn {
+    margin-bottom: 5px;
+}
+
+.open-btn {
+    display: none;
+}
+
+.open-close p{
+    margin: 0;
+}
+
 aside {
     width: 30%;
     background: #FFFFFF;
