@@ -45,7 +45,13 @@
     <div id="main-container">
         <aside class="filters">
             <h2>Фильтры</h2>
-            <p>Стоимость</p>
+            <div class="open-close">
+                <p>Стоимость</p>
+                <button class="close-btn" onclick="closeSection()">
+                    <img class="btn-close" src="Images/svg/line-button.svg"></button>
+                <button class="open-btn">
+                    <img class="btn-open" onclick="openSection()" src="Images/svg/cross-button.svg"></button>
+            </div>
             <div class="costs">
                 <div class="wrapper">
                     <div class="values">
@@ -62,8 +68,13 @@
                 </div>
             </div>
 
-
-            <p>Количество человек</p>
+            <div class="open-close">
+                <p>Количество человек</p>
+                <button class="close-btn" onclick="closeSection()">
+                    <img class="btn-close" src="Images/svg/line-button.svg"></button>
+                <button class="open-btn">
+                    <img class="btn-open" onclick="openSection()" src="Images/svg/cross-button.svg"></button>
+            </div>
             <div class="people-quantity">
                 <div class="quantity-checkboxes">
                     <label class="checkbox" id="quantity-checkbox1">1 чел.<input name="check" type="radio"
@@ -91,7 +102,13 @@
                 </div>
             </div>
 
-            <p>Место</p>
+            <div class="open-close">
+                <p>Место</p>
+                <button class="close-btn" onclick="closeSection()">
+                    <img class="btn-close" src="Images/svg/line-button.svg"></button>
+                <button class="open-btn">
+                    <img class="btn-open" onclick="openSection()" src="Images/svg/cross-button.svg"></button>
+            </div>
 
             <div class="place">
                 <p><input name="place" type="radio" value="Abkhasia"><label>Абхазия</label></p>
@@ -100,7 +117,14 @@
                 <p><input name="place" type="radio" value="Adler"><label>Адлер</label></p>
             </div>
 
-            <p>Длительность</p>
+
+            <div class="open-close">
+                <p>Длительность</p>
+                <button class="close-btn" onclick="closeSection()">
+                    <img class="btn-close" src="Images/svg/line-button.svg"></button>
+                <button class="open-btn">
+                    <img class="btn-open" onclick="openSection()" src="Images/svg/cross-button.svg"></button>
+            </div>
             <div class="duration">
                 <div class="wrapper">
                     <div class="values">
@@ -117,7 +141,13 @@
                 </div>
             </div>
 
-            <p>Дата</p>
+            <div class="open-close">
+                <p>Дата</p>
+                <button class="close-btn" onclick="closeSection()">
+                    <img class="btn-close" src="Images/svg/line-button.svg"></button>
+                <button class="open-btn">
+                    <img class="btn-open" onclick="openSection()" src="Images/svg/cross-button.svg"></button>
+            </div>
             <div class="date">
                 <input type="date" class="form-control" id="date" name="date" placeholder="Дата" required>
             </div>
@@ -128,7 +158,6 @@
                             src="Images/svg/arrow1.svg"></button>
                 </form>
             </div>
-
 
         </aside>
         <div class="main-section">
@@ -321,6 +350,8 @@
             </div>
         </div>
     </footer>
+
+
     <script>
         function toggleColor() {
             let c = document.getElementById("circle")
@@ -337,7 +368,6 @@
             }
         }
     </script>
-
     <script>
         window.onload = function () {
             let wrappers = document.getElementsByClassName("wrapper");
@@ -372,9 +402,7 @@
             let sliderTrack = rangeElement.getElementsByClassName('slider-track')[0];
             fillColor(sliders[0], sliders[1], sliderTrack);
         }
-
     </script>
-
     <script>
         function changeButtonColor(button, checkbox) {
             console.log(button);
@@ -383,6 +411,26 @@
                 buttons[i].style.backgroundColor = 'white';
             }
             button.style.backgroundColor = "#0499DD";
+        }
+    </script>
+    <script>
+        function closeSection() {
+            let closeBtn = document.getElementsByClassName('close-btn')[0];
+            let openBtn = document.getElementsByClassName('open-btn')[0];
+            let sectionToClose = document.getElementsByClassName('costs')[0];
+            sectionToClose.style.display = "none";
+            closeBtn.style.display = "none";
+            openBtn.style.display = "block";
+        }
+    </script>
+    <script>
+        function openSection() {
+            let closeBtn = document.getElementsByClassName('close-btn')[0];
+            let openBtn = document.getElementsByClassName('open-btn')[0];
+            let sectionToOpen = document.getElementsByClassName('costs')[0];
+            sectionToOpen.style.display = "block";
+            closeBtn.style.display = "block";
+            openBtn.style.display = "none";
         }
     </script>
 </body>
