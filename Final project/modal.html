@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    .video {
+        width: 300px;
+        height: 190px;
+        padding: 0;
+        position: relative;
+    }
+
+    video {
+        
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(.jpg);
+        border-radius: 10px;
+        height: 100%;
+        width: 100%;
+        margin: 0;
+    }
+
+    #playButton {
+        position: absolute;
+        top: 40%;
+        left: 40%;
+        width: 20%;
+        height: 20%;
+        background: transparent;
+        border: none;
+    }
+
+    #playButton img {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .video:hover .move-ne {
+        transform: translate(-350px,350px);
+        -webkit-transform: translate(-350px,350px);
+        -o-transform: translate(-350px,350px);
+        -moz-transform: translate(-350px,350px);
+    }
+</style>
+
+<body>
+
+    <div class="video">
+        <video poster="Images/images/main_video_img.png">
+            <source src="boat_-_1412 (360p).mp4">
+        </video>
+        <button id="playButton" onclick="playVideo(this.parentElement)"><img id="playImg"
+                src="Images/svg/video_play_button.svg"></button>
+    </div>
+
+    
+    <script>
+        function playVideo(videoDiv) {
+            videoDiv.style.width = "700px";
+            videoDiv.style.height = "400px";
+            let videoElement = document.getElementsByTagName("video")[0];
+            let playBtn = document.getElementById("playButton");
+            let playImg = document.getElementById("playImg");
+            if (videoElement.paused) {
+                videoElement.play();
+                playImg.style.display = "none";
+            } else {
+                videoElement.pause();
+                playImg.style.display = "block"
+            }
+        }
+
+    </script>
+</body>
+
+</html>
