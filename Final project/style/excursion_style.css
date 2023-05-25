@@ -152,13 +152,27 @@ button {
 
 .excursion-type p {
     text-align: center;
-    width: 18%;
+    width: 20%;
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
     line-height: 17px;
     color: #282828;
+    border-bottom: 2px solid #D4D4D4;
 }
+.excursion-type a:hover,
+.excursion-type a:active {
+    border-bottom: 2px solid #0499DD;
+    text-decoration: none;
+    color:#282828;
+}
+.excursion-type a {
+    color:#282828;
+    text-decoration: none;
+    
+}
+
+
 
 .button-header {
     display: flex;

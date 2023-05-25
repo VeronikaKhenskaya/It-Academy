@@ -58,9 +58,19 @@
         <a href="excursion.html">
             <form action="excursion.html" class="button-header">
                 <button id="button-text">К экскурсиям<img id="arrow1" src="Images/svg/arrow1.svg"></button>
-                </form>
+            </form>
         </a>
     </header>
+
+    <div class="video">
+        <video poster="Images/images/main_video_img.png">
+            <source src="boat_-_1412 (360p).mp4">
+        </video>
+        <button id="playButton" onclick="playVideo(this.parentElement)"><img id="playImg"
+                src="Images/svg/video_play_button.svg"></button>
+        <button id="closeVideo" onclick="closeVideo(this.parentElement)"><img id="crossBtn"
+                src="Images/svg/cross-button.svg"></button>
+    </div>
 
     <div class="title">
         <h3>Популярные экскурсии</h3>
@@ -141,7 +151,7 @@
     </div>
     <form action="excursion.html" class="button-excursion">
         <button id="button-text">К экскурсиям<img id="arrow1" src="Images/svg/arrow1.svg"></button>
-        </form>
+    </form>
 
     <div class="title">
         <h3>Галерея</h3>
@@ -198,15 +208,10 @@
             </form>
             <form action=" " class="button-excursion">
                 <button id="button-text">Оставить заявку<img id="arrow1" src="Images/svg/arrow1.svg"></button>
-                </form>
+            </form>
         </div>
 
     </div>
-
-
-
-
-
 
 
     <footer>
@@ -233,7 +238,9 @@
         <div class="footer-mail-sm">
             <div class="footerMail">
                 <img src="Images/svg/mail_logo.svg">
-                <a href="mailto: office@perotravel.ru"><p>office@perotravel.ru</p></a>
+                <a href="mailto: office@perotravel.ru">
+                    <p>office@perotravel.ru</p>
+                </a>
             </div>
             <div class="footerSM">
                 <img src="Images/svg/vk _color_logo.svg">
@@ -242,6 +249,38 @@
             </div>
         </div>
     </footer>
+
+
+    <script>
+        function playVideo(videoDiv) {
+            videoDiv.style.width = "700px";
+            videoDiv.style.height = "400px";
+            videoDiv.style.transform = "translate(-80%,-70%)";
+            videoDiv.style.transitionDuration = "1s";
+            let videoElement = document.getElementsByTagName("video")[0];
+            let playBtn = document.getElementById("playButton");
+            let playImg = document.getElementById("playImg");
+            let closeBtn = document.getElementById('closeVideo');
+            if (videoElement.paused) {
+                videoElement.play();
+                playImg.style.display = "none";
+                closeBtn.style.display = "block";
+            } else {
+                videoElement.pause();
+                playImg.style.display = "block"
+            }
+        }
+
+        function closeVideo(videoDiv) {
+            let closeBtn = document.getElementById('closeVideo');
+            closeBtn.style.display = "none";
+            videoDiv.style.width = "300px";
+            videoDiv.style.height = "190px";
+            videoDiv.style.transform = "translate(0px)";
+            videoDiv.style.transitionDuration = "1s";
+        }
+
+    </script>
 
 </body>
 

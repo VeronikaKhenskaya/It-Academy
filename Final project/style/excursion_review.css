@@ -33,6 +33,19 @@ menu {
     color: #FFFFFF;
 }
 
+#main-page,
+#excursion-page,
+#account {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+#main-page:hover,
+#excursion-page:hover,
+#account:hover {
+    color: #FFC700
+}
+
 
 
 .tagline {
@@ -58,52 +71,86 @@ menu {
 
 }
 
-.button-header {
+.button-with-like {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 15px;
+    width: 35%;
+    position: absolute;
+    left: 10%;
+    top: 65%;
+
+}
+
+.button-like {
     width: 230px;
     height: 50px;
     background: linear-gradient(92.71deg, #0499DD 0%, #17C1BC 100%);
     border-radius: 60px;
-    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    transition: all 0.2s ease-in-out;
 }
 
-#arrow1 {
-    width: 14px;
-
-}
-
-#button-text {
+button {
+    border: none;
+    border-radius: 60px;
+    width: 100%;
+    height: 100%;
+    background: transparent;
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 700;
     font-size: 14px;
-    line-height: 17px;
     color: #FFFFFF;
-    margin-right: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
 }
 
-.button-like {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 30%;
-    height: 50px;
+.button-like:hover,
+button:hover {
+    background: linear-gradient(92.71deg, #FFC700 0%, #ffcc99 100%);
+    ;
+    color: #FFFFFF;
+}
+
+#arrow1 {
+    margin-left: 10px;
+}
+
+.button-with-like svg {
+    margin-left: 10px;
+}
+
+
+label {
+    width: 40px;
+    height: 40px;
+    display: block;
+    position: relative;
+}
+
+#checkbox {
+    display: none;
+}
+
+#checkbox+span {
     position: absolute;
-    left: 10%;
-    top: 75%;
-    align-items: stretch;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    cursor: pointer;
 }
 
-.like img {
-    width: 50px;
-    height: 50px;
-    background: #FFFFFF;
-    opacity: 0.3;
-    backdrop-filter: blur(500px);
-    border-radius: 100%;
+#checkbox:checked+span {
+    background-position: 0 -26px;
 }
+
 
 .excursion_description,
 .excursion_cost {
@@ -178,6 +225,7 @@ menu {
     width: 40%;
     text-align: justify;
     margin-bottom: 150px;
+    margin-left: 10%;
 }
 
 .route_description h2 {
@@ -186,6 +234,7 @@ menu {
     font-size: 24px;
     line-height: 29px;
     color: #0499DD;
+    margin-top: 210px;
 }
 
 .route_description li::marker {
@@ -237,6 +286,10 @@ h2 {
     color: #0499DD;
     margin-bottom: 90px;
     margin-left: 10%;
+}
+
+#information {
+    margin-top: 150px;
 }
 
 .info {
@@ -297,7 +350,7 @@ h2 {
 }
 
 #passport {
-    margin-bottom: 20px;
+    margin-bottom: 50px;
 }
 
 .attention {
@@ -341,6 +394,19 @@ h2 {
     font-size: 12px;
     text-decoration-line: underline;
     color: #282828;
+}
+
+
+#see-all a {
+    text-decoration: underline;
+    color: #282828;
+
+}
+
+#see-all a:hover {
+    color: #0499DD;
+    font-weight: bold;
+    text-decoration-color: #0499DD;
 }
 
 #gallery {
@@ -413,6 +479,18 @@ h2 {
 #photo8 img {
     width: 100%;
     height: 100%;
+}
+
+#photo1 img:hover,
+#photo2 img:hover,
+#photo3 img:hover,
+#photo4 img:hover,
+#photo5 img:hover,
+#photo6 img:hover,
+#photo7 img:hover,
+#photo8 img:hover {
+    transform: scale(1.1);
+    transition: 1.5s;
 }
 
 .booking-form {

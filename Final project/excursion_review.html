@@ -16,9 +16,9 @@
                 <img src="Images/svg/main_logo.svg">
             </div>
             <menu>
-                <div>Главная</div>
-                <div>Экскурсии</div>
-                <div>Личный кабинет</div>
+                <div><a id="main-page" href="main_page.html">Главная</a></div>
+                <div><a id="excursion-page" href="excursion.html">Экскурсии</a></div>
+                <div><a id="account" href="">Личный кабинет</a></div>
             </menu>
         </div>
         <div class="tagline">
@@ -26,16 +26,22 @@
             <p id="golden-ring">ЗОЛОТОЕ КОЛЬЦО АБХАЗИИ<br>
                 (ИЗ АДЛЕРА)</p>
         </div>
-        <div class="button-like">
-            <div class="button-header">
-                <div id="button-text">К другим экскурсиям</div>
-                <div>
-                    <img id="arrow1" src="Images/svg/arrow1.svg">
-                </div>
+        <div class="button-with-like">
+            <form action="excursion.html" class="button-like">
+                <button id="button-text">Подробнее<img id="arrow1" src="Images/svg/arrow1.svg"></button>
+            </form>
+            <div>
+                <label><input type="checkbox" value="1" id="checkbox" onclick="toggleColor()">
+                    <span>
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle id="circle" cx="20" cy="20" r="20" fill="#EDEDED" />
+                            <path id="heart"
+                                d="M28.8401 12.61C28.3294 12.099 27.7229 11.6936 27.0555 11.4171C26.388 11.1405 25.6726 10.9982 24.9501 10.9982C24.2276 10.9982 23.5122 11.1405 22.8448 11.4171C22.1773 11.6936 21.5709 12.099 21.0601 12.61L20.0001 13.67L18.9401 12.61C17.9084 11.5783 16.5092 10.9987 15.0501 10.9987C13.5911 10.9987 12.1918 11.5783 11.1601 12.61C10.1284 13.6417 9.54883 15.041 9.54883 16.5C9.54883 17.959 10.1284 19.3583 11.1601 20.39L12.2201 21.45L20.0001 29.23L27.7801 21.45L28.8401 20.39C29.3511 19.8792 29.7565 19.2728 30.033 18.6053C30.3096 17.9379 30.4519 17.2225 30.4519 16.5C30.4519 15.7775 30.3096 15.0621 30.033 14.3946C29.7565 13.7272 29.3511 13.1208 28.8401 12.61V12.61Z"
+                                stroke="#D4D4D4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
             </div>
-            <div class="like">
-                <img src="Images/svg/heart.svg">
-            </div>
+            </span>
+            </label>
         </div>
     </header>
     <article class="excursion_description">
@@ -96,8 +102,8 @@
         </div>
     </div>
 
-    <h2>Важная информация</h2>
 
+    <h2 id="information">Важная информация</h2>
     <div class="info">
         <section class="documents">
             <p>При пересечении границы (Россия-Абхазия) при себе иметь:</p>
@@ -125,7 +131,7 @@
 
     <div class="title">
         <h3>Галерея тура</h3>
-        <div id="see-all">Смотреть все</div>
+        <div id="see-all"><a href=" ">Смотреть все</a></div>
     </div>
 
     <div id="gallery">
@@ -157,7 +163,7 @@
 
     <div class="title">
         <h3>Отзывы</h3>
-        <div id="see-all">Смотреть все</div>
+        <div id="see-all"><a href=" ">Смотреть все</a></div>
     </div>
 
     <section class="booking-form">
