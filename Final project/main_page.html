@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pero Travel</title>
     <link rel="stylesheet" href="./style/style.css">
+
 </head>
 
 <body>
@@ -249,38 +250,7 @@
             </div>
         </div>
     </footer>
-
-
-    <script>
-        function playVideo(videoDiv) {
-            videoDiv.style.width = "700px";
-            videoDiv.style.height = "400px";
-            videoDiv.style.transform = "translate(-80%,-70%)";
-            videoDiv.style.transitionDuration = "1s";
-            let videoElement = document.getElementsByTagName("video")[0];
-            let playBtn = document.getElementById("playButton");
-            let playImg = document.getElementById("playImg");
-            let closeBtn = document.getElementById('closeVideo');
-            if (videoElement.paused) {
-                videoElement.play();
-                playImg.style.display = "none";
-                closeBtn.style.display = "block";
-            } else {
-                videoElement.pause();
-                playImg.style.display = "block"
-            }
-        }
-
-        function closeVideo(videoDiv) {
-            let closeBtn = document.getElementById('closeVideo');
-            closeBtn.style.display = "none";
-            videoDiv.style.width = "300px";
-            videoDiv.style.height = "190px";
-            videoDiv.style.transform = "translate(0px)";
-            videoDiv.style.transitionDuration = "1s";
-        }
-
-    </script>
+    <script src="script.js"></script>
 
 </body>
 
