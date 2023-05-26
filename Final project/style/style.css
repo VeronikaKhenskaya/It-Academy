@@ -14,7 +14,7 @@ header {
     height: 789px;
     filter: blur(0.5px);
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url("../Images/images/Main_page.png") no-repeat;
-    background-size: 100%;
+    position: relative;
 }
 
 
@@ -36,8 +36,7 @@ footer {
 }
 
 .footerMenu p,
-.footerContacts,
-.footer-mail-sm {
+.footerContacts {
     display: flex;
     flex-direction: column;
 }
@@ -49,21 +48,18 @@ footer {
 .tgBot {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
-    flex-wrap: nowrap;
 }
 
 .tg img,
 .tgBot img,
 .whatsapp img,
 .footerMail img {
-    margin-right: 8px;
+    margin-right: 10px;
 }
 
 .footerSM {
     width: 120px;
     justify-content: space-between;
-    align-items: center;
 }
 
 .footerMenu a,
@@ -73,7 +69,7 @@ footer {
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
-    line-height: 15px;
+    line-height: 17px;
 }
 
 
@@ -182,6 +178,8 @@ menu {
     margin-right: 5px;
 }
 
+
+
 .button-header {
     width: 230px;
     height: 50px;
@@ -195,7 +193,10 @@ menu {
     left: 10%;
     top: 65%;
     align-items: center;
+    border-bottom: none;
 }
+
+
 
 .button-header button {
     border: none;
@@ -225,16 +226,17 @@ menu {
 }
 
 .video {
-    width: 300px;
-    height: 190px;
+    width: 350px;
+    height: 200px;
+    position: absolute;
+    left: 70%;
+    top: 85%;
+    z-index: 2;
     padding: 0;
-    position: relative;
-    right: -70%
+    border-radius: 10px;
 }
 
 video {
-    
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(.jpg);
     border-radius: 10px;
     height: 100%;
     width: 100%;
@@ -416,6 +418,7 @@ article p {
     transition: all 0.2s ease-in-out;
     margin: auto;
     margin-top: 20px;
+    border-bottom: none;
 }
 
 #button-text {

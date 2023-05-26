@@ -73,8 +73,7 @@ menu {
 }
 
 #date {
-    background: url(../Images/svg/calendar.svg) no-repeat;
-    background-position: 90% center;
+    
     width: 100%;
 }
 
@@ -82,6 +81,11 @@ menu {
     background: url(../Images/svg/people.svg) no-repeat;
     background-position: 90% center;
     width: 100%;
+}
+#place::placeholder,
+#date::placeholder,
+#people::placeholder {
+    color: #000000;
 }
 
 form input,
@@ -224,8 +228,13 @@ input:not([type="range"]) {
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {
-   display: none;
+   opacity: 1;
+   color: white;
+   background: url(../Images/svg/calendar.svg) no-repeat;
+   width: 20px;
+ height: 20px;
 }
+
 
 aside {
     margin-top: 38px;
@@ -493,10 +502,16 @@ footer {
     justify-content: space-between;
 }
 
-.footerMenu a {
+.footerMenu a,
+.footerMail a {
     text-decoration: none;
     color: #282828;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
 }
+
 
 #quantity-checkbox1,
 #quantity-checkbox2,

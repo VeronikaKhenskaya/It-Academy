@@ -20,11 +20,13 @@ function playVideo(videoDiv) {
 
 function closeVideo(videoDiv) {
     let closeBtn = document.getElementById('closeVideo');
+    let videoElement = document.getElementsByTagName("video")[0];
     closeBtn.style.display = "none";
-    videoDiv.style.width = "300px";
-    videoDiv.style.height = "190px";
-    videoDiv.style.transform = "translate(0px)";
+    videoDiv.style.width = "350px";
+    videoDiv.style.height = "200px";
+    videoDiv.style.transform = "translate(-5px)";
     videoDiv.style.transitionDuration = "1s";
+    videoDiv.style.borderRadius = "10px";
 }
 
 function toggleColor() {

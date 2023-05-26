@@ -658,3 +658,14 @@ footer {
     width: 120px;
     justify-content: space-between;
 }
+
+.footerMenu a,
+.footerMail a {
+    text-decoration: none;
+    color: #282828;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+}
+

@@ -34,8 +34,8 @@
         </div>
         <div class="search-form">
             <form>
-                <input id="place" type="text" placeholder="Место"><input id="date" type="date" placeholder="Дата"><input
-                    id="people" type="number" placeholder="Кол-во человек">
+                <input id="place" type="text" placeholder="Место"><input id="date" type="date" lang="ru"><input
+                    id="people" type="text" placeholder="Кол-во человек">
             </form>
             <form action=" " class="button-show">
                 <button id="button-text">Показать<img id="arrow1" src="Images/svg/arrow1.svg"></button>
@@ -149,7 +149,7 @@
                     <img class="btn-open" onclick="openSection()" src="Images/svg/cross-button.svg"></button>
             </div>
             <div class="date">
-                <input type="date" class="form-control" id="date" name="date" placeholder="Дата" required>
+                <input type="date" class="form-control" id="date" name="date" lang="ru" value="дд/мм/гггг">
             </div>
 
             <div class="button-with-like">
@@ -338,10 +338,12 @@
                 <p>Телеграм-бот PeroTravel</p>
             </div>
         </div>
-        <div>
+        <div class="footer-mail-sm">
             <div class="footerMail">
                 <img src="Images/svg/mail_logo.svg">
-                <p>office@perotravel.ru</p>
+                <a href="mailto: office@perotravel.ru">
+                    <p>office@perotravel.ru</p>
+                </a>
             </div>
             <div class="footerSM">
                 <img src="Images/svg/vk _color_logo.svg">
