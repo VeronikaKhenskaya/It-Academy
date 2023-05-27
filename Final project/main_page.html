@@ -56,25 +56,25 @@
                 </svg>
             </button>
         </div>
-            <form action="excursion.html" class="button-header">
-                <button id="button-text">К экскурсиям<img id="arrow1" src="Images/svg/arrow1.svg"></button>
-            </form>
-    <div class="video">
-        <video poster="Images/images/main_video_img.png">
-            <source src="Video/boat_-_1412 (360p).mp4">
-        </video>
-        <button id="playButton" onclick="playVideo(this.parentElement)"><img id="playImg"
-                src="Images/svg/video_play_button.svg"></button>
-        <button id="closeVideo" onclick="closeVideo(this.parentElement)"><img id="crossBtn"
-                src="Images/svg/cross-button.svg"></button>
-    </div>
+        <form class="button-header">
+            <button id="button-text">К экскурсиям<img id="arrow1" src="Images/svg/arrow1.svg"></button>
+        </form>
+        <div class="video">
+            <video poster="Images/images/main_video_img.png">
+                <source src="Video/boat_-_1412 (360p).mp4">
+            </video>
+            <button id="playButton" onclick="playVideo(this.parentElement)"><img id="playImg"
+                    src="Images/svg/video_play_button.svg"></button>
+            <button id="closeVideo" onclick="closeVideo(this.parentElement)"><img id="crossBtn"
+                    src="Images/svg/cross-button.svg"></button>
+        </div>
     </header>
 
-    
+
 
     <div class="title">
         <h3>Популярные экскурсии</h3>
-        <div id="see-all"><a href=" ">Смотреть все</a></div>
+        <div id="see-all"><a href="">Смотреть все</a></div>
     </div>
 
 
@@ -149,7 +149,7 @@
         очередей, просто и
         быстро!
     </div>
-    <form action="excursion.html" class="button-excursion">
+    <form class="button-excursion">
         <button id="button-text">К экскурсиям<img id="arrow1" src="Images/svg/arrow1.svg"></button>
     </form>
 
@@ -195,19 +195,22 @@
             <h3>Остались вопросы?</h3>
             <p id="request">Оставь заявку и мы ответим</p>
             <form name="form-name">
-                <p id="name">Имя:</p>
-                <input type="text" name="name" value="">
+                <div class="inputs">
+                    <p id="name">Имя:</p>
+                    <input type="text" name="name" value="">
+                </div>
+                <div class="inputs">
+                    <p id="tel">Телефон:</p>
+                    <input type="text" name="tel" value="">
+                </div>
+                <div class="inputs">
+                    <p id="email">Почта:</p>
+                    <input type="text" name="email" value="">
+                </div>
             </form>
-            <form>
-                <p id="tel">Телефон:</p>
-                <input type="text" name="tel" value="">
-            </form>
-            <form>
-                <p id="email">Почта:</p>
-                <input type="text" name="email" value="">
-            </form>
-            <form action=" " class="button-excursion">
-                <button id="button-text" type="submit">Оставить заявку<img id="arrow1" src="Images/svg/arrow1.svg"></button>
+            <form class="button-excursion">
+                <button id="button-text" type="submit">Оставить заявку<img id="arrow1"
+                        src="Images/svg/arrow1.svg"></button>
             </form>
         </div>
 
@@ -249,6 +252,7 @@
             </div>
         </div>
     </footer>
+    
     <script src="script.js"></script>
 
 </body>

@@ -536,6 +536,9 @@ article p {
 }
 
 .form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     width: 38%;
     background: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
@@ -544,6 +547,11 @@ article p {
     position: absolute;
     left: 57%;
     padding: 7%;
+}
+
+form [name="form-name"]{
+    display: flex;
+    flex-direction: column;
 }
 
 .form h3 {
@@ -558,7 +566,7 @@ article p {
     color: #FFC700;
 }
 
-form {
+.inputs {
     border-bottom: 1px solid #FFFFFF;
     width: 100%;
     background: transparent;

@@ -88,20 +88,20 @@ function changeButtonColor(button, checkbox) {
     button.style.backgroundColor = "#0499DD";
 }
 
-function closeSection() {
-    let closeBtn = document.getElementsByClassName('close-btn')[0];
-    let openBtn = document.getElementsByClassName('open-btn')[0];
-    let sectionToClose = document.getElementsByClassName('costs')[0];
-    sectionToClose.style.display = "none";
+function closeSection(sectionToClose) {
+    let closeBtn = sectionToClose.getElementsByClassName('close-btn')[0];
+    let openBtn = sectionToClose.getElementsByClassName('open-btn')[0];
+    let filterSection = sectionToClose.getElementsByClassName ('filterSection')[0];
+    filterSection.style.display = "none";
     closeBtn.style.display = "none";
     openBtn.style.display = "block";
 }
 
-function openSection() {
-    let closeBtn = document.getElementsByClassName('close-btn')[0];
-    let openBtn = document.getElementsByClassName('open-btn')[0];
-    let sectionToOpen = document.getElementsByClassName('costs')[0];
-    sectionToOpen.style.display = "block";
+function openSection(sectionToOpen) {
+    let closeBtn = sectionToOpen.getElementsByClassName('close-btn')[0];
+    let openBtn = sectionToOpen.getElementsByClassName('open-btn')[0];
+    let filterSection = sectionToOpen.getElementsByClassName('filterSection')[0];
+    filterSection.style.display = "block";
     closeBtn.style.display = "block";
     openBtn.style.display = "none";
 }

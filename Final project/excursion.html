@@ -45,111 +45,116 @@
     <div id="main-container">
         <aside class="filters">
             <h2>Фильтры</h2>
-            <div class="open-close">
-                <p>Стоимость</p>
-                <button class="close-btn" onclick="closeSection()">
-                    <img class="btn-close" src="Images/svg/line-button.svg"></button>
-                <button class="open-btn">
-                    <img class="btn-open" onclick="openSection()" src="Images/svg/cross-button.svg"></button>
-            </div>
-            <div class="costs">
-                <div class="wrapper">
-                    <div class="values">
-                        <span id="range1">1000</span>
-                        <span id="range2">20000</span>
-                    </div>
-                    <div class="container">
-                        <div class="slider-track"></div>
-                        <input type="range" min="1000" max="20000" value="1600" id="slider-1"
-                            oninput="sliderOne(this.parentElement.parentElement)">
-                        <input type="range" min="1000" max="20000" value="4000" id="slider-2"
-                            oninput="sliderTwo(this.parentElement.parentElement)">
+            <div class="container-for-function">
+                <div class="open-close">
+                    <p>Стоимость</p>
+                    <button class="close-btn" onclick="closeSection(this.parentElement.parentElement)">
+                        <img class="btn-close" src="Images/svg/line-button.svg"></button>
+                    <button class="open-btn" class="btn-open" onclick="openSection(this.parentElement.parentElement)">
+                        <img class="btn-open" src="Images/svg/cross-button.svg"></button>
+                </div>
+                <div class="costs filterSection">
+                    <div class="wrapper">
+                        <div class="values">
+                            <span id="range1">1000</span>
+                            <span id="range2">20000</span>
+                        </div>
+                        <div class="container">
+                            <div class="slider-track"></div>
+                            <input type="range" min="1000" max="20000" value="1600" id="slider-1"
+                                oninput="sliderOne(this.parentElement.parentElement)">
+                            <input type="range" min="1000" max="20000" value="4000" id="slider-2"
+                                oninput="sliderTwo(this.parentElement.parentElement)">
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <div class="open-close">
-                <p>Количество человек</p>
-                <button class="close-btn" onclick="closeSection()">
-                    <img class="btn-close" src="Images/svg/line-button.svg"></button>
-                <button class="open-btn">
-                    <img class="btn-open" onclick="openSection()" src="Images/svg/cross-button.svg"></button>
-            </div>
-            <div class="people-quantity">
-                <div class="quantity-checkboxes">
-                    <label class="checkbox" id="quantity-checkbox1">1 чел.<input name="check" type="radio"
-                            onclick="changeButtonColor(this.parentElement, this)"></label>
-                    <label class="checkbox" id="quantity-checkbox2">2 чел.<input name="check" type="radio"
-                            onclick="changeButtonColor(this.parentElement, this)"> </label>
-                    <label class="checkbox" id="quantity-checkbox3">3 чел.<input name="check" type="radio"
-                            onclick="changeButtonColor(this.parentElement, this)"></label>
-                    <label class="checkbox" id="quantity-checkbox4">4 чел.<input name="check" type="radio"
-                            onclick="changeButtonColor(this.parentElement, this)"></label>
-                    <label class="checkbox" id="quantity-checkbox5">5 чел.<input name="check" type="radio"
-                            onclick="changeButtonColor(this.parentElement, this)"></label>
-                    <label class="checkbox" id="quantity-checkbox6">6 чел.<input name="check" type="radio"
-                            onclick="changeButtonColor(this.parentElement, this)"></label>
-                    <label class="checkbox" id="quantity-checkbox7">7 чел.<input name="check" type="radio"
-                            onclick="changeButtonColor(this.parentElement, this)"></label>
-                    <label class="checkbox" id="quantity-checkbox8">8 чел.<input name="check" type="radio"
-                            onclick="changeButtonColor(this.parentElement, this)"></label>
-                    <label class="checkbox" id="quantity-checkbox9">9 чел.<input name="check" type="radio"
-                            onclick="changeButtonColor(this.parentElement, this)"></label>
-                    <label class="checkbox" id="quantity-checkbox10">10 чел.<input name="check" type="radio"
-                            onclick="changeButtonColor(this.parentElement, this)"></label>
-                    <label class="checkbox" id="quantity-checkbox11">Больше 10 чел.<input name="check" type="radio"
-                            onclick="changeButtonColor(this.parentElement, this)"></label>
+            <div class="container-for-function">
+                <div class="open-close">
+                    <p>Количество человек</p>
+                    <button class="close-btn" onclick="closeSection(this.parentElement.parentElement)">
+                        <img class="btn-close" src="Images/svg/line-button.svg"></button>
+                    <button class="open-btn" class="btn-open" onclick="openSection(this.parentElement.parentElement)">
+                        <img class="btn-open" src="Images/svg/cross-button.svg"></button>
                 </div>
-            </div>
-
-            <div class="open-close">
-                <p>Место</p>
-                <button class="close-btn" onclick="closeSection()">
-                    <img class="btn-close" src="Images/svg/line-button.svg"></button>
-                <button class="open-btn">
-                    <img class="btn-open" onclick="openSection()" src="Images/svg/cross-button.svg"></button>
-            </div>
-
-            <div class="place">
-                <p><input name="place" type="radio" value="Abkhasia"><label>Абхазия</label></p>
-                <p><input name="place" type="radio" value="Krasnaya Polyana"><label>Красная поляна</label></p>
-                <p><input name="place" type="radio" value="Sotchi"><label>Сочи</label></p>
-                <p><input name="place" type="radio" value="Adler"><label>Адлер</label></p>
-            </div>
-
-
-            <div class="open-close">
-                <p>Длительность</p>
-                <button class="close-btn" onclick="closeSection()">
-                    <img class="btn-close" src="Images/svg/line-button.svg"></button>
-                <button class="open-btn">
-                    <img class="btn-open" onclick="openSection()" src="Images/svg/cross-button.svg"></button>
-            </div>
-            <div class="duration">
-                <div class="wrapper">
-                    <div class="values">
-                        <span id="range1">1 день</span>
-                        <span id="range2">10 дней</span>
-                    </div>
-                    <div class="container">
-                        <div class="slider-track"></div>
-                        <input type="range" min="1" max="10" value="2" id="slider-left"
-                            oninput="sliderOne(this.parentElement.parentElement)">
-                        <input type="range" min="1" max="10" value="4" id="slider-right"
-                            oninput="sliderTwo(this.parentElement.parentElement)">
+                <div class="people-quantity filterSection">
+                    <div class="quantity-checkboxes">
+                        <label class="checkbox" id="quantity-checkbox1">1 чел.<input name="check" type="radio"
+                                onclick="changeButtonColor(this.parentElement, this)"></label>
+                        <label class="checkbox" id="quantity-checkbox2">2 чел.<input name="check" type="radio"
+                                onclick="changeButtonColor(this.parentElement, this)"> </label>
+                        <label class="checkbox" id="quantity-checkbox3">3 чел.<input name="check" type="radio"
+                                onclick="changeButtonColor(this.parentElement, this)"></label>
+                        <label class="checkbox" id="quantity-checkbox4">4 чел.<input name="check" type="radio"
+                                onclick="changeButtonColor(this.parentElement, this)"></label>
+                        <label class="checkbox" id="quantity-checkbox5">5 чел.<input name="check" type="radio"
+                                onclick="changeButtonColor(this.parentElement, this)"></label>
+                        <label class="checkbox" id="quantity-checkbox6">6 чел.<input name="check" type="radio"
+                                onclick="changeButtonColor(this.parentElement, this)"></label>
+                        <label class="checkbox" id="quantity-checkbox7">7 чел.<input name="check" type="radio"
+                                onclick="changeButtonColor(this.parentElement, this)"></label>
+                        <label class="checkbox" id="quantity-checkbox8">8 чел.<input name="check" type="radio"
+                                onclick="changeButtonColor(this.parentElement, this)"></label>
+                        <label class="checkbox" id="quantity-checkbox9">9 чел.<input name="check" type="radio"
+                                onclick="changeButtonColor(this.parentElement, this)"></label>
+                        <label class="checkbox" id="quantity-checkbox10">10 чел.<input name="check" type="radio"
+                                onclick="changeButtonColor(this.parentElement, this)"></label>
+                        <label class="checkbox" id="quantity-checkbox11">Больше 10 чел.<input name="check" type="radio"
+                                onclick="changeButtonColor(this.parentElement, this)"></label>
                     </div>
                 </div>
             </div>
+            <div class="container-for-function">
+                <div class="open-close">
+                    <p>Место</p>
+                    <button class="close-btn" onclick="closeSection(this.parentElement.parentElement)">
+                        <img class="btn-close" src="Images/svg/line-button.svg"></button>
+                    <button class="open-btn" onclick="openSection(this.parentElement.parentElement)">
+                        <img class="btn-open" src="Images/svg/cross-button.svg"></button>
+                </div>
 
-            <div class="open-close">
-                <p>Дата</p>
-                <button class="close-btn" onclick="closeSection()">
-                    <img class="btn-close" src="Images/svg/line-button.svg"></button>
-                <button class="open-btn">
-                    <img class="btn-open" onclick="openSection()" src="Images/svg/cross-button.svg"></button>
+                <div class="place filterSection">
+                    <p><input name="place" type="radio" value="Abkhasia"><label>Абхазия</label></p>
+                    <p><input name="place" type="radio" value="Krasnaya Polyana"><label>Красная поляна</label></p>
+                    <p><input name="place" type="radio" value="Sotchi"><label>Сочи</label></p>
+                    <p><input name="place" type="radio" value="Adler"><label>Адлер</label></p>
+                </div>
             </div>
-            <div class="date">
-                <input type="date" class="form-control" id="date" name="date" lang="ru" value="дд/мм/гггг">
+            <div class="container-for-function">
+                <div class="open-close">
+                    <p>Длительность</p>
+                    <button class="close-btn" onclick="closeSection(this.parentElement.parentElement)">
+                        <img class="btn-close" src="Images/svg/line-button.svg"></button>
+                    <button class="open-btn" onclick="openSection(this.parentElement.parentElement)">
+                        <img class="btn-open" src="Images/svg/cross-button.svg"></button>
+                </div>
+                <div class="duration filterSection">
+                    <div class="wrapper">
+                        <div class="values">
+                            <span id="range1">1 день</span>
+                            <span id="range2">10 дней</span>
+                        </div>
+                        <div class="container">
+                            <div class="slider-track"></div>
+                            <input type="range" min="1" max="10" value="2" id="slider-left"
+                                oninput="sliderOne(this.parentElement.parentElement)">
+                            <input type="range" min="1" max="10" value="4" id="slider-right"
+                                oninput="sliderTwo(this.parentElement.parentElement)">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-for-function">
+                <div class="open-close">
+                    <p>Дата</p>
+                    <button class="close-btn" onclick="closeSection(this.parentElement.parentElement)">
+                        <img class="btn-close" src="Images/svg/line-button.svg"></button>
+                    <button class="open-btn" onclick="openSection(this.parentElement.parentElement)">
+                        <img class="btn-open" src="Images/svg/cross-button.svg"></button>
+                </div>
+                <div class="date filterSection">
+                    <input type="date" class="form-control" id="date" name="date" lang="ru" value="дд/мм/гггг">
+                </div>
             </div>
 
             <div class="button-with-like">
@@ -352,7 +357,7 @@
             </div>
         </div>
     </footer>
- 
+
     <script src="script.js"></script>
 </body>
 

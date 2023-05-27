@@ -861,3 +861,9 @@ aside .button-with-like {
     margin-bottom: 20px;
     height: 50px;
 }
+
+.close-btn:hover,
+.open-btn:hover {
+    background: none;
+
+}
