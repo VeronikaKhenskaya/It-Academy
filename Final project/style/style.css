@@ -265,8 +265,9 @@ video {
     transform: rotate(45deg);
     background: transparent;
     border: none;
-    right: 100%;
     display: none;
+    width: 20px;
+    height: 20px;
 }
 
 .title {
