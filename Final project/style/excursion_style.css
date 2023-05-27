@@ -73,7 +73,7 @@ menu {
 }
 
 #date {
-    
+
     width: 100%;
 }
 
@@ -82,6 +82,7 @@ menu {
     background-position: 90% center;
     width: 100%;
 }
+
 #place::placeholder,
 #date::placeholder,
 #people::placeholder {
@@ -164,16 +165,18 @@ button {
     color: #282828;
     border-bottom: 2px solid #D4D4D4;
 }
+
 .excursion-type a:hover,
 .excursion-type a:active {
     border-bottom: 2px solid #0499DD;
     text-decoration: none;
-    color:#282828;
+    color: #282828;
 }
+
 .excursion-type a {
-    color:#282828;
+    color: #282828;
     text-decoration: none;
-    
+
 }
 
 
@@ -211,10 +214,11 @@ form {
 
 }
 
-input:not([type="range"]) {
+#place,
+#date,
+#people {
     width: 235px;
     height: 50px;
-    background: #FFFFFF;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     border: transparent;
@@ -228,17 +232,17 @@ input:not([type="range"]) {
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {
-   opacity: 1;
-   color: white;
-   background: url(../Images/svg/calendar.svg) no-repeat;
-   width: 20px;
- height: 20px;
+    opacity: 1;
+    color: white;
+    background: url(../Images/svg/calendar.svg) no-repeat;
+    width: 20px;
+    height: 20px;
 }
 
 
 aside {
     margin-top: 38px;
-   height: auto;
+    height: auto;
     background: #FFFFFF;
     box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
@@ -433,7 +437,7 @@ button:hover {
     margin-left: 10px;
 }
 
-label {
+.like-heart {
     width: 40px;
     height: 40px;
     display: block;
@@ -444,7 +448,7 @@ label {
     display: none;
 }
 
-#checkbox+span {
+#checkbox+svg {
     position: absolute;
     left: 0;
     top: 0;
@@ -454,7 +458,7 @@ label {
     cursor: pointer;
 }
 
-#checkbox:checked+span {
+#checkbox:checked+svg {
     background-position: 0 -26px;
 }
 
@@ -531,7 +535,7 @@ footer {
     border-radius: 40px;
 }
 
-.quantity-checkboxes{
+.quantity-checkboxes {
     display: grid;
     grid-column: 3;
     grid-row: 4;
@@ -570,8 +574,7 @@ footer {
 
 #quantity-checkbox2,
 #quantity-checkbox5,
-#quantity-checkbox8,
-#quantity-checkbox11 {
+#quantity-checkbox8 {
     grid-column: 2;
 }
 
@@ -582,7 +585,8 @@ footer {
 }
 
 #quantity-checkbox11 {
-    grid-column: 2/5;
+    grid-column: 2/4;
+    font-size: 8px;
 }
 
 .open-close {
@@ -606,7 +610,7 @@ footer {
     display: none;
 }
 
-.open-close p{
+.open-close p {
     margin: 0;
 }
 

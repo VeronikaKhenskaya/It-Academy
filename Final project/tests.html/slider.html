@@ -7,36 +7,156 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <style>
+        * {
+            box-sizing: border-box
+        }
 
+        /* Slideshow container */
+        .slideshow-container {
+            width: 300px;
+            height: 300px;
+            position: relative;
+            margin: auto;
+            display: flex;
+            flex-direction: row;
+            overflow: hidden;
+        }
+
+        /* Hide the images by default */
+        .mySlides {
+            display: block;
+        }
+
+        /* Next & previous buttons */
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 102%;
+            width: auto;
+            color: #0499DD;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+
+        /* Position the "next button" to the right */
+        .next {
+            right: 90%;
+            border-radius: 3px 0 0 3px;
+        }
+
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover,
+        .next:hover {
+            background-color: transparent;
+        }
+
+        /* Caption text */
+        .text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* The dots/bullets/indicators */
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #0499DD;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active,
+        .dot:hover {
+            background-color: #0499DD;
+        }
+
+        /* Fading animation */
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: .4
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        .mySlides fade,
+        .mySlides img {
+            height: 300px;
+            width: 200px;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide">Slide 1</div>
-            <div class="swiper-slide">Slide 2</div>
-            <div class="swiper-slide">Slide 3</div>
-            <div class="swiper-slide">Slide 4</div>
-            <div class="swiper-slide">Slide 5</div>
-            <div class="swiper-slide">Slide 6</div>
-            <div class="swiper-slide">Slide 7</div>
-            <div class="swiper-slide">Slide 8</div>
-            <div class="swiper-slide">Slide 9</div>
+    <!-- Slideshow container -->
+    <div>
+        <div class="slideshow-container" id="x">
+            <!-- Full-width images with number and caption text -->
+            <div class="mySlides fade">
+                <img src="../Images/images/gallery2_photo2.png">
+            </div>
+            <div class="mySlides fade">
+                <img src="../Images/images/gallery2_photo4.png">
+            </div>
+            <div class="mySlides fade">
+                <img src="../Images/images/gallery_photo3.png">
+            </div>
         </div>
-        <div class="swiper-pagination"></div>
-    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+        <!-- Next and previous buttons -->
+        <a class="prev" onclick="previousSlide()">&#10094;</a>
+        <!-- <a class="prev" onclick="plusSlides(-1)">&#10094;</a> -->
+        <a class="next" onclick="nextSlide()">&#10095;</a>
+    </div>
+    <br>
+
+
+
     <script>
-        var swiper = new Swiper(".mySwiper", {
-            slidesPerView: 2,
-            spaceBetween: 20,
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-        });
+        function renderCarousel() {
+            slideDivs = document.getElementById('x');
+            x.innerHtml
+
+        }
+        function previousSlide() {
+            let slideshowContainer = document.getElementById('x');
+            let slides = slideshowContainer.getElementsByTagName('div');
+            let firstSlide = slides[0];
+            slideshowContainer.removeChild(firstSlide);
+            slideshowContainer.appendChild(firstSlide);
+
+        }
+
+        function nextSlide() {
+            let slideshowContainer = document.getElementById('x');
+            let slides = slideshowContainer.getElementsByTagName('div');
+            let lastSlide = slides[slides.length-1];
+             slideshowContainer.removeChild(lastSlide);
+            slideshowContainer.insertBefore(lastSlide, slides[0]);
+           
+            
+
+        }
     </script>
 </body>
 

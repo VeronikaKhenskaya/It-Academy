@@ -309,6 +309,7 @@ video {
     width: 74%;
     height: 749px;
     position: relative;
+    margin-top: 200px;
 }
 
 .about-us img {
@@ -533,6 +534,7 @@ article p {
     background: url(../Images/images/background_questions.png);
     position: relative;
     padding-right: 10%;
+    margin-top: 230px;
 }
 
 .form {
@@ -597,4 +599,179 @@ form input:focus {
 
 #request {
     margin-bottom: 45px;
+}
+
+
+
+#slide1-text,
+#slide2-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 53%;
+}
+
+#slide1-text p,
+#slide2-text p {
+    font-size: 12px;
+    color: #282828;
+    height: 95%;
+    width: 100%;
+}
+
+#slides {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 430px;
+    width: 90%;
+    box-sizing: border-box;
+    border-radius: 10px; 
+    margin: auto;
+}
+
+#slide1,
+#slide2,
+#slide3 {
+    padding-left: 15px;
+    padding-top: 15%;
+    padding-bottom: 3%;
+}
+
+#slide1 {
+    height: 430px;
+    width: 360px;
+    background: url(../Images/images/bridge.png);
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#slide2 {
+    height: 430px;
+    width: 360px;
+    background: url(../Images/images/horses.png);
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#slide3 {
+    height: 430px;
+    width: 360px;
+    background: url(../Images/images/waterfall.png);
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.slides-text {
+    width: 95%;
+    height: 45%;
+}
+
+.slides-text p {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    color: #FFFFFF;
+}
+
+.slides-text h3 {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    color: #FFC700;
+}
+
+.button-precise {
+    width: 160px;
+    height: 40px;
+    background: linear-gradient(92.71deg, #0499DD 0%, #17C1BC 100%);
+    border-radius: 60px;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    transition: all 0.2s ease-in-out;
+
+}
+
+.button-precise:hover,
+button:hover {
+    background: linear-gradient(92.71deg, #FFC700 0%, #ffcc99 100%);
+    color: #FFFFFF;
+}
+
+button {
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+
+#arrow1 {
+    width: 14px;
+    margin-left: 5px;
+}
+
+#button-text {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    color: #FFFFFF;
+    margin-right: 5px;
+}
+
+.reviews{
+    width: 90%;
+    margin: auto;
+  
+}
+.reviews,
+.firstReview,
+.secondReview  {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#review-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#review-text p{
+    margin-bottom: 10px;
+}
+
+
+.firstReview,
+.secondReview {
+    background: #EDEDED;
+    margin-right: 30px;
+    padding: 20px;
+    border-radius: 10px;bord
+}
+
+.firstReview img,
+.secondReview img {
+    margin-right: 20px;
 }

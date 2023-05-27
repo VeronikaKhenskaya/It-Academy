@@ -29,21 +29,20 @@ function closeVideo(videoDiv) {
     videoDiv.style.borderRadius = "10px";
 }
 
-function toggleColor() {
-    let c = document.getElementById("circle")
-    let e = document.getElementById("heart");
-    let checkBoxElement = document.getElementById("checkbox")
+function toggleColor(heartLabel) {
+    let c = heartLabel.getElementsByTagName('circle')[0];
+    let heart = heartLabel.getElementsByTagName("path")[0];
+    let checkBoxElement = heartLabel.getElementsByTagName("input")[0];
     if (checkBoxElement.checked == true) {
-        e.style.fill = "#0499DD";
-        e.style.stroke = "#0499DD";
+        heart.style.fill = "#0499DD";
+        heart.style.stroke = "#0499DD";
         c.style.stroke = "#0499DD";
     } else {
-        e.style.fill = "#EDEDED";
-        e.style.stroke = "#D4D4D4";
+        heart.style.fill = "#EDEDED";
+        heart.style.stroke = "#D4D4D4";
         c.style.stroke = "#D4D4D4";
     }
 }
-
 
 window.onload = function () {
     let wrappers = document.getElementsByClassName("wrapper");
@@ -105,3 +104,29 @@ function openSection(sectionToOpen) {
     closeBtn.style.display = "block";
     openBtn.style.display = "none";
 }
+
+function renderCarousel() {
+    slideDivs = document.getElementById('x');
+    x.innerHtml
+
+}
+function previousSlide() {
+    let slideshowContainer = document.getElementById('x');
+    let slides = slideshowContainer.getElementsByTagName('div');
+    let firstSlide = slides[0];
+    slideshowContainer.removeChild(firstSlide);
+    slideshowContainer.appendChild(firstSlide);
+
+}
+
+function nextSlide() {
+    let slideshowContainer = document.getElementById('x');
+    let slides = slideshowContainer.getElementsByTagName('div');
+    let lastSlide = slides[slides.length-1];
+     slideshowContainer.removeChild(lastSlide);
+    slideshowContainer.insertBefore(lastSlide, slides[0]);
+   
+    
+
+}
+

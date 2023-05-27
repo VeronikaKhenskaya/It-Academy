@@ -87,7 +87,7 @@
 <body>
     <div class="slides">
         <div class="mySlides">
-            <img src="Images/images/review1.png" class="block" alt="">
+            <img src="../Images/images/review1.png" class="block" alt="">
             <div id="slide1-text">
                 <p><b>Иван Иванов, 25 лет</b></p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
@@ -101,7 +101,7 @@
             </div>
         </div>
         <div class="mySlides">
-            <img src="Images/images/review2.png" class="block" alt="">
+            <img src="../Images/images/review2.png" class="block" alt="">
             <div id="slide2-text">
                 <p><b>Иван Иванов, 25 лет</b></p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
@@ -115,32 +115,10 @@
             </div>
         </div>
     </div>
-    <button class="btnLeft" onclick="plusSlides(-1)"><img src="Images/svg/slider_button_left.svg"></button>
-    <button class="btnRight" onclick="plusSlides(1)"><img src="Images/svg/slider_button_left.svg"></button>
+    <button class="btnLeft" ><img src="../Images/svg/slider_button_left.svg"></button>
+    <button class="btnRight"><img src="../Images/svg/slider_button_left.svg"></button>
 
-    <script>
-        let slideIndex = 1;
-        showSlides(slideIndex);
-        // Next/previous controls
-        function plusSlides(n) {
-            showSlides(slideIndex += n);
-        }
-        // Thumbnail image controls
-        function currentSlide(n) {
-            showSlides(slideIndex = n);
-        }
-        function showSlides(n) {
-            let i;
-            let slides = document.getElementsByClassName("mySlides");
-            if (n > slides.length) { slideIndex = 1 }
-            if (n < 1) { slideIndex = slides.length }
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-           
-            slides[slideIndex - 1].style.display = "block";
-        }
-    </script>
+   
 </body>
 
 </html>
