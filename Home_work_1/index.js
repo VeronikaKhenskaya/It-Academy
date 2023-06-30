@@ -5,7 +5,7 @@
  */
 // function should return sum of two numbers
 const sum = (a, b) => {
-  // write your code here
+  +(a + b)
 };
 
 /**
@@ -14,7 +14,11 @@ const sum = (a, b) => {
  */
 // function should return true if number is even or false is number is not even
 const isNumberEven = (num) => {
-  // write your code here
+  if (num % 2 == 0) {
+    return "The number is even";
+  } else {
+    return "The number is odd";
+  };
 };
 
 /**
@@ -27,7 +31,15 @@ const isNumberEven = (num) => {
 // if num2 is greater than num1 return string 'num2 is the largest number'
 // if num1 is equal to num2 return string 'num1 is equal to num2'
 const findLargestNumber = (num1, num2) => {
-  // write your code here
+  if (num1 == num2) {
+    return "num1 is equal to num2";
+  } else {
+    if (num1 > num2) {
+      return num1 + " " + "is the largest number";
+    } else {
+      return num2 + " " + "is the largest number";
+    }
+  }
 };
 
 /**
@@ -41,8 +53,16 @@ const findLargestNumber = (num1, num2) => {
 // if triangle is Scalene return string 'Scalene triangle'
 // if triangle is Isosceles return string 'Isosceles triangle'
 const findTriangleType = (side1, side2, side3) => {
-  // write your code here
-};
+  if (side1 == side2 == side3) {
+    return "Equilateral triangle";
+  } else {
+    if (side1 == side2 || side2 == side3 || side3 == side1) {
+      return "Isosceles triangle";
+    } else {
+      return "Scalene triangle";
+    };
+  };
+}
 
 /**
  * @param {number} month
@@ -73,7 +93,13 @@ const calculateResult = (num1, num2, operation) => {
 // Create multiply table multiplying all digits from 2 t0 9 on 1 - 10 and write result in string
 // Compare your result with string in test
 const getMultiplicationTable = () => {
-  // write your code here
+  for (let j = 2; j <= 9; j++) {
+    document.write("<div style='float: left; width: 70px;'>");
+    for (let i = 2; i <= 9; i++) {
+      document.write(i + "*" + j + "=" + (i * j) + "<br>");
+    }
+    document.write("</div>");
+  }
 };
 
 module.exports = {
