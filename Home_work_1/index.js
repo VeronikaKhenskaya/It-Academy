@@ -32,7 +32,7 @@ const isNumberEven = (num) => {
 // if num1 is equal to num2 return string 'num1 is equal to num2'
 const findLargestNumber = (num1, num2) => {
   if (num1 == num2) {
-    return num1 + " "+ "is equal to " + num2;
+    return num1 + " " + "is equal to " + num2;
   } else {
     if (num1 > num2) {
       return num1 + " " + "is the largest number";
@@ -56,11 +56,11 @@ const findTriangleType = (side1, side2, side3) => {
   if (side1 == side2 && side2 == side3 && side3 == side1) {
     return "Equilateral triangle";
   } else if (side1 == side2 || side2 == side3 || side3 == side1) {
-      return "Isosceles triangle";
-    } else {
-      return "Scalene triangle";
-    };
+    return "Isosceles triangle";
+  } else {
+    return "Scalene triangle";
   };
+};
 
 /**
  * @param {number} month
@@ -70,10 +70,10 @@ const findTriangleType = (side1, side2, side3) => {
 // function should return amount of days in month with string 'The Month has X days'
 // If wrong month number provided return string 'Invalid Month of value X'
 const findDaysInMonth = (month, year) => {
- if (month > 12) {
-  return "Invalid Month of value " + month
- } 
- return "The Month has " + new Date(year, month, 0).getDate() + " " + "days";
+  if (month > 12) {
+    return "Invalid Month of value " + month;
+  }
+  return "The Month has " + new Date(year, month, 0).getDate() + " " + "days";
 }
 
 /**
@@ -85,7 +85,22 @@ const findDaysInMonth = (month, year) => {
 // function should return result of operation of num1 and num2 based on operation parameter.
 // If operation is invalid return string 'Invalid operation'
 const calculateResult = (num1, num2, operation) => {
-  // write your code here
+  if (operation == "add") {
+    return num1 + num2;
+  }
+  if (operation == "subtract") {
+    return num1 - num2;
+  }
+  if (operation == "multiply") {
+    return num1 * num2;
+  }
+  if (operation == "divide"){
+    return num1 / num2;
+  }
+  if (operation == "modulus") {
+    return num1 % num2;
+  } 
+  return "someunknownoperation is an invalid operation";
 }
 
 /**
