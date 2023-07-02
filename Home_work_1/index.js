@@ -5,8 +5,8 @@
  */
 // function should return sum of two numbers
 const sum = (a, b) => {
-  +(a + b)
-};
+  return a + b;
+}
 
 /**
  * @param {number} num
@@ -15,9 +15,9 @@ const sum = (a, b) => {
 // function should return true if number is even or false is number is not even
 const isNumberEven = (num) => {
   if (num % 2 == 0) {
-    return "The number is even";
+    return true;
   } else {
-    return "The number is odd";
+    return false;
   };
 };
 
@@ -32,7 +32,7 @@ const isNumberEven = (num) => {
 // if num1 is equal to num2 return string 'num1 is equal to num2'
 const findLargestNumber = (num1, num2) => {
   if (num1 == num2) {
-    return "num1 is equal to num2";
+    return num1 + " "+ "is equal to " + num2;
   } else {
     if (num1 > num2) {
       return num1 + " " + "is the largest number";
@@ -53,16 +53,14 @@ const findLargestNumber = (num1, num2) => {
 // if triangle is Scalene return string 'Scalene triangle'
 // if triangle is Isosceles return string 'Isosceles triangle'
 const findTriangleType = (side1, side2, side3) => {
-  if (side1 == side2 == side3) {
+  if (side1 == side2 && side2 == side3 && side3 == side1) {
     return "Equilateral triangle";
-  } else {
-    if (side1 == side2 || side2 == side3 || side3 == side1) {
+  } else if (side1 == side2 || side2 == side3 || side3 == side1) {
       return "Isosceles triangle";
     } else {
       return "Scalene triangle";
     };
   };
-}
 
 /**
  * @param {number} month
@@ -72,7 +70,10 @@ const findTriangleType = (side1, side2, side3) => {
 // function should return amount of days in month with string 'The Month has X days'
 // If wrong month number provided return string 'Invalid Month of value X'
 const findDaysInMonth = (month, year) => {
-  // write your code here
+ if (month > 12) {
+  return "Invalid Month of value " + month
+ } 
+ return "The Month has " + new Date(year, month, 0).getDate() + " " + "days";
 }
 
 /**
