@@ -94,12 +94,12 @@ const calculateResult = (num1, num2, operation) => {
   if (operation == "multiply") {
     return num1 * num2;
   }
-  if (operation == "divide"){
+  if (operation == "divide") {
     return num1 / num2;
   }
   if (operation == "modulus") {
     return num1 % num2;
-  } 
+  }
   return "someunknownoperation is an invalid operation";
 }
 
@@ -109,14 +109,15 @@ const calculateResult = (num1, num2, operation) => {
 // Create multiply table multiplying all digits from 2 t0 9 on 1 - 10 and write result in string
 // Compare your result with string in test
 const getMultiplicationTable = () => {
-  for (let j = 2; j <= 9; j++) {
-    document.write("<div style='float: left; width: 70px;'>");
-    for (let i = 2; i <= 9; i++) {
-      document.write(i + "*" + j + "=" + (i * j) + "<br>");
+  let str1 = "";
+  for (let i = 2; i < 10; i++) {
+    str1 += "==== " + i + " ==== \n";
+    for (let j = 1; j <= 10; j++) {
+      str1 += i + " * " + j + " = " + (i * j) + " \n";
     }
-    document.write("</div>");
   }
-};
+  return str1;
+}
 
 module.exports = {
   isNumberEven,
