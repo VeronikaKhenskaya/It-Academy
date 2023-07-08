@@ -69,7 +69,7 @@ const getModulus = (a, b) => {
 // returns combination of messageType with message
 const formatLogger = (messageType) => {
   return myFunction = (message) => {
-    return `${messageType:} + " " + ${message}`
+    return `${messageType}: ${message}`
   }
 };
 
