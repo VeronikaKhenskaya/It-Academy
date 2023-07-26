@@ -1,10 +1,10 @@
-/**
+x/**
  * @param {string} str
  * @return {string}
  */
 // function returns string without spaces from the beginning and from the end, and in upper letter register
 const transformString = (str) => {
-  // write your code here
+  return str.trim().toUpperCase()
 };
 
 /**
@@ -13,7 +13,9 @@ const transformString = (str) => {
  */
 // function should return max number from array
 const findMaxNumber = (array) => {
-  // write your code here
+  return array.sort(function (a, b) {
+    return b - a;
+  })[0];
 };
 
 /**
@@ -22,7 +24,12 @@ const findMaxNumber = (array) => {
  */
 // function returns array of length of every word in string
 const getStringWordsLength = (str) => {
-  // write your code here
+  let newArray = str.split(", ");
+  let wordsLengthArray = [];
+  for (let i = 0; i < newArray.length; i++) {
+    wordsLengthArray.push(newArray[i].length);
+  }
+  return wordsLengthArray;
 };
 
 /**
@@ -32,7 +39,11 @@ const getStringWordsLength = (str) => {
  */
 // function returns array of numbers as result of initial number and degree
 const getTransformedNumbers = (numArray, degree) => {
-  // write your code here
+  let resultArray = [];
+  for (let i = 0; i < numArray.length; i++) {
+    resultArray.push(Math.pow(numArray[i], degree));
+  }
+  return resultArray;
 };
 
 /**
@@ -41,7 +52,17 @@ const getTransformedNumbers = (numArray, degree) => {
  */
 // function returns text with all first letters at the beginning of sentence capitalized
 const getTransformedText = (text) => {
-  // write your code here
+  let modifiedSentencesArray = [];
+  let textArray = text.split(". ");
+  let firstUpperLetter;
+  let sentenceWithoutFirstLetter;
+  let newSentence;
+  for (i = 0; i < textArray.length; i++) {
+    firstUpperLetter = textArray[i].substring(0, 1).toUpperCase();
+    sentenceWithoutFirstLetter = textArray[i].slice(1);
+    modifiedSentencesArray.push(newSentence = firstUpperLetter + sentenceWithoutFirstLetter);
+  };
+  return modifiedSentencesArray;
 };
 
 /**
@@ -50,7 +71,13 @@ const getTransformedText = (text) => {
  */
 // function filters array and return only array of positive integers
 const getPositiveIntegers = (array) => {
-  // write your code here
+  let positiveIntegersArray = [];
+ for (let i = 0; i < array.length; i++) {
+   if(typeof array[i] === 'number' && array[i] > 0) {
+   positiveIntegersArray.push(array[i]);
+ }; 
+ };
+  return positiveIntegersArray;
 };
 
 /**
@@ -60,7 +87,11 @@ const getPositiveIntegers = (array) => {
  */
 // functions return index of element in array
 const getElementIndex = (array, value) => {
-  // write your code here
+  for(i = 0; i < array.length; i++) {
+    if(value === array[i]) {
+    return i;
+  }
+  }
 };
 
 /**
@@ -70,7 +101,11 @@ const getElementIndex = (array, value) => {
  */
 // function returns item from array or undefined if item is not found
 const getItem = (array, value) => {
-  // write your code here
+  for(i = 0; i < array.length; i++) {
+    if(value === array[i]) {
+    return array[i];
+  }
+  }
 };
 
 /**
