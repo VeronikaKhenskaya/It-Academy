@@ -115,7 +115,9 @@ const getItem = (array, value) => {
  */
 // function returns true if word is in every string in array and false if is not
 const isWordInEveryArrayString = (array, word) => {
-  // write your code here
+  for(i=0; i < array.length; i++){
+    return array[i].includes(word);
+  };
 };
 
 /**
@@ -124,7 +126,9 @@ const isWordInEveryArrayString = (array, word) => {
  */
 // function returns true if any number in array is negative
 const isNegativeNumbersInArray = (array) => {
-  // write your code here
+  for(i=0; i < array.length; i++){
+    return array.includes(array[i] === 'number' && array[i] < 0);
+  };
 };
 
 /**
@@ -135,7 +139,7 @@ const isNegativeNumbersInArray = (array) => {
  */
 // function returns part of array from start to end (including end) positions
 const returnArrayPart = (array, startPosition, endPosition) => {
-  // write your code here
+  return array.slice(startPosition,endPosition+1);
 };
 
 
