@@ -1,11 +1,11 @@
-x/**
+/**
  * @param {string} str
  * @return {string}
  */
 // function returns string without spaces from the beginning and from the end, and in upper letter register
 const transformString = (str) => {
-  return str.trim().toUpperCase()
-};
+  return str.trim().toUpperCase();
+}
 
 /**
  * @param {number[]} array
@@ -13,10 +13,14 @@ const transformString = (str) => {
  */
 // function should return max number from array
 const findMaxNumber = (array) => {
-  return array.sort(function (a, b) {
-    return b - a;
-  })[0];
-};
+  if (array.length == 0) {
+    return NaN;
+  } else {
+    return array.sort(function (a, b) {
+      return b - a;
+    })[0];
+  }
+}
 
 /**
  * @param {string} str
@@ -24,13 +28,16 @@ const findMaxNumber = (array) => {
  */
 // function returns array of length of every word in string
 const getStringWordsLength = (str) => {
+  if (str.length === 0) {
+    return [];
+  }
   let newArray = str.split(", ");
   let wordsLengthArray = [];
   for (let i = 0; i < newArray.length; i++) {
     wordsLengthArray.push(newArray[i].length);
   }
   return wordsLengthArray;
-};
+}
 
 /**
  * @param {number[]} numArray
@@ -44,7 +51,7 @@ const getTransformedNumbers = (numArray, degree) => {
     resultArray.push(Math.pow(numArray[i], degree));
   }
   return resultArray;
-};
+}
 
 /**
  * @param {string} text
@@ -56,14 +63,13 @@ const getTransformedText = (text) => {
   let textArray = text.split(". ");
   let firstUpperLetter;
   let sentenceWithoutFirstLetter;
-  let newSentence;
   for (i = 0; i < textArray.length; i++) {
     firstUpperLetter = textArray[i].substring(0, 1).toUpperCase();
     sentenceWithoutFirstLetter = textArray[i].slice(1);
-    modifiedSentencesArray.push(newSentence = firstUpperLetter + sentenceWithoutFirstLetter);
-  };
-  return modifiedSentencesArray;
-};
+    modifiedSentencesArray.push(firstUpperLetter + sentenceWithoutFirstLetter);
+  }
+  return modifiedSentencesArray.join(". ");
+}
 
 /**
  * @param {any[]} array
@@ -72,13 +78,13 @@ const getTransformedText = (text) => {
 // function filters array and return only array of positive integers
 const getPositiveIntegers = (array) => {
   let positiveIntegersArray = [];
- for (let i = 0; i < array.length; i++) {
-   if(typeof array[i] === 'number' && array[i] > 0) {
-   positiveIntegersArray.push(array[i]);
- }; 
- };
+  for (let i = 0; i < array.length; i++) {
+    if ((typeof array[i]) === 'number' && array[i] > 0 && array[i] !== Number.POSITIVE_INFINITY) {
+      positiveIntegersArray.push(array[i]);
+    }
+  }
   return positiveIntegersArray;
-};
+}
 
 /**
  * @param {any[]} array
@@ -87,12 +93,13 @@ const getPositiveIntegers = (array) => {
  */
 // functions return index of element in array
 const getElementIndex = (array, value) => {
-  for(i = 0; i < array.length; i++) {
-    if(value === array[i]) {
-    return i;
+  for (i = 0; i < array.length; i++) {
+    if (value === array[i]) {
+      return i;
+    }
   }
-  }
-};
+  return -1;
+}
 
 /**
  * @param {any[]} array
@@ -101,12 +108,12 @@ const getElementIndex = (array, value) => {
  */
 // function returns item from array or undefined if item is not found
 const getItem = (array, value) => {
-  for(i = 0; i < array.length; i++) {
-    if(value === array[i]) {
-    return array[i];
+  for (i = 0; i < array.length; i++) {
+    if (value === array[i]) {
+      return array[i];
+    }
   }
-  }
-};
+}
 
 /**
  * @param {string[]} array
@@ -115,10 +122,16 @@ const getItem = (array, value) => {
  */
 // function returns true if word is in every string in array and false if is not
 const isWordInEveryArrayString = (array, word) => {
-  for(i=0; i < array.length; i++){
-    return array[i].includes(word);
-  };
-};
+  if (array.length === 0) {
+    return false;
+  }
+  for (i = 0; i < array.length; i++) {
+    if (!array[i].toLowerCase().includes(word.toLowerCase())) {
+      return false;
+    }
+  }
+  return true;
+}
 
 /**
  * @param {number[]} array
@@ -126,10 +139,13 @@ const isWordInEveryArrayString = (array, word) => {
  */
 // function returns true if any number in array is negative
 const isNegativeNumbersInArray = (array) => {
-  for(i=0; i < array.length; i++){
-    return array.includes(array[i] === 'number' && array[i] < 0);
-  };
-};
+  for (i = 0; i < array.length; i++) {
+    if (isNaN(array[i]) === false && array[i] < 0) {
+      return true;
+    }
+  }
+  return false;
+}
 
 /**
  * @param {number[]} array
@@ -139,8 +155,8 @@ const isNegativeNumbersInArray = (array) => {
  */
 // function returns part of array from start to end (including end) positions
 const returnArrayPart = (array, startPosition, endPosition) => {
-  return array.slice(startPosition,endPosition+1);
-};
+  return array.slice(startPosition, endPosition + 1);
+}
 
 
 module.exports = {
