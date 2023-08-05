@@ -1,3 +1,61 @@
 .title {
   margin: 50px 0 50px;
 }
+
+#template {
+  display: none;
+}
+
+#main-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 85%;
+  height: auto;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.card {
+  margin: 10px;
+  height: 400px;
+  width: 20%;
+
+}
+
+.card-img-top {
+  width: 100%;
+  height: 30%;
+  margin-bottom: 5px;
+}
+
+.card-body {
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.price-rating {
+  background: #F1EFEF;
+  border-top: 1px solid #D0D3D3;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 3px;
+  font-size: smaller;
+  padding-bottom: 10px;
+  padding-top: 5px;
+  height: 20%;
+}
+
+.card-title {
+  font-size: small;
+  height: 10%;
+  margin-bottom: 5px;
+}
+
+.card-text {
+  font-size: small;
+  height: 40%;
+}
