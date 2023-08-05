@@ -16,7 +16,7 @@ fetch('https://dummyjson.com/products')
       newCard.getElementsByClassName("card-img-top")[0].src = product.images[0];
       newCard.getElementsByClassName("card-title")[0].textContent = product.title;
       newCard.getElementsByClassName("card-text")[0].textContent = product.description;
-      newCard.getElementsByClassName("price")[0].textContent = `Price: ${product.price}`;
+      newCard.getElementsByClassName("price")[0].textContent = `Price: ${product.price}$`;
       newCard.getElementsByClassName("rating")[0].textContent = `Rating: ${product.rating}`;
     }
   });
