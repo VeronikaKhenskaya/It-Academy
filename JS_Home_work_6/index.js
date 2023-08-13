@@ -21,6 +21,17 @@ fetch('https://dummyjson.com/products')
     }
   })
 
+// //function forFilter() {
+//       for (let card of document.getElementsByClassName("card")) {
+//         if (newCard.getElementsByClassName("seach-input")[0] == card.title || newCard.getElementsByClassName("seach-input")[0] == card.description) {
+//           return card;
+//         } else return "Ничего не найдено";
+//       }
+//     }
+//function siteSearch() {
+//return productsArray.filter(forFilter) ;  
+//}
+
 window.addEventListener('resize', resizeScreen);
 function resizeScreen() {
   for (let card of document.getElementsByClassName("card")) {
@@ -31,3 +42,5 @@ function resizeScreen() {
     }
   }
 }
+
+
