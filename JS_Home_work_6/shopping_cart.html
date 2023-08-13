@@ -6,19 +6,92 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+
+        body { 
+            margin: 0 auto;
+            box-sizing: border-box;
+        }
+
+        .main-container {
+            width: 50%;
+            height: 50%;
+            padding: 10px;
+            border: solid grey 1px;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+        }
+
+        .order,
+        .item-information,
+        .total-price {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .item-information {
+            justify-content: space-between;
+            border: solid 1px grey;
+            border-radius: 5px;
+            padding: 3%;
+        }
+
+        .order {
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .delete-btn {
+            border: solid 1px red;
+            background: red;
+            border-radius: 5px;
+            height: 25px;
+            color: white;
+            text-align: center;
+            font-weight: bold;
+            padding: 1%;
+        }
+
+        .total-price {
+            justify-content: end;
+            font-weight: bold;
+        }
+
+        .order-btn {
+            height: 20px;
+            color: white;
+            background: blue;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+            padding: 1%;
+        }
+    </style>
 </head>
 
 <body>
     <div class="main-container">
+        <div class="order">
+            <h1>Your Order</h1>
+            <div>X</div>
+        </div>
         <div class="item-information">
-            <div class="item-image"></div>
-            <div class="item-title"></div>
-            <div class="quantity"></div>
-            <a class="delete-btn"></a>
+            <div class="item-image">image</div>
+            <div class="item-title">title</div>
+            <div class="quantity">1</div>
+            <a class="delete-btn">Remove from order</a>
         </div>
 
-        <div class="total-price"></div>
-        <a class="order-btn"></a>
+        <div class="total-price">
+            <span>Total:</span>
+            <span>XXXXXX</span>
+        </div>
+        <a class="order-btn">Order</a>
     </div>
 </body>
 
