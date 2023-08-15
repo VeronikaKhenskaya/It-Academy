@@ -20,23 +20,39 @@ fetch('https://dummyjson.com/products')
       newCard.getElementsByClassName("rating")[0].textContent = `Rating: ${product.rating}`;
     }
 
-    let itemsMap = new Map();
-    for (let i = 0; i < productsArray.length; i++) {
-      itemsMap.set(productsArray[i].title, productsArray[i]);
-      itemsMap.forEach((value, key) => {
-        console.log(`${key}: ${value}`);
-      });
-    }
+
 
     window.addEventListener("click", function (event) {
       if (event.target.hasAttribute("href")) {
-        const card = event.target.closest(".card-body")
+
+        const card = event.target.closest(".card-body");
         let productInfo = {
           title: card.querySelector(".card-title").innerText,
           imgSrc: card.closest(".card").querySelector(".card-img-top").hasAttribute("src"),
           price: card.querySelector(".price").innerText,
         }
-        console.log(productInfo)
+
+        let n = document.querySelector(".is-quantity").innerText;
+        n++;
+
+        const cartItemHtml = ` <div class="item-information">
+        <div class="item-image">${productInfo.imgSrc}</div>
+        <div class="item-title">${productInfo.title}</div>
+        <div class="quantity-price">
+          <div data-id="minus-quantity" data-id="minus">-</div>
+          <div class="common-price-quantity">
+            <div class="is-quantity">${n}</div>
+            <div class="multiply">x</div>
+            <div class="is-price">${productInfo.price}</div>
+          </div>
+          <div class="plus-quantity" data-id="plus">+</div>
+        </div>
+        <a class="delete-btn">Remove from order</a>
+      </div>`
+
+        const cartWrapper = document.querySelector(".main-container");
+        cartWrapper.insertAdjacentHTML("beforeend", cartItemHtml);
+
       }
     })
 
