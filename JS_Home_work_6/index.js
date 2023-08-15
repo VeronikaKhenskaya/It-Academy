@@ -19,18 +19,24 @@ fetch('https://dummyjson.com/products')
       newCard.getElementsByClassName("price")[0].textContent = `Price: ${product.price}$`;
       newCard.getElementsByClassName("rating")[0].textContent = `Rating: ${product.rating}`;
     }
-  })
 
-// //function forFilter() {
-//       for (let card of document.getElementsByClassName("card")) {
-//         if (newCard.getElementsByClassName("seach-input")[0] == card.title || newCard.getElementsByClassName("seach-input")[0] == card.description) {
-//           return card;
-//         } else return "Ничего не найдено";
-//       }
-//     }
-//function siteSearch() {
-//return productsArray.filter(forFilter) ;  
-//}
+    //const productsArray = data.products;
+    let itemsMap = new Map();
+     for(let i=0; i < productsArray.length; i++){
+     itemsMap.set(productsArray[i].title, productsArray[i]); 
+     itemsMap.forEach((value, key) => {
+    console.log(`${key}: ${value}`); 
+  });
+    }
+
+    //let shoppingCart = new Map();
+
+   // function addToShoppingCart(){
+    //  let addButton = document.getElementById
+  //  }
+
+
+  })
 
 window.addEventListener('resize', resizeScreen);
 function resizeScreen() {
@@ -44,3 +50,20 @@ function resizeScreen() {
 }
 
 
+let openButton = document.getElementById("your-cart");
+let shoppingCart = document.getElementsByClassName("main-container")[0];
+let closeButton = document.getElementsByClassName("close-btn")[0];
+
+function openCart() {
+  shoppingCart.style.display = "block";
+  document.body.style.background = "#B4B4B4";
+  document.body.style.position = "fixed";
+}
+openButton.addEventListener("click", openCart)
+
+function closeCart() {
+  shoppingCart.style.display = "none";
+  document.body.style.background = "white";
+  document.body.style.position = "initial";
+}
+closeButton.addEventListener('click', closeCart);

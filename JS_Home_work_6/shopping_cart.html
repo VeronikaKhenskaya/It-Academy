@@ -71,6 +71,15 @@
             font-weight: bold;
             padding: 1%;
         }
+
+        .close-btn {
+            border-radius: 3px;
+            background: #DADDDD;
+            width: 15px;
+            height: 15px;
+            text-align: center;
+            font-size: 13px;
+        }
     </style>
 </head>
 
@@ -78,7 +87,7 @@
     <div class="main-container">
         <div class="order">
             <h1>Your Order</h1>
-            <div>X</div>
+            <a class="close-btn">&times</a>
         </div>
         <div class="item-information">
             <div class="item-image">image</div>
@@ -94,5 +103,25 @@
         <a class="order-btn">Order</a>
     </div>
 </body>
+
+<script>
+    fetch('https://dummyjson.com/products')
+  .then(res => res.json())
+  .then((data) => {
+    console.log(data.products);
+    const productsArray = data.products;
+  let itemsMap = new Map();
+   for(let i=0; i < productsArray.length; i++){
+   itemsMap.set(productsArray[i].title, productsArray[i]); 
+   console.log(itemsMap.values());
+   }
+   let shoppingCartMap = new Map();
+   function addToCart(){
+    shoppingCartMap.set(this.title, )
+   }
+
+   
+   });
+</script>
 
 </html>
