@@ -20,21 +20,25 @@ fetch('https://dummyjson.com/products')
       newCard.getElementsByClassName("rating")[0].textContent = `Rating: ${product.rating}`;
     }
 
-    //const productsArray = data.products;
     let itemsMap = new Map();
-     for(let i=0; i < productsArray.length; i++){
-     itemsMap.set(productsArray[i].title, productsArray[i]); 
-     itemsMap.forEach((value, key) => {
-    console.log(`${key}: ${value}`); 
-  });
+    for (let i = 0; i < productsArray.length; i++) {
+      itemsMap.set(productsArray[i].title, productsArray[i]);
+      itemsMap.forEach((value, key) => {
+        console.log(`${key}: ${value}`);
+      });
     }
 
-    //let shoppingCart = new Map();
-
-   // function addToShoppingCart(){
-    //  let addButton = document.getElementById
-  //  }
-
+    window.addEventListener("click", function (event) {
+      if (event.target.hasAttribute("href")) {
+        const card = event.target.closest(".card-body")
+        let productInfo = {
+          title: card.querySelector(".card-title").innerText,
+          imgSrc: card.closest(".card").querySelector(".card-img-top").hasAttribute("src"),
+          price: card.querySelector(".price").innerText,
+        }
+        console.log(productInfo)
+      }
+    })
 
   })
 
@@ -48,7 +52,6 @@ function resizeScreen() {
     }
   }
 }
-
 
 let openButton = document.getElementById("your-cart");
 let shoppingCart = document.getElementsByClassName("main-container")[0];

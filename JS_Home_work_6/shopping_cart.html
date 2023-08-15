@@ -100,7 +100,7 @@
             <span>Total:</span>
             <span>XXXXXX</span>
         </div>
-        <a class="order-btn">Order</a>
+        <a class="order-btn" dataset-id="btn-to-order">Order</a>
     </div>
 </body>
 
@@ -115,10 +115,12 @@
    itemsMap.set(productsArray[i].title, productsArray[i]); 
    console.log(itemsMap.values());
    }
-   let shoppingCartMap = new Map();
-   function addToCart(){
-    shoppingCartMap.set(this.title, )
-   }
+   
+   window.addEventListener("click", function(event){
+    if(event.target.hasAttribute("order-btn")) {
+        const card = event.target.closest("card-body")
+    }
+   })
 
    
    });
