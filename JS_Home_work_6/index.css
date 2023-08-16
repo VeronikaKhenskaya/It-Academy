@@ -230,3 +230,17 @@ form {
   margin: 3px;
 }
 
+.order,
+.order-btn {
+  display: flex;
+}
+
+.item-information {
+  
+}
+
+.main-container {
+  
+  justify-content: space-between;
+}
+
