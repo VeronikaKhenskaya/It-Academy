@@ -54,13 +54,9 @@ fetch('https://dummyjson.com/products')
       cartWrapper.insertAdjacentHTML("beforeend", cartItemHtml);
       //shoppingCart.insertAdjacentHTML("beforeend", OrderBtn);
       let productInCart = document.getElementsByClassName(".item-information");
+
     }
   })
-
-
-
-
-
 
 window.addEventListener('resize', resizeScreen);
 function resizeScreen() {
