@@ -12,4 +12,15 @@ let calc = new Calculator();
 
  function updateDisplay(){
     document.querySelector('.screen').innerHTML = calc.displayText;
+
+ }
+
+ function inputRadix(){
+    calc.inputRadix();
+    updateDisplay();
+ }
+
+ function plusMinus() {
+    calc.plusMinus();
+    updateDisplay();
  }
