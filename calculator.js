@@ -4,7 +4,6 @@ class Calculator {
     this.currentOperation = null;
     this.lastOperation = null;
     this.result = 0; //текущий результат предыдущих операций//
-    this.displayText = '0'; //хранит значение, которое отображается на экране калькулятора
     this.hasRadix = false;
   }
 
@@ -24,17 +23,13 @@ class Calculator {
       this.currentOperation = null;
       this.input = String(digit);
     }
-    this.displayText = this.input;
   }
 
   inputOperation(operation) {
     if (this.currentOperation === null) { // первый ввод текущей операции после числа
       if (this.lastOperation !== null) {
         this.performLastOperation();
-        this.displayText = this.result;
-      } else {
-        // this.result = Number(this.input);
-        this.displayText = this.input;
+        this.input = null;
       }
       this.currentOperation = operation;
     } else {   // повторный ввод текущей выбранной операции
@@ -57,19 +52,48 @@ class Calculator {
   inputRadix() {
     if (this.hasRadix === false) {
       this.input = this.input + ".";
-      this.displayText = this.input;
       this.hasRadix = true;
     }
   }
 
   plusMinus() {
-    this.input = String(Number(this.input) * -1);
-    this.displayText = this.input;
+    if (this.input != null) {
+      this.input = String(Number(this.input) * -1);
+    } else {
+      this.input = this.result * -1;
+    }
   }
 
-  clear(){
-     this.displayText = '0';
-     this.input = '0'
+  displayText1() {
+    if (this.input === null) {
+      return String(this.result);
+    } else {
+      return this.input;
+    }
+  }
+
+  equal() {
+    this.performLastOperation();
+    this.input = null;
+    this.currentOperation = null;
+    this.lastOperation = null;
+    this.hasRadix = false;
+  }
+
+  reset() {
+    this.input = '0';
+    this.currentOperation = null;
+    this.lastOperation = null;
+    this.result = 0;
+    this.hasRadix = false;
+  }
+
+  percent() {
+    if (this.lastOperation === '*') {
+      this.performLastOperation();
+      this.result = this.result / 100;
+      this.input = null;
+    }
   }
 }
 
