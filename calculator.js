@@ -70,5 +70,9 @@ class Calculator {
   result() {
 
   }
+
+  clear(){
+    
+  }
 }
 
