@@ -23,4 +23,11 @@ let calc = new Calculator();
  function plusMinus() {
     calc.plusMinus();
     updateDisplay();
+    
+ }
+
+ function clear(){
+   calc.clear();
+   updateDisplay();
+   console.log(clear());
  }

@@ -67,12 +67,9 @@ class Calculator {
     this.displayText = this.input;
   }
 
-  result() {
-
-  }
-
   clear(){
-    
+     this.displayText = '0';
+     this.input = '0'
   }
 }
 
