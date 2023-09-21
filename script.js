@@ -1,10 +1,9 @@
-function search() {
-    let searchLocation = document.querySelector(".search").value;
-    console.log(searchLocation);
-}
+let inputData = document.querySelector(".inputData").value;
+console.log(inputData);
+
 
 function enter() {
-    document.querySelector(".search").addEventListener('keydown', function (enter) {
+    document.querySelector(".inputData").addEventListener('keydown', function (enter) {
         if (enter.key === "Enter") {
             console.log(this.value);
         }
@@ -17,8 +16,8 @@ let todayTemperature = document.querySelector(".todayTemperature").innerText;
 let location = document.querySelector(".location").innerText;
 let todaySunsetTime = document.querySelector(".time").innerText;
 
-const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-const date = new Date();
+let weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+let date = new Date();
 let day = weekday[date.getDay()];
 document.querySelector("#today-day").innerText = day;
 console.log(day);
