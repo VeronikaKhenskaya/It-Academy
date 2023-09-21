@@ -278,13 +278,13 @@ header input[type="text"] {
     grid-column: 2;
     grid-row: 1/3;
 }
-.temperature {
+.todayTemperature {
     font-size: 70px;
 }
 .location {
     font-size: 30px;
 }
-.time,
+.sunset,
 .sunset-time {
     font-size: 25px;
 }
