@@ -5,7 +5,7 @@ body {
 
 h1 {
     color: #78304f;
-    font-weight: 700;
+    font-weight: 900;
 }
 
 header {
@@ -19,8 +19,8 @@ header {
 }
 
 header input {
-    width: 20%;
-    height: 20px;
+    width: 80%;
+    height: 30px;
     border: 1px solid #78304f;
     border-radius: 5px;
 }
@@ -36,7 +36,7 @@ header input[type="text"] {
 
 .main-table {
     width: 90%;
-    height: 400px;
+    height: 250px;
     background: center no-repeat;
     background-image: url("6220925.jpg");
     background-size: cover;
