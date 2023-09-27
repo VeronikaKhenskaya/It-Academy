@@ -1,7 +1,6 @@
-
+//let inputData = document.querySelector(".inputData").value;
 function inputSearch() {
   let inputData = document.querySelector(".inputData").value;
-  document.querySelector(".location").innerText = inputData;
   console.log(inputData);
   findWeatherData(inputData);
 }
@@ -24,7 +23,12 @@ async function findWeatherData(city) {
   console.log(data);
   document.querySelector(".todayTemperature").innerText = Math.round(data.list[0].main.temp) + '\xB0';
   document.querySelector("#three").innerText = data.list[0].main.humidity + '%';
-  document.querySelector("#todayIcon") = data.list[0].weather[0].icon;
+  //document.querySelector("#todayIcon") = data.list[0].weather[0].icon;
+  document.querySelector(".location").innerText = `${data.city.name}, ${data.city.country}`;
+  document.querySelector("#weather-description").innerText = data.list[0].weather[0].description;
+
+  let weatherIconCode = data.list[0].weather[0].icon;
+  document.querySelector("#weather-icon").src = `https://openweathermap.org/img/wn/${weatherIconCode}@2x.png`
 
 
   let unixTimeSunset = data.city.sunset;
@@ -66,23 +70,40 @@ let monthlyRain = document.querySelector("#rainfall-data").innerText;
 
 //const options = {
 //  enableHighAccuracy: true,
- // timeout: 5000,
- // maximumAge: 0,
+// timeout: 5000,
+// maximumAge: 0,
 //};
 
 //function success(pos) {
-  //const crd = pos.coords;
-  //const lat = crd.latitude;
-  //const lon = crd.longitude;
-  //console.log("Your current position is:");
- // console.log(`Latitude : ${lat}`);
- // console.log(`Longitude: ${lon}`);
+//const crd = pos.coords;
+//const lat = crd.latitude;
+//const lon = crd.longitude;
+//console.log("Your current position is:");
+// console.log(`Latitude : ${lat}`);
+// console.log(`Longitude: ${lon}`);
 //}
 //function error(err) {
-  //console.warn(`ERROR(${err.code}): ${err.message}`);
+//console.warn(`ERROR(${err.code}): ${err.message}`);
 //}
 //z = navigator.geolocation.getCurrentPosition(success, error, options);
 //console.log(z);
+
+function inputSearch() {
+  let stored = localStorage.getItem('storageArray');
+  let lastSearches;
+  if (stored === null) {
+    lastSearches = []
+  } else {
+    lastSearches = JSON.parse(stored)
+  }
+  if (lastSearches.length >= 10) {
+    lastSearches.shift();
+  }
+  lastSearches.push(document.querySelector(".inputData").value);
+  localStorage.setItem('storageArray', JSON.stringify(lastSearches));
+  console.log(localStorage.getItem('storageArray'))
+}
+inputSearch();
 
 
 
