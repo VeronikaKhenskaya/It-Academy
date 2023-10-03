@@ -1,8 +1,21 @@
-//let inputData = document.querySelector(".inputData").value;
+
 function inputSearch() {
   let inputData = document.querySelector(".inputData").value;
   console.log(inputData);
   findWeatherData(inputData);
+  let stored = localStorage.getItem('storageArray');
+  let lastSearches;
+  if (stored === null) {
+    lastSearches = []
+  } else {
+    lastSearches = JSON.parse(stored)
+  }
+  if (lastSearches.length >= 10) {
+    lastSearches.shift();
+  }
+  lastSearches.push(document.querySelector(".inputData").value);
+  localStorage.setItem('storageArray', JSON.stringify(lastSearches));
+  console.log(localStorage.getItem('storageArray'))
 }
 
 function bindEnterKey() {
@@ -21,11 +34,13 @@ async function findWeatherData(city) {
   let response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apikey}&units=metric`);
   let data = await response.json();
   console.log(data);
-  document.querySelector(".todayTemperature").innerText = Math.round(data.list[0].main.temp) + '\xB0';
+  document.querySelector(".todayTemperature").innerText = Math.round(data.list[0].main.temp) + "\xB0";
   document.querySelector("#three").innerText = data.list[0].main.humidity + '%';
-  //document.querySelector("#todayIcon") = data.list[0].weather[0].icon;
+  document.querySelector("#max-temp-data").innerText = Math.round(data.list[0].main.temp_max) + " \xB0" + "C" ;
+  document.querySelector("#min-temp-data").innerText = Math.round(data.list[0].main.temp_min) + " \xB0" + "C";
   document.querySelector(".location").innerText = `${data.city.name}, ${data.city.country}`;
   document.querySelector("#weather-description").innerText = data.list[0].weather[0].description;
+  document.querySelector("#nine").innerText = Math.round(data.list[0].wind.speed) + " m/s";
 
   let weatherIconCode = data.list[0].weather[0].icon;
   document.querySelector("#weather-icon").src = `https://openweathermap.org/img/wn/${weatherIconCode}@2x.png`
@@ -52,8 +67,6 @@ async function findWeatherData(city) {
   document.querySelector("#twelve").innerText = sunriseFormattedTime;
 }
 
-
-
 let weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 let date = new Date();
 let day = weekday[date.getDay()];
@@ -63,9 +76,6 @@ console.log(day);
 let humidityData = document.querySelector("#three").innerText;
 let sunsetTime = document.querySelector("#six").innerText;
 let sunriseTime = document.querySelector("#twelve").innerText;
-let uvIndex = document.querySelector("#nine").innerText;
-let monthlyRain = document.querySelector("#rainfall-data").innerText;
-//let annualRain = document.querySelector("#rrainfall-changes").innerText;
 
 
 //const options = {
@@ -88,7 +98,7 @@ let monthlyRain = document.querySelector("#rainfall-data").innerText;
 //z = navigator.geolocation.getCurrentPosition(success, error, options);
 //console.log(z);
 
-function inputSearch() {
+/* function inputSearch() {
   let stored = localStorage.getItem('storageArray');
   let lastSearches;
   if (stored === null) {
@@ -103,7 +113,7 @@ function inputSearch() {
   localStorage.setItem('storageArray', JSON.stringify(lastSearches));
   console.log(localStorage.getItem('storageArray'))
 }
-inputSearch();
+inputSearch(); */
 
 
 
