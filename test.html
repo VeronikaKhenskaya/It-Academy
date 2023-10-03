@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .forecast-weather-container {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .forecast-container {
+            width: 10%;
+            height: 50%;
+            display: flex;
+            flex-direction: column;
+            border: solid 1px black;
+            border-radius: 20px;
+            padding: 10px;
+            text-align: center;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="forecast-weather-container"></div>
+
+    <div class="forecast-container">
+        <div class="week-day"></div>
+        <div class="date"></div>
+        <div class="forecast-weather-icon"></div>
+        <div class="forecast-weather-temp"></div>
+    </div>
+
+    <script>
+        const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        let d = new Date();
+        console.log(d);
+        let dayOfWeek = weekday[d.getDay()];
+        console.log(dayOfWeek);
+        document.querySelector(".week-day").innerText = dayOfWeek;
+        let todayDate = d.getDate();
+        console.log(todayDate);
+        let todayMonth = months[d.getMonth()];
+        console.log(todayMonth);
+        let year = d.getFullYear();
+        console.log(year);
+        document.querySelector(".date").innerText = `${todayMonth} ${todayDate}, ${year}`;
+
+        async function findWeatherData() {
+            let apikey = "7e4d1602c64a4d064ef336db6d4bdc24"
+            let response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=Paris&appid=${apikey}&units=metric`);
+            let data = await response.json();
+            console.log(data);
+        }
+        findWeatherData()
+
+        function createCard() {
+            for (let i = 0; i <= 5; i++) {
+                let container = document.querySelector(".forecast-weather-container");
+                let parent = document.querySelector(".forecast-container");
+                let clone = parent.cloneNode(true);
+                container.appendChild(clone);
+                document.querySelector(".forecast-container").style.display = "block"
+                console.log(clone)
+            }
+        }
+        createCard();
+
+        const DAY_MILSEC = 24 * 60 * 60 * 1000;
+        let today = new Date().getTime();
+        //console.log(today)
+        for (let i = 0; i < 5; i++) {
+            let date = new Date(today + DAY_MILSEC * i);
+            console.log(getDay(date));
+        }
+
+        function getDay(date) {
+            return date.getDate() + " " + weekday[date.getDay()];
+        }
+
+    </script>
+</body>
+
+</html>
