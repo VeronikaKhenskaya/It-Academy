@@ -58,8 +58,8 @@
             let data = await response.json();
             console.log(data);
             let dataArray = [];
-            for(i=0; i < dataArray.length; i++){
-               let dates = dataArray.push(data.list[i].dt_txt);
+            for (i = 0; i < dataArray.length; i++) {
+                let dates = dataArray.push(data.list[i].dt_txt);
                 return dataArray;
                 console.log(dates)
             }
@@ -91,6 +91,13 @@
             let todayMonth = months[new Date().getMonth()]
             let nextDays = `${todayMonth} ${date.getDate()}, ${weekday[date.getDay()]}`;
             return nextDays
+        }
+
+
+        for (let i = 0; i < 5; i++) {
+            let nextDay = new Date();
+            nextDay.setDate(nextDay.getDate() + i)
+            console.log(nextDay)
         }
 
     </script>

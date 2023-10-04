@@ -56,7 +56,7 @@ async function findWeatherData(city) {
   let sunsetMinutes = date.getMinutes();
   // Will display time in 10:30:23 format
   let formattedTime = sunsetHours + ':' + sunsetMinutes;
-  document.querySelector(".sunset-time").innerText = formattedTime;
+  document.querySelector(".sunset-time").innerText = `${formattedTime} \n Sunset time`;
   document.querySelector("#six").innerText = formattedTime;
 
   let unixTimeSunrise = data.city.sunrise;
@@ -67,11 +67,26 @@ async function findWeatherData(city) {
   document.querySelector("#twelve").innerText = sunriseFormattedTime;
 }
 
-let weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-let date = new Date();
-let day = weekday[date.getDay()];
-document.querySelector("#today-day").innerText = day;
-console.log(day);
+//let weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+//let date = new Date();
+//let day = weekday[date.getDay()];
+//document.querySelector("#today-day").innerText = day;
+//console.log(day);
+
+const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+let d = new Date();
+console.log(d);
+let dayOfWeek = weekday[d.getDay()];
+console.log(dayOfWeek);
+//document.querySelector(".week-day").innerText = dayOfWeek;
+let todayDate = d.getDate();
+console.log(todayDate);
+let todayMonth = months[d.getMonth()];
+console.log(todayMonth);
+let year = d.getFullYear();
+console.log(year);
+document.querySelector("#today-day").innerText = `${todayMonth} ${todayDate}`;
 
 let humidityData = document.querySelector("#three").innerText;
 let sunsetTime = document.querySelector("#six").innerText;
@@ -151,7 +166,25 @@ function resizeScreen() {
       document.querySelector(".max-min-temperature").style.gridRow = "2";
       document.querySelector(".forecast-container").style.gridColumn = "2";
       document.querySelector(".forecast-container").style.gridRow = "1/3";
-      
+    }
+
+    for(let i=0; i < 5; i++) {
+      let nextDay = new Date();
+      nextDay.setDate(nextDay.getDate() + i)
+      //console.log(nextDay)
+      const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+      const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+      let dayOfWeek = weekday[nextDay.getDay()];
+      //console.log(dayOfWeek)
+      let todayDate = nextDay.getDate() - 1;
+     //console.log(todayDate);
+     let todayMonth = months[nextDay.getMonth()];
+     //console.log(todayMonth);
+        console.log(`${dayOfWeek}, ${todayMonth} ${todayDate}`)
+       let dayForecast =  document.getElementsByClassName("day-forecast")[i];
+    console.log(dayForecast);
+    let weekDayElement = dayForecast.getElementsByClassName("week-day")[0];
+      weekDayElement.innerText = `${dayOfWeek}, ${todayMonth} ${todayDate}`
     }
   }
 
