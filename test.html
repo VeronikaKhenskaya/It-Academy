@@ -61,14 +61,7 @@
             lastSearches.push(document.querySelector(".inputData").value);
             localStorage.setItem('storageArray', JSON.stringify(lastSearches));
            console.log(localStorage.getItem('storageArray'))
-            console.log(lastSearches)
-           // lastSearches.forEach((element)  => {
-            for(let i=0; i < lastSearches.length; i++){
-                let li = document.createElement('li');
-                list.appendChild(li);
-                li.textContent = `${lastSearches[i]}`;
-            };
-                
+            console.log(lastSearches);           
             }
 
 
