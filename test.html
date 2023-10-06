@@ -7,98 +7,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .forecast-weather-container {
-            display: flex;
-            flex-direction: row;
-        }
-
-        .forecast-container {
-            width: 10%;
-            height: 50%;
-            display: flex;
-            flex-direction: column;
-            border: solid 1px black;
-            border-radius: 20px;
-            padding: 10px;
-            text-align: center;
+        .inputSearchList {
             display: none;
+            width: 200px;
+            height: 50px;
+            border: solid 1px black
         }
     </style>
 </head>
 
 <body>
-    <div class="forecast-weather-container"></div>
-
-    <div class="forecast-container">
-        <div class="week-day"></div>
-        <div class="date"></div>
-        <div class="forecast-weather-icon"></div>
-        <div class="forecast-weather-temp"></div>
-    </div>
+    <input class="inputData" list="searchList" onclick="showLastSearches()">
+    <div class="inputSearchList"></div>
 
     <script>
-        const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-        const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-        let d = new Date();
-        console.log(d);
-        let dayOfWeek = weekday[d.getDay()];
-        console.log(dayOfWeek);
-        document.querySelector(".week-day").innerText = dayOfWeek;
-        let todayDate = d.getDate();
-        console.log(todayDate);
-        let todayMonth = months[d.getMonth()];
-        console.log(todayMonth);
-        let year = d.getFullYear();
-        console.log(year);
-        document.querySelector(".date").innerText = `${todayMonth} ${todayDate}, ${year}`;
-
-        async function findWeatherData() {
-            let apikey = "7e4d1602c64a4d064ef336db6d4bdc24"
-            let response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=Paris&appid=${apikey}&units=metric`);
-            let data = await response.json();
-            console.log(data);
-            let dataArray = [];
-            for (i = 0; i < dataArray.length; i++) {
-                let dates = dataArray.push(data.list[i].dt_txt);
-                return dataArray;
-                console.log(dates)
+        document.addEventListener('click', function hideLastSearches(event) {
+            const inputDiv = document.querySelector(".inputSearchList");
+            const inputField = document.querySelector(".inputData");
+            if (!inputDiv.contains(event.target) && !inputField.contains(event.target)) {
+                inputDiv.replaceChildren();
             }
-            //console.log(data.list[0].dt_txt)
-        }
-        findWeatherData()
 
-        function createCard() {
-            for (let i = 0; i <= 5; i++) {
-                let container = document.querySelector(".forecast-weather-container");
-                let parent = document.querySelector(".forecast-container");
-                let clone = parent.cloneNode(true);
-                container.appendChild(clone);
-                document.querySelector(".forecast-container").style.display = "block"
-                console.log(clone)
+        })
+        function showLastSearches() {
+            let lastSearches = JSON.parse(localStorage.getItem('storageArray'));
+            let inputDiv = document.querySelector(".inputSearchList");
+            let list = document.createElement('ul');
+            inputDiv.replaceChildren(list);
+            for(let i=0; i < lastSearches.length; i++){
+                let li = document.createElement('li');
+                list.appendChild(li);
+                li.textContent = `${lastSearches[i]}`;
+            };
+            inputDiv.style.display = "block";
+        }
+
+        function inputSearch() {
+            let list = document.querySelector(".inputSearchList");
+            list.style.display = "block";
+            let inputData = document.querySelector(".inputData").value;
+            //console.log(inputData);
+            //findWeatherData(inputData);
+            let stored = localStorage.getItem('storageArray');
+            let lastSearches;
+            if (stored === null) {
+                lastSearches = []
+            } else {
+                lastSearches = JSON.parse(stored)
             }
-        }
-        createCard();
+            if (lastSearches.length >= 10) {
+                lastSearches.shift();
+            }
+            lastSearches.push(document.querySelector(".inputData").value);
+            localStorage.setItem('storageArray', JSON.stringify(lastSearches));
+           console.log(localStorage.getItem('storageArray'))
+            console.log(lastSearches)
+           // lastSearches.forEach((element)  => {
+            for(let i=0; i < lastSearches.length; i++){
+                let li = document.createElement('li');
+                list.appendChild(li);
+                li.textContent = `${lastSearches[i]}`;
+            };
+                
+            }
 
-        const DAY_MILSEC = 24 * 60 * 60 * 1000;
-        let today = new Date().getTime();
-        for (let i = 0; i < 5; i++) {
-            let date = new Date(today + DAY_MILSEC * i);
-            console.log(getDay(date));
-        }
-        function getDay(date) {
-            const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-            const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-            let todayMonth = months[new Date().getMonth()]
-            let nextDays = `${todayMonth} ${date.getDate()}, ${weekday[date.getDay()]}`;
-            return nextDays
-        }
-
-
-        for (let i = 0; i < 5; i++) {
-            let nextDay = new Date();
-            nextDay.setDate(nextDay.getDate() + i)
-            console.log(nextDay)
-        }
 
     </script>
 </body>
