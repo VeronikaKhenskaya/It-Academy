@@ -33,17 +33,24 @@
         function showLastSearches() {
             let lastSearches = JSON.parse(localStorage.getItem('storageArray'));
             let inputDiv = document.querySelector(".inputSearchList");
-            let list = document.createElement('ul');
+            let list = document.createElement('div');
             inputDiv.replaceChildren(list);
             for (let i = 0; i < lastSearches.length; i++) {
-                let li = document.createElement('li');
+                let li = document.createElement('div');
                 list.appendChild(li);
                 li.textContent = `${lastSearches[i]}`;
             };
             inputDiv.style.display = "block";
             changeColorOfSearchesList();
-        }
 
+            //сделать отдельной функцией
+            let arrayOfInputValues = Array.from(list.children);
+            for (let i = 0; i < arrayOfInputValues.length; i++) {
+                arrayOfInputValues[i].addEventListener('click', function () {
+                    document.querySelector(".inputData").value = event.target.textContent;
+                })
+            }
+        }
 
         function inputSearch() {
             let list = document.querySelector(".inputSearchList");
@@ -61,7 +68,8 @@
             if (lastSearches.length >= 10) {
                 lastSearches.shift();
             }
-            lastSearches.push(document.querySelector(".inputData").value);
+            lastSearches.unshift(document.querySelector(".inputData").value);
+            console.log(lastSearches)
             localStorage.setItem('storageArray', JSON.stringify(lastSearches));
             //console.log(localStorage.getItem('storageArray'))
             //console.log(lastSearches);           
@@ -77,15 +85,14 @@
         bindEnterKey();
 
         function changeColorOfSearchesList() {
-            let listOfSearches = document.getElementsByTagName('li');
+            let listOfSearches = document.getElementsByTagName('div');
             let arrayOfSearches = Array.from(listOfSearches);
-            console.log(arrayOfSearches);
             for (i = 0; i < arrayOfSearches.length; i++) {
                 arrayOfSearches[i].onmouseover = arrayOfSearches[i].onmouseout = handler;
                 function handler(event) {
                     if (event.type == "mouseover") {
                         event.target.style.background = "grey";
-                        event.target.style.backroundImage = "URL('cross-svgrepo-com.svg')"
+                        event.target.style.backroundImage = "url('cross.svg')";
                     }
                     if (event.type == "mouseout") {
                         event.target.style.background = "white";
@@ -94,6 +101,14 @@
             }
         }
 
+        function selectLastSearch() {
+            let listOfSearches = document.getElementsByTagName('div');
+            let arrayOfSearches = Array.from(listOfSearches);
+            for (i = 0; i < arrayOfSearches.length; i++) {
+                arrayOfSearches[i].addEventListener('click', function () {
+                })
+            }
+        }
 
 
     </script>
