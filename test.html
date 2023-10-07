@@ -55,6 +55,11 @@
         function showLastSearches() {
             let lastSearches = JSON.parse(localStorage.getItem('storageArray'));
             let inputDiv = document.querySelector(".inputSearchList");
+            if (lastSearches.length === 0) {
+                inputDiv.style.display = "none";
+            } else {
+                inputDiv.style.display = "block";
+            }
             let list = document.createElement('div');
             list.className = "list-container";
             inputDiv.replaceChildren(list);
@@ -64,14 +69,17 @@
                 let searchText = previousSearchContainer.appendChild(document.createElement('div'));
                 searchText.className = "search-text";
                 searchText.textContent = `${lastSearches[i]}`;
-                searchText.addEventListener('click', function () {
-                    document.querySelector(".inputData").value = event.target.textContent;
-                    list.style.display = "none";
+                searchText.addEventListener('click', function (event) {
+                    if (!event.target.classList.contains('delete-search')) {
+                        document.querySelector(".inputD ata").value = event.target.textContent;
+                        inputDiv.style.display = "none";
+                    }
+
                 })
                 previousSearchContainer.addEventListener('click', function (event) {
-                    if (!event.target.contains('delete-search')) {
+                    if (!event.target.classList.contains('delete-search')) {
                         document.querySelector(".inputData").value = searchText.textContent;
-                        list.style.display = "none";
+                        inputDiv.style.display = "none";
                     }
                 })
                 //создание div с крестиком
@@ -81,24 +89,26 @@
                 previousSearchContainer.onmouseover = previousSearchContainer.onmouseout = handler;
                 function handler(event) {
                     if (event.type == "mouseover") {
-                        event.target.style.background = "grey";
+                        //event.target.style.background = "grey";
                         deleteSearch.style.display = "block";
                     }
                     if (event.type == "mouseout") {
-                        event.target.style.background = "white";
+                        //event.target.style.background = "";
                         deleteSearch.style.display = "none";
                     }
                 }
 
                 deleteSearch.addEventListener('click', function () {
+                    if (document.querySelector(".inputData").value === searchText.textContent) {
+                        document.querySelector(".inputData").value = "";
+                    }
                     previousSearchContainer.remove();
                     lastSearches.splice(i, 1);
                     localStorage.setItem('storageArray', JSON.stringify(lastSearches));
+
+
                 })
             };
-
-
-            inputDiv.style.display = "block";
 
         }
 
@@ -118,9 +128,17 @@
             if (lastSearches.length >= 10) {
                 lastSearches.shift();
             }
-            //arr.push => arr.unshift
-            lastSearches.unshift(document.querySelector(".inputData").value);
-            localStorage.setItem('storageArray', JSON.stringify(lastSearches));
+            for (let i = 0; i < lastSearches.length; i++) {
+                if (document.querySelector(".inputData").value !== lastSearches[i]) {
+                    //arr.push => arr.unshift
+                    lastSearches.unshift(document.querySelector(".inputData").value);
+                    localStorage.setItem('storageArray', JSON.stringify(lastSearches));
+                } else {
+                    lastSearches = JSON.parse(stored);
+                }
+            }
+
+
         }
 
         function bindEnterKey() {
