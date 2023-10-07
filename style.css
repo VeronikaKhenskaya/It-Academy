@@ -327,3 +327,32 @@ header input[type="text"] {
 #today-day {
     font-size: 25px;
 }
+
+.inputSearchList {
+    display: none;
+    width: 200px;
+    height: auto;
+    border: solid 1px black
+}
+
+.list-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.previous-search-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 3px;
+}
+
+.delete-search {
+    text-align: right;
+    font-size: 15px;
+    color: black;
+    font-weight: bold;
+    display: none;
+
+}
