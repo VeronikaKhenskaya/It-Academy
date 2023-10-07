@@ -1,7 +1,7 @@
 
 function inputSearch() {
   let inputData = document.querySelector(".inputData").value;
-  console.log(inputData);
+  //console.log(inputData);
   findWeatherData(inputData);
   let stored = localStorage.getItem('storageArray');
   let lastSearches;
@@ -27,7 +27,7 @@ function bindEnterKey() {
 };
 bindEnterKey();
 
-let todayWeatherIcon = document.querySelector("#todayIcon");
+//let todayWeatherIcon = document.querySelector("#todayIcon");
 
 async function findWeatherData(city) {
   let apikey = "7e4d1602c64a4d064ef336db6d4bdc24"
