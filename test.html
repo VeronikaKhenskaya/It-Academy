@@ -13,6 +13,26 @@
             height: auto;
             border: solid 1px black
         }
+
+        .list-container{
+            display: flex;
+            flex-direction: column;
+        }
+        .last-searches-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            box-sizing: border-box;
+            padding: 3px;
+        }
+
+        .cross {
+            text-align: right;
+            font-size: 15px;
+            color: black;
+            font-weight: bold;
+        }
+
     </style>
 </head>
 
@@ -34,11 +54,18 @@
             let lastSearches = JSON.parse(localStorage.getItem('storageArray'));
             let inputDiv = document.querySelector(".inputSearchList");
             let list = document.createElement('div');
+            list.className = "list-container";
             inputDiv.replaceChildren(list);
             for (let i = 0; i < lastSearches.length; i++) {
                 let li = document.createElement('div');
-                list.appendChild(li);
-                li.textContent = `${lastSearches[i]}`;
+                li.className = "last-searches-container";
+                let lastinput = list.appendChild(li);
+                lastinput.textContent = `${lastSearches[i]}`;
+                //создание div с крестиком
+                let x = document.createElement('div');
+                x.className = "cross"
+                x.textContent = 'x'
+                li.appendChild(x);
             };
             inputDiv.style.display = "block";
             changeColorOfSearchesList();
@@ -48,15 +75,20 @@
             for (let i = 0; i < arrayOfInputValues.length; i++) {
                 arrayOfInputValues[i].addEventListener('click', function () {
                     document.querySelector(".inputData").value = event.target.textContent;
+                    
+                    list.style.display = "none";
                 })
             }
+        }
+
+        function createCrossInDiv() {
+
         }
 
         function inputSearch() {
             let list = document.querySelector(".inputSearchList");
             list.style.display = "block";
             let inputData = document.querySelector(".inputData").value;
-            //console.log(inputData);
             //findWeatherData(inputData);
             let stored = localStorage.getItem('storageArray');
             let lastSearches;
@@ -68,17 +100,16 @@
             if (lastSearches.length >= 10) {
                 lastSearches.shift();
             }
+            //arr.push => arr.unshift
             lastSearches.unshift(document.querySelector(".inputData").value);
-            console.log(lastSearches)
             localStorage.setItem('storageArray', JSON.stringify(lastSearches));
-            //console.log(localStorage.getItem('storageArray'))
-            //console.log(lastSearches);           
         }
 
         function bindEnterKey() {
             document.querySelector(".inputData").addEventListener('keydown', function (enter) {
                 if (enter.key === "Enter") {
                     inputSearch();
+                    document.querySelector(".inputSearchList").style.display = "none";
                 }
             });
         };
@@ -92,7 +123,7 @@
                 function handler(event) {
                     if (event.type == "mouseover") {
                         event.target.style.background = "grey";
-                        event.target.style.backroundImage = "url('cross.svg')";
+                        document.querySelector(".cross").style.display = "block";
                     }
                     if (event.type == "mouseout") {
                         event.target.style.background = "white";
@@ -100,16 +131,6 @@
                 }
             }
         }
-
-        function selectLastSearch() {
-            let listOfSearches = document.getElementsByTagName('div');
-            let arrayOfSearches = Array.from(listOfSearches);
-            for (i = 0; i < arrayOfSearches.length; i++) {
-                arrayOfSearches[i].addEventListener('click', function () {
-                })
-            }
-        }
-
 
     </script>
 </body>
