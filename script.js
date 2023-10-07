@@ -1,7 +1,6 @@
 
 function inputSearch() {
   let inputData = document.querySelector(".inputData").value;
-  //console.log(inputData);
   findWeatherData(inputData);
   let stored = localStorage.getItem('storageArray');
   let lastSearches;
@@ -41,20 +40,14 @@ async function findWeatherData(city) {
   document.querySelector(".location").innerText = `${data.city.name}, ${data.city.country}`;
   document.querySelector("#weather-description").innerText = data.list[0].weather[0].description;
   document.querySelector("#nine").innerText = Math.round(data.list[0].wind.speed) + " m/s";
-
   let weatherIconCode = data.list[0].weather[0].icon;
   document.querySelector("#weather-icon").src = `https://openweathermap.org/img/wn/${weatherIconCode}@2x.png`
 
 
   let unixTimeSunset = data.city.sunset;
-  // Create a new JavaScript Date object based on the timestamp
-  // multiplied by 1000 so that the argument is in milliseconds, not seconds.
   let date = new Date(unixTimeSunset * 1000);
-  // Hours part from the timestamp
   let sunsetHours = date.getHours();
-  // Minutes part from the timestamp
   let sunsetMinutes = date.getMinutes();
-  // Will display time in 10:30:23 format
   let formattedTime = sunsetHours + ':' + sunsetMinutes;
   document.querySelector(".sunset-time").innerText = `${formattedTime} \n Sunset time`;
   document.querySelector("#six").innerText = formattedTime;
@@ -111,40 +104,17 @@ function setForecastDates() {
   for (let i = 0; i < 5; i++) {
     let nextDay = new Date();
     nextDay.setDate(nextDay.getDate() + i)
-    //console.log(nextDay)
     let dayOfWeek = weekday[nextDay.getDay()];
-    //console.log(dayOfWeek)
     let todayDate = nextDay.getDate();
-    //console.log(todayDate);
     let todayMonth = months[nextDay.getMonth()];
-    //console.log(todayMonth);
-    //console.log(`${dayOfWeek}, ${todayMonth} ${todayDate}`)
     let dayForecast = document.getElementsByClassName("day-forecast")[i];
-    //console.log(dayForecast);
     let weekDayElement = dayForecast.firstChild;
-    //console.log(weekDayElement)
     weekDayElement.textContent = `${dayOfWeek} ${todayMonth} ${todayDate}`;
-    //console.log(weekDayElement)
   }
 }
 setForecastDates()
 
-/* function inputSearch() {
-  let stored = localStorage.getItem('storageArray');
-  let lastSearches;
-  if (stored === null) {
-    lastSearches = []
-  } else {
-    lastSearches = JSON.parse(stored)
-  }
-  if (lastSearches.length >= 10) {
-    lastSearches.shift();
-  }
-  lastSearches.push(document.querySelector(".inputData").value);
-  localStorage.setItem('storageArray', JSON.stringify(lastSearches));
-  console.log(localStorage.getItem('storageArray'))
-}
-inputSearch(); */
+
 
 
 
