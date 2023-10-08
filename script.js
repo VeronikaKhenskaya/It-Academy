@@ -1,4 +1,4 @@
-const apikey = "7e4d1602c64a4d064ef336db6d4bdc24";
+const apikey = "";
 //находит текущее местоположение и загружает погодные данные текущего местоположения
 window.onload = async function findWeatherInCurrentLocation() {
   let latitude;
@@ -9,7 +9,7 @@ window.onload = async function findWeatherInCurrentLocation() {
       longitude = position.coords.longitude;
       let response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${apikey}&units=metric`);
       let data = await response.json();
-      showWeather(data)
+      showWeather(data);
       weatherByDate(data).forEach(displayForecastWeather);
     })
   }
@@ -17,18 +17,14 @@ window.onload = async function findWeatherInCurrentLocation() {
 
 function weatherByDate(data) {
   let forecastWeatherDataArray = data.list.filter(element => new Date([element.dt] * 1000).getHours() < 13);
-  //console.log(forecastWeatherDataArray);
   let dateToWeather = new Map(forecastWeatherDataArray.map(getForecastWeatherData));
   function getForecastWeatherData(weather) {
     for (i = 0; i < forecastWeatherDataArray.length; i++) {
       return [new Date(weather.dt * 1000).toDateString(), [weather.main.temp, weather.weather[0].icon]];
     }
   }
-  console.log(dateToWeather)
-  return dateToWeather
+  return dateToWeather;
 }
-
-
 
 function displayForecastWeather(value, key, map) {
   let forecastContainer = document.querySelector(".forecast-container");
@@ -44,7 +40,6 @@ function displayForecastWeather(value, key, map) {
   forecastTemperature.className = "forecast-temperature";
   forecastTemperature.textContent = Math.round(value[0]) + " \xB0" + "C";
 }
-
 
 //вычисляет и отображает текущую дату, месяц и следующие пять дней
 function setDates() {
@@ -94,8 +89,7 @@ async function inputSearch() {
   showWeather(await findWeatherData(inputData));
   lastSearches = getLastStoredSearches();
   if (lastSearches.length >= 10) {
-    lastSearches.pop
-      ();
+    lastSearches.pop();
   }
   if (!lastSearches.includes(inputData)) {
     lastSearches.unshift(inputData);
@@ -122,7 +116,7 @@ bindEnterKey();
 
 //загружает данные погоды с помощью api
 async function findWeatherData(city) {
-  let apikey = "7e4d1602c64a4d064ef336db6d4bdc24"
+  let apikey = "";
   let response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apikey}&units=metric`);
   return await response.json();
 }
@@ -136,5 +130,5 @@ function getLastStoredSearches() {
   } else {
     lastSearches = JSON.parse(stored);
   }
-  return lastSearches
+  return lastSearches;
 }

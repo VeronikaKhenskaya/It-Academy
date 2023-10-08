@@ -1,4 +1,3 @@
-
 #main-container {
     box-sizing: border-box;
     font-family: "Poppins";
@@ -255,7 +254,6 @@ header input[type="text"] {
     width: 30px;
 }
 
-
 .forecast-container {
     display: flex;
     flex-direction: row;
@@ -279,7 +277,6 @@ header input[type="text"] {
     font-size: 13px;
     font-weight: bold;
 }
-
 
 .container {
     width: 90%;
