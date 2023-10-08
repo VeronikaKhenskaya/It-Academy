@@ -17,6 +17,12 @@ function resizeScreen() {
     document.querySelector(".max-min-temperature").style.gridRow = "2";
     document.querySelector(".forecast-container").style.gridColumn = "1";
     document.querySelector(".forecast-container").style.gridRow = "3";
+    document.querySelector(".inputSearchList").style.position = "absolute";
+    document.querySelector(".inputSearchList").style.left = "3%";
+    document.querySelector(".inputSearchList").style.top = "90%";
+    document.querySelector(".inputSearchList").style.background = "white";
+    document.querySelector(".inputSearchList").style.width = "90%";
+
   } else {
     document.getElementsByTagName('header')[0].style.flexDirection = "row"
     document.getElementsByTagName('header')[0].style.width = "90%";

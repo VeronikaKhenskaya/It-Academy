@@ -1,13 +1,10 @@
-body {
-    margin: o auto;
-}
 
 #main-container {
     box-sizing: border-box;
     font-family: "Poppins";
     margin: 0 auto;
     width: 100%;
-
+    height: 100%;
 }
 
 h1 {
@@ -17,6 +14,7 @@ h1 {
 
 header {
     width: 90%;
+    height: 20%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -24,6 +22,7 @@ header {
     padding: 20px;
     margin: 0 auto;
     box-sizing: border-box;
+    position: relative;
 }
 
 header input {
@@ -31,7 +30,6 @@ header input {
     height: 30px;
     border: 1px solid #78304f;
     border-radius: 5px;
-    
 }
 
 header input[type="text"] {
@@ -45,7 +43,7 @@ header input[type="text"] {
 
 .main-table {
     width: 90%;
-    height: 250px;
+    height: 50%;
     background: center no-repeat;
     background-image: url("6220925.jpg");
     background-size: cover;
@@ -63,7 +61,6 @@ header input[type="text"] {
     margin: 0 auto;
     font-family: "Poppins";
     align-items: flex-end;
-
 }
 
 .todayWeather {
@@ -119,67 +116,67 @@ header input[type="text"] {
     margin-left: 3px;
 }
 
-#one {
+#humidity-icon {
     grid-column: 1;
     grid-row-start: 1;
     grid-row-end: 3;
 }
 
-#two {
+#humidity-title {
     grid-column: 2;
     grid-row: 1;
     font-weight: bold;
 }
 
-#three {
+#humidity-data {
     grid-column: 2;
     grid-row: 2;
 }
 
-#four {
+#sunset-icon {
     grid-column: 4;
     grid-row: 1/3;
 }
 
-#five {
+#sunset-title {
     grid-column: 5;
     grid-row: 1;
     font-weight: bold;
 }
 
-#six {
+#sunset-data {
     grid-column: 5;
     grid-row: 2;
 }
 
-#seven {
+#wind-icon {
     grid-column: 1;
     grid-row: 3/5;
 }
 
-#eight {
+#wind-title {
     grid-column: 2;
     grid-row: 3;
     font-weight: bold;
 }
 
-#nine {
+#wind-data {
     grid-column: 2;
     grid-row: 4;
 }
 
-#ten {
+#sunrise-icon {
     grid-column: 4;
     grid-row: 3/5;
 }
 
-#eleven {
+#sunrise-title {
     grid-column: 5;
     grid-row: 3;
     font-weight: bold;
 }
 
-#twelve {
+#sunrise-data {
     grid-column: 5;
     grid-row: 4;
 }
@@ -194,7 +191,7 @@ header input[type="text"] {
 
 .max-min-temperature {
     display: grid;
-    grid-template-columns: 25% 25% 25% 25% ;
+    grid-template-columns: 25% 25% 25% 25%;
     grid-template-rows: 30px 25px 25px;
     border: 1px solid #99606A;
     border-radius: 20px;
@@ -258,7 +255,7 @@ header input[type="text"] {
 }
 
 
-.forecast-container{
+.forecast-container {
     display: flex;
     flex-direction: row;
     border: solid 1px #99606A;
@@ -266,21 +263,26 @@ header input[type="text"] {
     padding: 10px;
     align-content: space-around;
     justify-content: space-around;
+    align-items: stretch;
     font-family: "Poppins";
     box-sizing: border-box;
+    width: 100%;
 }
 
-.day-forecast{
+.day-forecast-container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 5px;
     text-align: center;
+    width: 20%;
+    font-size: 13px;
+    font-weight: bold;
 }
 
 
-.container{
+.container {
     width: 90%;
+    height: 40%;
     margin: 0 auto;
     margin-top: 30px;
     display: grid;
@@ -312,16 +314,20 @@ header input[type="text"] {
     grid-column: 1;
     grid-row: 2;
 }
+
 .weather-of-week {
     grid-column: 2;
     grid-row: 1/3;
 }
+
 .todayTemperature {
     font-size: 40px;
 }
+
 .location {
     font-size: 20px;
 }
+
 .sunset,
 .sunset-time,
 #today-day {
@@ -330,9 +336,17 @@ header input[type="text"] {
 
 .inputSearchList {
     display: none;
-    width: 200px;
+    width: 35%;
     height: auto;
-    border: solid 1px black
+    border: solid 1px black;
+    position: absolute;
+    top: 65%;
+    left: 20%;
+    background: transparent;
+    border: 1px solid black;
+    font-family: "Poppins";
+    box-sizing: border-box;
+    padding: 5px;
 }
 
 .list-container {
@@ -354,5 +368,8 @@ header input[type="text"] {
     color: black;
     font-weight: bold;
     display: none;
+}
 
+#weather-description {
+    font-size: 20px;
 }

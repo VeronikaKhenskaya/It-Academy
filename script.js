@@ -7,13 +7,44 @@ window.onload = async function findWeatherInCurrentLocation() {
     navigator.geolocation.getCurrentPosition(async function (position) {
       latitude = position.coords.latitude;
       longitude = position.coords.longitude;
-      console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
       let response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${apikey}&units=metric`);
       let data = await response.json();
       showWeather(data)
-    });
+      weatherByDate(data).forEach(displayForecastWeather);
+    })
   }
 }
+
+function weatherByDate(data) {
+  let forecastWeatherDataArray = data.list.filter(element => new Date([element.dt] * 1000).getHours() < 13);
+  //console.log(forecastWeatherDataArray);
+  let dateToWeather = new Map(forecastWeatherDataArray.map(getForecastWeatherData));
+  function getForecastWeatherData(weather) {
+    for (i = 0; i < forecastWeatherDataArray.length; i++) {
+      return [new Date(weather.dt * 1000).toDateString(), [weather.main.temp, weather.weather[0].icon]];
+    }
+  }
+  console.log(dateToWeather)
+  return dateToWeather
+}
+
+
+
+function displayForecastWeather(value, key, map) {
+  let forecastContainer = document.querySelector(".forecast-container");
+  let dailyForecast = forecastContainer.appendChild(document.createElement('div'));
+  dailyForecast.className = "day-forecast-container";
+  let forecastDate = dailyForecast.appendChild(document.createElement('div'));
+  forecastDate.className = "forecast-date";
+  forecastDate.textContent = key;
+  let forecastIcon = dailyForecast.appendChild(document.createElement('img'));
+  forecastIcon.className = "forecast-icon";
+  forecastIcon.src = `https://openweathermap.org/img/wn/${value[1]}@2x.png`;
+  let forecastTemperature = dailyForecast.appendChild(document.createElement('div'));
+  forecastTemperature.className = "forecast-temperature";
+  forecastTemperature.textContent = Math.round(value[0]) + " \xB0" + "C";
+}
+
 
 //вычисляет и отображает текущую дату, месяц и следующие пять дней
 function setDates() {
@@ -25,28 +56,18 @@ function setDates() {
   let todayMonth = months[d.getMonth()];
   let year = d.getFullYear();
   document.querySelector("#today-day").innerText = `${todayMonth} ${todayDate}`;
-  for (let i = 0; i < 5; i++) {
-    let nextDay = new Date();
-    nextDay.setDate(nextDay.getDate() + i)
-    let dayOfWeek = weekday[nextDay.getDay()];
-    let todayDate = nextDay.getDate();
-    let todayMonth = months[nextDay.getMonth()];
-    let dayForecast = document.getElementsByClassName("day-forecast")[i];
-    let weekDayElement = dayForecast.firstChild;
-    weekDayElement.textContent = `${dayOfWeek} ${todayMonth} ${todayDate}`;
-  }
 }
 setDates()
 
 //показывает найденные погодные данные
 function showWeather(data) {
   document.querySelector(".todayTemperature").innerText = Math.round(data.list[0].main.temp) + "\xB0";
-  document.querySelector("#three").innerText = data.list[0].main.humidity + '%';
+  document.querySelector("#humidity-data").innerText = data.list[0].main.humidity + '%';
   document.querySelector("#max-temp-data").innerText = Math.round(data.list[0].main.temp_max) + " \xB0" + "C";
   document.querySelector("#min-temp-data").innerText = Math.round(data.list[0].main.temp_min) + " \xB0" + "C";
   document.querySelector(".location").innerText = `${data.city.name}, ${data.city.country}`;
   document.querySelector("#weather-description").innerText = data.list[0].weather[0].description;
-  document.querySelector("#nine").innerText = Math.round(data.list[0].wind.speed) + " m/s";
+  document.querySelector("#wind-data").innerText = Math.round(data.list[0].wind.speed) + " m/s";
   let weatherIconCode = data.list[0].weather[0].icon;
   document.querySelector("#weather-icon").src = `https://openweathermap.org/img/wn/${weatherIconCode}@2x.png`;
   document.querySelector(".inputData").value = `${data.city.name}`;
@@ -57,14 +78,14 @@ function showWeather(data) {
   let sunsetMinutes = date.getMinutes();
   let formattedTime = sunsetHours + ':' + sunsetMinutes;
   document.querySelector(".sunset-time").innerText = `${formattedTime} \n Sunset time`;
-  document.querySelector("#six").innerText = formattedTime;
+  document.querySelector("#sunset-data").innerText = formattedTime;
   // вычисляет и показывает время рассвета
   let unixTimeSunrise = data.city.sunrise;
   let date1 = new Date(unixTimeSunrise * 1000);
   let sunriseHours = date1.getHours();
   let sunriseMinutes = date1.getMinutes();
   let sunriseFormattedTime = sunriseHours + ':' + sunriseMinutes;
-  document.querySelector("#twelve").innerText = sunriseFormattedTime;
+  document.querySelector("#sunrise-data").innerText = sunriseFormattedTime;
 }
 
 //вызывает функции поиска погодных данных по введенному городу в input и сохраняет данные поиска в localStorage
@@ -73,7 +94,8 @@ async function inputSearch() {
   showWeather(await findWeatherData(inputData));
   lastSearches = getLastStoredSearches();
   if (lastSearches.length >= 10) {
-    lastSearches.shift();
+    lastSearches.pop
+      ();
   }
   if (!lastSearches.includes(inputData)) {
     lastSearches.unshift(inputData);
@@ -116,15 +138,3 @@ function getLastStoredSearches() {
   }
   return lastSearches
 }
-
-
-
-
-
-
-
-
-
-
-
-
