@@ -35,7 +35,7 @@ header input {
 header input[type="text"] {
     color: #49484a;
     padding-right: 10px;
-    background: url(search.svg) center left 97%;
+    background: url(/images/search.svg) center left 97%;
     background-repeat: no-repeat;
     font-family: "Poppins";
     font-weight: 500;
@@ -45,7 +45,7 @@ header input[type="text"] {
     width: 90%;
     height: 50%;
     background: center no-repeat;
-    background-image: url("6220925.jpg");
+    background-image: url(/images/6220925.jpg);
     background-size: cover;
     border: solid 1px #99606A;
     display: flex;
@@ -98,6 +98,7 @@ header input[type="text"] {
     padding: 5px;
     justify-content: space-between;
     box-sizing: border-box;
+    align-content: center;
 }
 
 #weather-icon {
